@@ -2,11 +2,6 @@
 {% if document.read_time or document.show_date or  %}
   <p class="page__meta">
     {% if page.update_published_at %}
-      {% assign date = document.update_published_at %}
-      <span class="page__meta-date">
-        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="{{ date | date_to_xmlschema }}">{{ date | date: "%B %-d, %Y" }}</time>
-      </span>
     {% elsif document.show_date and document.date %}
       {% assign date = document.date %}
       <span class="page__meta-date">
