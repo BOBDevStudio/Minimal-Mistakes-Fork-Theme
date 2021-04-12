@@ -1,0 +1,11 @@
+{% if page.tab_icon %}
+{% capture icon_path %}{{ page.tab_icon }}{% endcapture %}
+{% unless icon_path == empty %}
+<link rel="icon" href="{{ icon_path | relative_url }}">
+{% endunless %}
+{% else %}
+{% capture icon_path %}{{ site.tab_icon }}{% endcapture %}
+{% unless icon_path == empty %}
+<link rel="icon" href="{{ icon_path | relative_url }}">
+{% endunless %}
+{% endif %}
