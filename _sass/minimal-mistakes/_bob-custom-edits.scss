@@ -10,6 +10,14 @@ h6 {
   color: #3d4144bf;
 }
 
+.page__content {
+  h1,
+  h2 {
+    padding-bottom: 0.5em;
+    border-bottom: 3px solid #e6e6e6;
+  }
+}
+
 h1,
 h2,
 h3,
