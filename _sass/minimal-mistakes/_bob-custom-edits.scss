@@ -57,10 +57,10 @@
     text-align: center;
     border-radius: 50%;
     background-color: #c8c8c8;
-    transition: none;
 
     .post__status-icon {
       font-size: 1.10em;
+      transition: none;
       // color: #000000; -- Here if wanted
     }
   }
