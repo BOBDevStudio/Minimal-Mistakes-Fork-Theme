@@ -6,7 +6,7 @@ layout: archive
 
 <ul class="taxonomy__index">
   {% assign postsInYear1 = site.posts | where_exp: "item", "item.hidden != true" | where_exp: "item", "item.pinned == true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
-  {% for year in postsInYear %}
+  {% for year in postsInYear1 %}
     <li>
       <a href="#pinned-{{ year.name }}">
         <strong>Pinned: {{ year.name }}</strong> <span class="taxonomy__count">{{ year.items | size }}</span>
