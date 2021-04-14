@@ -3,11 +3,10 @@
   font-size: 2em;
 }
 
-.post__status-icons-1 {
+.post__status-icons {
   height: 30px;
   width: 30px;
   display: grid;
-  grid-template-columns: repeat(1, 35px);
   margin-left: auto;
   margin-right: auto;
 
@@ -30,6 +29,37 @@
   .post__pin-status-icon-wrapper {
     background-color: #0aff64;
   }
+}
+
+.post__status-icons-1 {
+  grid-template-columns: repeat(1, 35px);
+}
+.post__status-icons-2 {
+  grid-template-columns: repeat(2, 35px);
+}
+.post__status-icons-3 {
+  grid-template-columns: repeat(3, 35px);
+}
+.post__status-icons-4 {
+  grid-template-columns: repeat(4, 35px);
+}
+.post__status-icons-5 {
+  grid-template-columns: repeat(5, 35px);
+}
+.post__status-icons-6 {
+  grid-template-columns: repeat(6, 35px);
+}
+.post__status-icons-7 {
+  grid-template-columns: repeat(7, 35px);
+}
+.post__status-icons-8 {
+  grid-template-columns: repeat(8, 35px);
+}
+.post__status-icons-9 {
+  grid-template-columns: repeat(9, 35px);
+}
+.post__status-icons-10 {
+  grid-template-columns: repeat(10, 35px);
 }
 
 h6 {
