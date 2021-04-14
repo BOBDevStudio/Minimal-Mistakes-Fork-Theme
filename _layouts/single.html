@@ -25,8 +25,19 @@ layout: default
 
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
-        <header>
-          {% if page.title %}<h1 id="page-title" class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
+        <header class="page__title-header">
+          {% if page.title %}
+		  <h1 id="page-title" class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
+          {% if page.pinned == true %}
+          <div class="post__status-icons-1">
+            {% if page.pinned == true %}
+            <div class="post__status-icon-wrapper post__pin-status-icon-wrapper">
+              <i class="post__status-icon fas fa-thumbtack"></i>
+            </div>
+            {% endif %}
+          </div>
+          {% endif %}
+          {% endif %}
           {% include page__meta.html %}
         </header>
       {% endunless %}

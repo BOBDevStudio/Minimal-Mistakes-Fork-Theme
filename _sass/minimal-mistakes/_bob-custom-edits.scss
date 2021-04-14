@@ -3,6 +3,37 @@
   font-size: 2em;
 }
 
+.page__title-header {
+  .post__status-icons-1 {
+    height: 30px;
+    width: 30px;
+    display: grid;
+    grid-template-columns: repeat(1, 35px);
+    margin-left: auto;
+    margin-right: auto;
+    
+    .post__status-icon-wrapper {
+      height: 30px;
+      width: 30px;
+      overflow: hidden;
+      text-align: center;
+      border-radius: 50%;
+      background-color: #c8c8c8;
+      
+      .post__status-icon {
+        font-size: 1.10em;
+        // color: #000000; -- Here if wanted
+      }
+    }
+    
+    // Special colors for each icon:
+    
+    .post__pin-status-icon-wrapper {
+      background-color: #0aff64;
+    }
+  }
+}
+
 h6 {
   font-size: .7em;
   margin: 0 0 1.3em;
