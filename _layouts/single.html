@@ -37,20 +37,20 @@ layout: default
               <i class="post__status-icon fas fa-eye-slash"></i>
             </div>
           </div>
-          {% elsif post.pinned == true or post.listed == false %}
+          {% elsif page.pinned == true and page.listed != false %}
           <div class="post__status-icons post__status-icons-1">
-            {% if page.pinned == true and page.listed == true %}
             <div class="post__status-icon-wrapper post__pinned-status-icon-wrapper" title="This post is pinned">
               <i class="post__status-icon fas fa-thumbtack"></i>
             </div>
-            {% elsif page.pinned == false and page.listed == false %}
+          </div>
+          {% elsif page.pinned != true and page.listed == false %}
+          <div class="post__status-icons post__status-icons-1">
             <div class="post__status-icon-wrapper post__unlisted-status-icon-wrapper" title="This post is unlisted from the main list of posts">
               <i class="post__status-icon fas fa-eye-slash"></i>
             </div>
-            {% endif %}
           </div>
           {% else %}
-          oof 5x
+          oof 6x
           {% if page.pinned == true %}
           yes 1
           {% endif %}
