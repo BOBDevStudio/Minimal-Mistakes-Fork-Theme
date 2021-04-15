@@ -44,6 +44,29 @@
   width: 345px;
 }
 
+.post__preview-header {
+  display: grid;
+  grid-template-columns: 30px auto;
+  
+  .post__small-status-icons {
+    margin-top: 0.6em;
+    width: 25px;
+    height: 25px;
+    grid-template-columns: repeat(1, 25px);
+    
+    .post__small-status-icon-wrapper {
+      height: 25px;
+      width: 25px;
+      
+      .post__small-status-icon {
+        font-size: .9em;
+        position: relative;
+        top: -4px;
+      }
+    }
+  }
+}
+
 .post__status-icons {
   height: 30px;
   display: grid;
@@ -57,7 +80,7 @@
     text-align: center;
     border-radius: 50%;
     background-color: #c8c8c8;
-
+    
     .post__status-icon {
       font-size: 1.10em;
       transition: none;
