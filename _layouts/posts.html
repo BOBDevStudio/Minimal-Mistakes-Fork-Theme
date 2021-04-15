@@ -24,7 +24,7 @@ layout: archive
 </ul>
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
-{% assign postsByYear1 = site.posts | where_exp: "item", "item.hidden != true" | where_exp: "item", "item.listed == true" | where_exp: "item", "item.pinned == true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+{% assign postsByYear1 = site.posts | where_exp: "item", "item.hidden != true" | where_exp: "item", "item.listed != false" | where_exp: "item", "item.pinned == true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
 {% for year in postsByYear1 %}
   <section id="pinned-{{ year.name }}" class="taxonomy__section">
     <h2 class="archive__subtitle">Pinned: {{ year.name }}</h2>
@@ -38,7 +38,7 @@ layout: archive
 {% endfor %}
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
-{% assign postsByYear2 = site.posts | where_exp: "item", "item.hidden != true" | where_exp: "item", "item.listed == true" | where_exp: "item", "item.pinned != true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+{% assign postsByYear2 = site.posts | where_exp: "item", "item.hidden != true" | where_exp: "item", "item.listed != false" | where_exp: "item", "item.pinned != true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
 {% for year in postsByYear2 %}
   <section id="{{ year.name }}" class="taxonomy__section">
     <h2 class="archive__subtitle">{{ year.name }}</h2>
