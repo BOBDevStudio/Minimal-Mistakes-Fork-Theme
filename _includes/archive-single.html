@@ -17,11 +17,16 @@
         <img src="{{ teaser | relative_url }}" alt="">
       </div>
     {% endif %}
-    {% if post.pinned == true %}
+    {% if post.pinned == true or post.listed == false %}
     <div class="post__status-icons post__status-icons-10 post__status-icons-no-center">
       {% if post.pinned == true %}
-      <div class="post__status-icon-wrapper post__pin-status-icon-wrapper" title="This post is pinned">
+      <div class="post__status-icon-wrapper post__pinned-status-icon-wrapper" title="This post is pinned">
         <i class="post__status-icon fas fa-thumbtack"></i>
+      </div>
+      {% endif %}
+      {% if post.listed == false %}
+      <div class="post__status-icon-wrapper post__unlisted-status-icon-wrapper" title="This post is unlisted from the main list of posts">
+        <i class="post__status-icon fas fa-eye-slash"></i>
       </div>
       {% endif %}
     </div>

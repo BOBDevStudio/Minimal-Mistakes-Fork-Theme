@@ -67,8 +67,12 @@
   
   // Special colors for each icon:
   
-  .post__pin-status-icon-wrapper {
-    background-color: #0aff64;
+  .post__pinned-status-icon-wrapper {
+    background-color: #64ff64;
+  }
+  
+  .post__unlisted-status-icon-wrapper {
+    background-color: #e1e1e1;
   }
 }
 
