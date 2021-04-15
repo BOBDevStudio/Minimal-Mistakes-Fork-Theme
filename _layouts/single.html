@@ -37,7 +37,8 @@ layout: default
               <i class="post__status-icon fas fa-eye-slash"></i>
             </div>
           </div>
-          {% elsif post.pinned == true or post.listed == false %}
+          {% else %}
+          {% if post.pinned == true or post.listed == false %}
           <div class="post__status-icons post__status-icons-1">
             {% if page.pinned == true and page.listed == true %}
             <div class="post__status-icon-wrapper post__pinned-status-icon-wrapper" title="This post is pinned">
@@ -50,7 +51,8 @@ layout: default
             {% endif %}
           </div>
           {% else %}
-          oof
+          oof 2x
+          {% endif %}
           {% endif %}
           {% endif %}
           {% include page__meta.html %}
