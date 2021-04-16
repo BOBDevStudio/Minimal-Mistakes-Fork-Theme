@@ -43,13 +43,13 @@
     {% if post.pinned == true or post.listed == false %}
     <div class="post__preview-header">
       <div class="post__status-icons post__small-status-icons post__status-icons-no-center">
-        {% if post.pinned == true %}
-        <div class="post__status-icon-wrapper post__small-status-icon-wrapper post__pinned-status-icon-wrapper" title="This post is pinned">
-          <i class="post__status-icon post__small-status-icon fas fa-thumbtack"></i>
-        </div>
-        {% elsif post.listed == false %}
+        {% if post.listed == false %}
         <div class="post__status-icon-wrapper post__small-status-icon-wrapper post__unlisted-status-icon-wrapper" title="This post is unlisted from the main list of posts">
           <i class="post__status-icon post__small-status-icon fas fa-eye-slash"></i>
+        </div>
+        {% elsif post.pinned == true %}
+        <div class="post__status-icon-wrapper post__small-status-icon-wrapper post__pinned-status-icon-wrapper" title="This post is pinned">
+          <i class="post__status-icon post__small-status-icon fas fa-thumbtack"></i>
         </div>
         {% endif %}
       </div>
