@@ -99,6 +99,16 @@
   }
 }
 
+span,
+h6,
+h5,
+h4,
+h3,
+h2,
+h1 {
+  text-transform: none;
+}
+
 .post__status-icons-no-center {
   margin-left: initial;
   margin-right: initial;
@@ -155,14 +165,4 @@ a {
   code {
     color: #3d4144;
   }
-}
-
-span,
-h6,
-h5,
-h4,
-h3,
-h2,
-h1 {
-  text-transform: none;
 }
