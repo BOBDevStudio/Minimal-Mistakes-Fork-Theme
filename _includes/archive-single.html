@@ -40,9 +40,9 @@
       {% endif %}
     </h2>
     {% elsif include.type == "grid" %}
+    {% if post.pinned == true or post.listed == false %}
     <div class="post__preview-header">
-      {% if post.pinned == true or post.listed == false %}
-      <div class="post__status-icons post__status-icons-small post__status-icons-no-center">
+      <div class="post__status-icons post__small-status-icons post__status-icons-no-center">
         {% if post.pinned == true %}
         <div class="post__status-icon-wrapper post__small-status-icon-wrapper post__pinned-status-icon-wrapper" title="This post is pinned">
           <i class="post__status-icon post__small-status-icon fas fa-thumbtack"></i>
@@ -53,7 +53,6 @@
         </div>
         {% endif %}
       </div>
-      {% endif %}
       <h2 class="archive__item-title no_toc" itemprop="headline">
         {% if post.link %}
           <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
@@ -62,6 +61,15 @@
         {% endif %}
       </h2>
     </div>
+    {% else %}
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      {% if post.link %}
+        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+      {% else %}
+        <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+      {% endif %}
+    </h2>
+    {% endif %}
     {% else %}
     <h2 class="archive__item-title no_toc" itemprop="headline">
       {% if post.link %}
