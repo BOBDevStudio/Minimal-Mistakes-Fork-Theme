@@ -1,7 +1,7 @@
 {% if page.is_update_log == true and page.update_published_at and site.update_log_time_zone %}
 <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Update published to RBAP:" }}</strong> {{ page.update_published_at | date: "%A, %B %e, %Y at %l:%M %p" }} ({{ site.update_log_time_zone }})</p>
 {% elsif page.is_update_log == true and page.date %}
-<p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Update published to RBAP:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
+<p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Update published to RBAP:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%A, %B %e, %Y" }}</time></p>
 {% elsif page.date %}
 <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Created:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
 {% endif %}
