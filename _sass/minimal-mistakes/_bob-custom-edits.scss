@@ -82,8 +82,10 @@
     background-color: #c8c8c8;
     
     .post__status-icon {
-      font-size: 1.10em;
+      font-size: 1em;
       transition: none;
+      position: relative;
+      top: -2.5px;
       // color: #000000; -- Here if wanted
     }
   }
