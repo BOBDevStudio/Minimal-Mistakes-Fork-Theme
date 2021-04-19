@@ -39,7 +39,7 @@ layout: archive
           {% endfor %}
         </div>
       </section>
-      {% else %}
+      {% elsif page.only_list_update_logs != true %}
       <section id="{{ category[0] | slugify | downcase }}" class="taxonomy__section">
         <h2 class="archive__subtitle">{{ category[0] }}</h2>
         <div class="entries-{{ entries_layout }}">
