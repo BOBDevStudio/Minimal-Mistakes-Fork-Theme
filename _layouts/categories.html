@@ -50,7 +50,7 @@ layout: archive
             {% include archive-single.html type=entries_layout %}
             {% elsif site.redirect_update_logs_category == true and category[0] != "Update Logs" %}
             {% include archive-single.html type=entries_layout %}
-            {% elsif site.redirect_update_logs_category != true %}
+            {% elsif site.redirect_update_logs_category != true and post.title != "Random Buildings And Parts Update Logs" %}
             {% include archive-single.html type=entries_layout %}
             {% endif %}
           {% endfor %}
