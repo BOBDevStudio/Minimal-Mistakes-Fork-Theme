@@ -35,7 +35,7 @@ layout: archive
       <section class="taxonomy__section">
         <div class="entries-{{ entries_layout }}">
           {% for post in category.last %}
-            {% if post.title ~= "Random Buildings And Parts Update Logs" %}
+            {% if post.title != "Random Buildings And Parts Update Logs" %}
             {% include archive-single.html type=entries_layout %}
             {% endif %}
           {% endfor %}
