@@ -35,7 +35,9 @@ layout: archive
       <section class="taxonomy__section">
         <div class="entries-{{ entries_layout }}">
           {% for post in category.last %}
+            {% if post.title ~= "Random Buildings And Parts Update Logs" %}
             {% include archive-single.html type=entries_layout %}
+            {% endif %}
           {% endfor %}
         </div>
       </section>
@@ -44,7 +46,13 @@ layout: archive
         <h2 class="archive__subtitle">{{ category[0] }}</h2>
         <div class="entries-{{ entries_layout }}">
           {% for post in category.last %}
+            {% if site.redirect_update_logs_category == true and category[0] == "Update Logs" and post.title == "Random Buildings And Parts Update Logs" %}
             {% include archive-single.html type=entries_layout %}
+            {% elseif site.redirect_update_logs_category == true and category[0] != "Update Logs" %}
+            {% include archive-single.html type=entries_layout %}
+            {% elseif site.redirect_update_logs_category != true %}
+            {% include archive-single.html type=entries_layout %}
+            {% endif %}
           {% endfor %}
         </div>
         <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
