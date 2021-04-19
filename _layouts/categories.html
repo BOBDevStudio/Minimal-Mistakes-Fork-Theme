@@ -48,9 +48,9 @@ layout: archive
           {% for post in category.last %}
             {% if site.redirect_update_logs_category == true and category[0] == "Update Logs" and post.title == "Random Buildings And Parts Update Logs" %}
             {% include archive-single.html type=entries_layout %}
-            {% elseif site.redirect_update_logs_category == true and category[0] != "Update Logs" %}
+            {% elsif site.redirect_update_logs_category == true and category[0] != "Update Logs" %}
             {% include archive-single.html type=entries_layout %}
-            {% elseif site.redirect_update_logs_category != true %}
+            {% elsif site.redirect_update_logs_category != true %}
             {% include archive-single.html type=entries_layout %}
             {% endif %}
           {% endfor %}
