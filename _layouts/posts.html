@@ -5,48 +5,48 @@ layout: archive
 {{ content }}
 
 <ul class="taxonomy__index">
-  {% assign postsInYear1 = site.posts | where_exp: "item", "item.hidden != true" | where_exp: "item", "item.listed != false" | where_exp: "item", "item.pinned == true" | where_exp: "item", "item.title != 'Random Buildings And Parts Update Logs'" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
-  {% for year in postsInYear1 %}
+  {%- assign postsInYear1 = site.posts | where_exp: "item", "item.hidden != true" | where_exp: "item", "item.listed != false" | where_exp: "item", "item.pinned == true" | where_exp: "item", "item.title != 'Random Buildings And Parts Update Logs'" | group_by_exp: 'post', 'post.date | date: "%Y"' -%}
+  {%- for year in postsInYear1 -%}
     <li>
       <a href="#pinned-{{ year.name }}">
         <strong>Pinned: {{ year.name }}</strong> <span class="taxonomy__count">{{ year.items | size }}</span>
       </a>
     </li>
-  {% endfor %}
-  {% assign postsInYear2 = site.posts | where_exp: "item", "item.hidden != true" | where_exp: "item", "item.listed != false" | where_exp: "item", "item.pinned != true" | where_exp: "item", "item.title != 'Random Buildings And Parts Update Logs'" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
-  {% for year in postsInYear2 %}
+  {%- endfor -%}
+  {%- assign postsInYear2 = site.posts | where_exp: "item", "item.hidden != true" | where_exp: "item", "item.listed != false" | where_exp: "item", "item.pinned != true" | where_exp: "item", "item.title != 'Random Buildings And Parts Update Logs'" | group_by_exp: 'post', 'post.date | date: "%Y"' -%}
+  {%- for year in postsInYear2 -%}
     <li>
       <a href="#{{ year.name }}">
         <strong>{{ year.name }}</strong> <span class="taxonomy__count">{{ year.items | size }}</span>
       </a>
     </li>
-  {% endfor %}
+  {%- endfor -%}
 </ul>
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-{% assign postsByYear1 = site.posts | where_exp: "item", "item.hidden != true" | where_exp: "item", "item.listed != false" | where_exp: "item", "item.pinned == true" | where_exp: "item", "item.title != 'Random Buildings And Parts Update Logs'" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
-{% for year in postsByYear1 %}
+{%- assign entries_layout = page.entries_layout | default: 'list' -%}
+{%- assign postsByYear1 = site.posts | where_exp: "item", "item.hidden != true" | where_exp: "item", "item.listed != false" | where_exp: "item", "item.pinned == true" | where_exp: "item", "item.title != 'Random Buildings And Parts Update Logs'" | group_by_exp: 'post', 'post.date | date: "%Y"' -%}
+{%- for year in postsByYear1 -%}
   <section id="pinned-{{ year.name }}" class="taxonomy__section">
     <h2 class="archive__subtitle">Pinned: {{ year.name }}</h2>
     <div class="entries-{{ entries_layout }}">
-      {% for post in year.items %}
-        {% include archive-single.html type=entries_layout %}
-      {% endfor %}
+      {%- for post in year.items -%}
+        {%- include archive-single.html type=entries_layout -%}
+      {%- endfor -%}
     </div>
     <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
   </section>
-{% endfor %}
+{%- endfor -%}
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-{% assign postsByYear2 = site.posts | where_exp: "item", "item.hidden != true" | where_exp: "item", "item.listed != false" | where_exp: "item", "item.pinned != true" | where_exp: "item", "item.title != 'Random Buildings And Parts Update Logs'" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
-{% for year in postsByYear2 %}
+{%- assign entries_layout = page.entries_layout | default: 'list' -%}
+{%- assign postsByYear2 = site.posts | where_exp: "item", "item.hidden != true" | where_exp: "item", "item.listed != false" | where_exp: "item", "item.pinned != true" | where_exp: "item", "item.title != 'Random Buildings And Parts Update Logs'" | group_by_exp: 'post', 'post.date | date: "%Y"' -%}
+{%- for year in postsByYear2 -%}
   <section id="{{ year.name }}" class="taxonomy__section">
     <h2 class="archive__subtitle">{{ year.name }}</h2>
     <div class="entries-{{ entries_layout }}">
-      {% for post in year.items %}
-        {% include archive-single.html type=entries_layout %}
-      {% endfor %}
+      {%- for post in year.items -%}
+        {%- include archive-single.html type=entries_layout -%}
+      {%- endfor -%}
     </div>
     <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
   </section>
-{% endfor %}
+{%- endfor -%}

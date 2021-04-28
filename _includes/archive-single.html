@@ -1,89 +1,89 @@
-{% if post.header.teaser %}
-  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
-{% else %}
-  {% assign teaser = site.teaser %}
-{% endif %}
+{%- if post.header.teaser -%}
+  {%- capture teaser -%}{{ post.header.teaser }}{%- endcapture -%}
+{%- else -%}
+  {%- assign teaser = site.teaser -%}
+{%- endif -%}
 
-{% if post.id %}
-  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
-{% else %}
-  {% assign title = post.title %}
-{% endif %}
+{%- if post.id -%}
+  {%- assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" -%}
+{%- else -%}
+  {%- assign title = post.title -%}
+{%- endif -%}
 
 <div class="{{ include.type | default: 'list' }}__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    {% if include.type == "grid" and teaser %}
+    {%- if include.type == "grid" and teaser -%}
       <div class="archive__item-teaser">
         <img src="{{ teaser | relative_url }}" alt="">
       </div>
-    {% endif %}
-    {% if include.type == "entries_layout" %}
-    {% if post.pinned == true or post.listed == false %}
+    {%- endif -%}
+    {%- if include.type == "entries_layout" -%}
+    {%- if post.pinned == true or post.listed == false -%}
     <div class="post__status-icons post__status-icons-10 post__status-icons-no-center">
-      {% if post.pinned == true %}
+      {%- if post.pinned == true -%}
       <div class="post__status-icon-wrapper post__pinned-status-icon-wrapper" title="This post is pinned">
         <i class="post__status-icon fas fa-thumbtack"></i>
       </div>
-      {% endif %}
-      {% if post.listed == false %}
+      {%- endif -%}
+      {%- if post.listed == false -%}
       <div class="post__status-icon-wrapper post__unlisted-status-icon-wrapper" title="This post is unlisted from the main list of posts">
         <i class="post__status-icon fas fa-eye-slash"></i>
       </div>
-      {% endif %}
+      {%- endif -%}
     </div>
-    {% endif %}
+    {%- endif -%}
     <h2 class="archive__item-title no_toc" itemprop="headline">
-      {% if post.link %}
+      {%- if post.link -%}
         <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
+      {%- else -%}
         <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
-      {% endif %}
+      {%- endif -%}
     </h2>
-    {% elsif include.type == "grid" %}
-    {% if post.pinned == true or post.listed == false %}
+    {%- elsif include.type == "grid" -%}
+    {%- if post.pinned == true or post.listed == false -%}
     <div class="post__preview-header">
       <div class="post__status-icons post__small-status-icons post__status-icons-no-center">
-        {% if post.listed == false %}
+        {%- if post.listed == false -%}
         <div class="post__status-icon-wrapper post__small-status-icon-wrapper post__unlisted-status-icon-wrapper" title="This post is unlisted from the main list of posts">
           <i class="post__status-icon post__small-status-icon fas fa-eye-slash"></i>
         </div>
-        {% elsif post.pinned == true %}
+        {%- elsif post.pinned == true -%}
         <div class="post__status-icon-wrapper post__small-status-icon-wrapper post__pinned-status-icon-wrapper" title="This post is pinned">
           <i class="post__status-icon post__small-status-icon fas fa-thumbtack"></i>
         </div>
-        {% endif %}
+        {%- endif -%}
       </div>
       <h2 class="archive__item-title no_toc" itemprop="headline">
-        {% if post.link %}
+        {%- if post.link -%}
           <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-        {% else %}
+        {%- else -%}
           <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
-        {% endif %}
+        {%- endif -%}
       </h2>
     </div>
-    {% else %}
+    {%- else -%}
     <h2 class="archive__item-title no_toc" itemprop="headline">
-      {% if post.link %}
+      {%- if post.link -%}
         <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
+      {%- else -%}
         <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
-      {% endif %}
+      {%- endif -%}
     </h2>
-    {% endif %}
-    {% else %}
+    {%- endif -%}
+    {%- else -%}
     <h2 class="archive__item-title no_toc" itemprop="headline">
-      {% if post.link %}
+      {%- if post.link -%}
         <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
+      {%- else -%}
         <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
-      {% endif %}
+      {%- endif -%}
     </h2>
-    {% endif %}
-    {% include page__meta.html type=include.type %}
-    {% if post.short_description %}
+    {%- endif -%}
+    {%- include page__meta.html type=include.type -%}
+    {%- if post.short_description -%}
     <p class="archive__item-excerpt" itemprop="description">{{ post.short_description | markdownify | strip_html | truncate: 160 }}</p>
-    {% elsif post.excerpt %}
+    {%- elsif post.excerpt -%}
     <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>
-    {% endif %}
+    {%- endif -%}
   </article>
 </div>
