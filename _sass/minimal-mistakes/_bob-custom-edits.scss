@@ -118,6 +118,12 @@ h6 {
 }
 
 .page__content {
+  h1.update-log-section-title {
+    text-align: center;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  
   h1,
   h2 {
     padding-bottom: 0.5em;
