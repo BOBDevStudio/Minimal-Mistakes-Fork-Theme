@@ -1,10 +1,11 @@
+{%- if page.is_post -%}
 {%- if page.is_update_log == true and page.update_published_at and site.update_log_time_zone -%}
-<p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Update published to RBAP:" }}</strong> {{ page.update_published_at | date: "%A, %B %e, %Y at %l:%M %p" }} ({{ site.update_log_time_zone }})</p>
-{%- elsif page.is_update_log == true and page.date -%}
-<p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Update published to RBAP:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%A, %B %e, %Y" }} ({{ site.update_log_time_zone }})</time></p>
-{%- elsif page.date -%}
-<p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Created:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
+<p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Update published to RBAP:</strong> {{ page.update_published_at | date: "%A, %B %e, %Y at %l:%M %p" }} ({{ site.update_log_time_zone }})</p>
 {%- endif -%}
-{%- if page.last_modified_at -%}
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}</strong> <time datetime="{{ page.last_modified_at | date: "%Y-%m-%d" }}">{{ page.last_modified_at | date: "%B %-d, %Y" }}</time></p>
+{%- if page.post_created_at -%}
+<p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Post Created:</strong> {{ page.post_created_at | date: "%A, %B %e, %Y" }}</p>
+{%- endif -%}
+{%- if page.post_updated_at -%}
+<p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Post Updated:</strong> {{ page.post_updated_at | date: "%A, %B %e, %Y" }}</p>
+{%- endif -%}
 {%- endif -%}
