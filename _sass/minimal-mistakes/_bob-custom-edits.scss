@@ -112,7 +112,7 @@
 
 h6 {
   font-size: .7em;
-  margin: 0 0 1.3em;
+  margin: 0 0 1.3em 0;
   font-weight: normal;
   color: #3d4144bf;
 }
@@ -136,12 +136,16 @@ h6 {
   h4,
   h5,
   h6 {
-    margin: 1em 0 0.75em;
+    margin: 1em 0 0.75em 0;
   }
   
   h1,
   h2 {
-    margin: 1em 0 0.5em;
+    margin: 1em 0 0.5em 0;
+  }
+  
+  h6 {
+    margin: 0 0 0 0;
   }
   
   .language-plaintext.highlighter-rouge div.highlight code {
@@ -159,7 +163,7 @@ h6 {
 }
 
 .nav__sub-title {
-  border-bottom: 0px;
+  border-bottom: 0;
 }
 
 hr {
