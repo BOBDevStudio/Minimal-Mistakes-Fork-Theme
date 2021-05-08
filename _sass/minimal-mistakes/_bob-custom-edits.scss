@@ -131,17 +131,17 @@ h6 {
   }
   
   h1,
-  h2 {
-    margin: 1em 0 0.5em;
-  }
-  
-  h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
     margin: 1em 0 0.75em;
+  }
+  
+  h1,
+  h2 {
+    margin: 1em 0 0.5em;
   }
   
   .language-plaintext.highlighter-rouge div.highlight code {
