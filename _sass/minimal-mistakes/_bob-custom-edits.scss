@@ -152,6 +152,10 @@ h6 {
     background: none;
   }
   
+  div.no-format, p.no-format {
+    display: initial;
+  }
+  
   table {
     margin-top: 1em;
   }
