@@ -174,6 +174,12 @@ h6 {
   border-bottom: 0;
 }
 
+.nav__list .nav__items .active {
+  margin-left: initial;
+  padding-left: 0.5em;
+  padding-right: initial;
+}
+
 hr {
   border-top: 3px solid #e6e6e6;
 }
