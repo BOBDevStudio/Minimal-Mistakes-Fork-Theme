@@ -161,13 +161,13 @@ h6 {
   }
 }
 
+.page__meta p.page__taxonomy.list {
+  height: initial;
+}
+
 .page__meta p {
   margin: 10px 0 0 0;
   height: 35px;
-  
-  .page__taxonomy.list {
-    height: initial;
-  }
 }
 
 .nav__sub-title {
