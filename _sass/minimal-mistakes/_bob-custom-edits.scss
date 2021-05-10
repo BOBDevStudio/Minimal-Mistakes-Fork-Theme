@@ -176,8 +176,10 @@ h6 {
 
 .nav__list .nav__items .active {
   margin-left: initial;
-  padding-left: 0.5em;
+  padding-left: initial;
   padding-right: initial;
+  text-shadow: 0 4px #00000040;
+  font-size: 1.25em;
 }
 
 hr {
