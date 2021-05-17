@@ -120,6 +120,10 @@ h6 {
 .page__content {
   table tbody tr td img.color-image {
     box-shadow: 0 0 10px 0 #00000040;
+    
+    &.dock-type-light-color {
+      border-radius: 100%;
+    }
   }
   
   h1.update-log-section-title {
