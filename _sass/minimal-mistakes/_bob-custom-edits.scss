@@ -160,6 +160,10 @@ h6 {
     background: none;
   }
   
+  img.dock-type-image {
+    background-color: #0000000d;
+  }
+  
   div.no-format, p.no-format {
     display: initial;
   }
@@ -196,10 +200,6 @@ h6 {
 
 img {
   border-radius: 5px;
-  
-  &.dock-type-image {
-    background-color: #0000000d;
-  }
 }
 
 hr {
