@@ -196,7 +196,10 @@ h6 {
 
 img {
   border-radius: 5px;
-  background-color: #0000000d;
+  
+  &.dock-type-image {
+    background-color: #0000000d;
+  }
 }
 
 hr {
