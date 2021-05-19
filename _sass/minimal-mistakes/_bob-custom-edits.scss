@@ -3,7 +3,7 @@
   font-size: 2em;
 }
 
-header.page__title-header .page__title .post-status-icon {
+header.page__title-header .page__title .post-status-icon, article.archive__item .archive__item-title .post-status-icon {
   margin-right: 10px;
   
   &.post-pinned-status-icon {
