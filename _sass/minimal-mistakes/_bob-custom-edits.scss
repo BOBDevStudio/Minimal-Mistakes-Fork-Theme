@@ -3,111 +3,16 @@
   font-size: 2em;
 }
 
-.post__status-icons-1 {
-  grid-template-columns: repeat(1, 35px);
-  width: 30px;
-}
-.post__status-icons-2 {
-  grid-template-columns: repeat(2, 35px);
-  width: 65px;
-}
-.post__status-icons-3 {
-  grid-template-columns: repeat(3, 35px);
-  width: 100px;
-}
-.post__status-icons-4 {
-  grid-template-columns: repeat(4, 35px);
-  width: 135px;
-}
-.post__status-icons-5 {
-  grid-template-columns: repeat(5, 35px);
-  width: 170px;
-}
-.post__status-icons-6 {
-  grid-template-columns: repeat(6, 35px);
-  width: 210px;
-}
-.post__status-icons-7 {
-  grid-template-columns: repeat(7, 35px);
-  width: 240px;
-}
-.post__status-icons-8 {
-  grid-template-columns: repeat(8, 35px);
-  width: 275px;
-}
-.post__status-icons-9 {
-  grid-template-columns: repeat(9, 35px);
-  width: 310px;
-}
-.post__status-icons-10 {
-  grid-template-columns: repeat(10, 35px);
-  width: 345px;
-}
-
-.post__preview-header {
-  display: grid;
-  grid-template-columns: 30px auto;
-  
-  .post__small-status-icons {
-    margin-top: 0.6em;
-    width: 25px;
-    height: 25px;
-    grid-template-columns: repeat(1, 25px);
-    
-    .post__small-status-icon-wrapper {
-      height: 25px;
-      width: 25px;
-      
-      .post__small-status-icon {
-        font-size: .9em;
-        position: relative;
-        top: -4px;
-      }
-    }
+header.page__title-header .page__title .post-status-icon {
+  &.post-pinned-status-icon {
+    color: #64ff64;
   }
-}
-
-.post__status-icons {
-  height: 30px;
-  display: grid;
-  margin-left: auto;
-  margin-right: auto;
-  
-  .post__status-icon-wrapper {
-    height: 30px;
-    width: 30px;
-    overflow: hidden;
-    text-align: center;
-    border-radius: 50%;
-    background-color: #c8c8c8;
-    
-    .post__status-icon {
-      font-size: 1em;
-      transition: none;
-      position: relative;
-      top: -2.5px;
-      // color: #000000; -- Here if wanted
-    }
+  &.post-unlisted-status-icon {
+    color: #e1e1e1;
   }
-  
-  // Special colors for each icon:
-  
-  .post__pinned-status-icon-wrapper {
-    background-color: #64ff64;
+  &.post-locked-status-icon {
+    color: #ff6464;
   }
-  
-  .post__unlisted-status-icon-wrapper {
-    background-color: #e1e1e1;
-  }
-  
-  .post__locked-status-icon-wrapper {
-    background-color: #ff6464;
-  }
-}
-
-.post__status-icons-no-center {
-  margin-left: initial;
-  margin-right: initial;
 }
 
 h6 {
