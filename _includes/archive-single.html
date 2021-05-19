@@ -18,7 +18,7 @@
       </div>
     {%- endif -%}
     <h2 class="archive__item-title no_toc" itemprop="headline">
-      <a href="{{ post.url | relative_url }}" rel="permalink">{%- if post.pinned == true -%}<i class="post-small-status-icon post-pinned-status-icon fas fa-thumbtack" title="This post is pinned"></i>{%- endif -%}{%- if post.listed == false -%}<i class="post-small-status-icon post-unlisted-status-icon fas fa-eye-slash" title="This post is unlisted from the main list of posts"></i>{%- endif -%}{%- if post.locked == true or post.comments == false -%}<i class="post-small-status-icon post-locked-status-icon fas fa-lock" title="This post does not accept new comments"></i>{%- endif -%}{{ title }}</a>
+      <a href="{{ post.url | relative_url }}" rel="permalink">{%- if post.pinned == true -%}<i class="post-status-icon post-pinned-status-icon fas fa-thumbtack" title="This post is pinned"></i>{%- endif -%}{%- if post.listed == false -%}<i class="post-status-icon post-unlisted-status-icon fas fa-eye-slash" title="This post is unlisted from the main list of posts"></i>{%- endif -%}{%- if post.locked == true or post.comments == false -%}<i class="post-status-icon post-locked-status-icon fas fa-lock" title="This post does not accept new comments"></i>{%- endif -%}{{ title }}</a>
     </h2>
     {%- include page__meta.html type=include.type -%}
     {%- if post.short_description -%}
