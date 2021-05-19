@@ -17,68 +17,9 @@
         <img src="{{ teaser | relative_url }}" alt="">
       </div>
     {%- endif -%}
-    {%- if include.type == "entries_layout" -%}
-    {%- if post.pinned == true or post.listed == false -%}
-    <div class="post__status-icons post__status-icons-10 post__status-icons-no-center">
-      {%- if post.pinned == true -%}
-      <div class="post__status-icon-wrapper post__pinned-status-icon-wrapper" title="This post is pinned">
-        <i class="post__status-icon fas fa-thumbtack"></i>
-      </div>
-      {%- endif -%}
-      {%- if post.listed == false -%}
-      <div class="post__status-icon-wrapper post__unlisted-status-icon-wrapper" title="This post is unlisted from the main list of posts">
-        <i class="post__status-icon fas fa-eye-slash"></i>
-      </div>
-      {%- endif -%}
-    </div>
-    {%- endif -%}
     <h2 class="archive__item-title no_toc" itemprop="headline">
-      {%- if post.link -%}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {%- else -%}
-        <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
-      {%- endif -%}
+      <a href="{{ post.url | relative_url }}" rel="permalink">{%- if page.pinned == true -%}<i class="post-status-icon post-pinned-status-icon fas fa-thumbtack" title="This post is pinned"></i>{%- endif -%}{%- if page.listed == false -%}<i class="post-status-icon post-unlisted-status-icon fas fa-eye-slash" title="This post is unlisted from the main list of posts"></i>{%- endif -%}{%- if page.locked == true or page.comments == false -%}<i class="post-status-icon post-locked-status-icon fas fa-lock" title="This post does not accept new comments"></i>{%- endif -%}{{ title }}</a>
     </h2>
-    {%- elsif include.type == "grid" -%}
-    {%- if post.pinned == true or post.listed == false -%}
-    <div class="post__preview-header">
-      <div class="post__status-icons post__small-status-icons post__status-icons-no-center">
-        {%- if post.listed == false -%}
-        <div class="post__status-icon-wrapper post__small-status-icon-wrapper post__unlisted-status-icon-wrapper" title="This post is unlisted from the main list of posts">
-          <i class="post__status-icon post__small-status-icon fas fa-eye-slash"></i>
-        </div>
-        {%- elsif post.pinned == true -%}
-        <div class="post__status-icon-wrapper post__small-status-icon-wrapper post__pinned-status-icon-wrapper" title="This post is pinned">
-          <i class="post__status-icon post__small-status-icon fas fa-thumbtack"></i>
-        </div>
-        {%- endif -%}
-      </div>
-      <h2 class="archive__item-title no_toc" itemprop="headline">
-        {%- if post.link -%}
-          <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-        {%- else -%}
-          <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
-        {%- endif -%}
-      </h2>
-    </div>
-    {%- else -%}
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      {%- if post.link -%}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {%- else -%}
-        <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
-      {%- endif -%}
-    </h2>
-    {%- endif -%}
-    {%- else -%}
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      {%- if post.link -%}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {%- else -%}
-        <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
-      {%- endif -%}
-    </h2>
-    {%- endif -%}
     {%- include page__meta.html type=include.type -%}
     {%- if post.short_description -%}
     <p class="archive__item-excerpt" itemprop="description">{{ post.short_description | markdownify | strip_html | truncate: 160 }}</p>
