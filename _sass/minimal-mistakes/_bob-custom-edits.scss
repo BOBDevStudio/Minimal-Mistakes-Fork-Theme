@@ -3,9 +3,15 @@
   font-size: 2em;
 }
 
-header.page__title-header .page__title .post-status-icon, article.archive__item .archive__item-title .post-status-icon {
+header.page__title-header .page__title .post-status-icon {
   margin-right: 10px;
-  
+}
+
+article.archive__item .archive__item-title .post-status-icon {
+  margin-right: 5px;
+}
+
+header.page__title-header .page__title .post-status-icon, article.archive__item .archive__item-title .post-status-icon {
   &.post-pinned-status-icon {
     color: #64ff64;
   }
