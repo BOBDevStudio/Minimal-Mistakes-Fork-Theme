@@ -30,6 +30,12 @@ h6 {
   color: #3d4144bf;
 }
 
+.masthead {
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+}
+
 .page__content {
   table tbody tr td img.color-image {
     box-shadow: 0 0 10px 0 #00000040;
