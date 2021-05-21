@@ -40,10 +40,10 @@ h6 {
 .initial-content {
   .page .page__inner-wrap, .sidebar {
     margin-top: 2em;
-    
-    &:first-child {
-      margin-top: 0;
-    }
+  }
+  
+  .sidebar:first-child {
+    margin-top: 0;
   }
   
   .page .page__inner-wrap .page__content {
