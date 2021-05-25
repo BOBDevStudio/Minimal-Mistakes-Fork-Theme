@@ -106,8 +106,8 @@ h6 {
       background-color: #0000000d;
     }
     
-    div.no-format, p.no-format {
-      display: initial;
+    p.no-format {
+      margin: unset;
     }
     
     table {
