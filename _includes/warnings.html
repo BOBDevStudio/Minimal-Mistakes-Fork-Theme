@@ -1,22 +1,22 @@
 {%- if page.update_log_wip == true or page.page_wip == true or page.update_log_old == true or page.update_log_really_old == true -%}
 <div class="page-notices">
   {%- if page.is_post == true and page.is_update_log == true and page.update_log_wip == true -%}
-  <p class="page-notice notice--danger">
+  <p class="page-notice page-notice-danger">
     <b>This update and/or update log are still actively being worked on!</b> Please do not think either of them are finalized.
   </p>
   {%- endif -%}
   {%- if page.is_post == false and page.page_wip == true -%}
-  <p class="page-notice notice--danger">
+  <p class="page-notice page-notice-danger">
     <b>Note:</b> This page is marked as a work in progress. Please do not consider it finalized as there still may be changes coming.
   </p>
   {%- endif -%}
   {%- if page.is_post == true and page.is_update_log == true and page.update_log_old == true -%}
-  <p class="page-notice notice--danger">
+  <p class="page-notice page-notice-danger">
     <b>Note:</b> Do to how old the update described in this update log is this update log is not being actively maintained. This shouldn’t affect the usability of the page but stuff like spelling mistakes and overall unnecessary hype that was used older in update logs is unlikely to be fixed.
   </p>
   {%- endif -%}
   {%- if page.is_post == true and page.is_update_log == true and page.update_log_really_old == true -%}
-  <p class="page-notice notice--warning">
+  <p class="page-notice page-notice-warning">
     <b>Note:</b> This update log was originally made for the long gone in-game update log system from around late 2018. Due to it being from the old system it is unlikely that it will ever be given a version number due to the fact that the old system predates the current version numbers system. It is also unlikely that it will ever have a listed exact publish time. More info on this is available in the <a href="https://bobdevstudio.github.io/RBAP-Wiki/Posts/Update-Log-Notes">notes about the update log system</a>.
   </p>
   {%- endif -%}
