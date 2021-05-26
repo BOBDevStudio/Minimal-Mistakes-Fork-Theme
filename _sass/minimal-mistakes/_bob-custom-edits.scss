@@ -116,6 +116,32 @@ h6 {
   }
 }
 
+.feature__item {
+  float: left;
+  margin-bottom: 0;
+  width: 49%;
+}
+
+.feature__item:nth-child(3n+2) {
+  clear: unset;
+  margin-left: unset;
+}
+
+.feature__item:nth-child(3n+1) {
+  clear: unset;
+  margin-left: unset;
+}
+
+.feature__item:nth-child(2n+2) {
+  clear: none;
+  margin-left: 1.6949152542%;
+}
+
+.feature__item:nth-child(2n+1) {
+  clear: both;
+  margin-left: 0;
+}
+
 .page__meta p.page__taxonomy.list {
   height: initial;
 }
