@@ -23,13 +23,7 @@
 >
   {%- if page.header.overlay_color or page.header.overlay_image -%}
     <div class="wrapper">
-      {{ page.uses_splash_layout }}
-      test #1
-      {%- if page.uses_splash_layout -%}
-      <h1 id="page-title" class="page__title" itemprop="headline">
-      {%- else -%}
-      <h1 id="page-title" class="page__title non-splash-page-title" itemprop="headline">
-      {%- endif -%}
+      <h1 id="page-title" {%- if page.uses_image_header == true -%}class="page__title"{%- else -%}class="page__title non-splash-page-title"{%- endif -%} itemprop="headline">
         {%- if paginator and site.paginate_show_page_num -%}
           {{ site.title }}{%- unless paginator.page == 1 -%} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{%- endunless -%}
         {%- else -%}
