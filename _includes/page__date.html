@@ -1,5 +1,5 @@
 {%- if page.is_post -%}
-{%- if page.is_update_log == true and page.update_published_at and site.update_log_time_zone -%}
+{%- if page.is_update_log == true and page.update_published_at -%}
 <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Update published to RBAP:</strong> {{ page.update_published_at | date: "%A, %B %e, %Y at %l:%M %p" }} ({%- if page.published_time_uses_pst == true and page.published_time_uses_pdt == false -%}PST{%- elsif page.published_time_uses_pst == false and page.published_time_uses_pdt == true -%}PDT{%- else -%}PST/PDT{%- endif -%})</p>
 {%- endif -%}
 {%- if page.post_created_at -%}
