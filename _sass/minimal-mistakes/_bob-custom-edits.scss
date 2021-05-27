@@ -193,6 +193,14 @@ h6 {
   }
 }
 
+div.bob-name-easter-egg {
+  display: inline;
+  
+  &::selection {
+    color: #00ffff;
+  }
+}
+
 .page__meta p.page__taxonomy.list {
   height: initial;
 }
