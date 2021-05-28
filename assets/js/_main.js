@@ -128,8 +128,7 @@ $(document).ready(function() {
       var anchor = document.createElement("a");
       anchor.className = 'header-link';
       anchor.href = '#' + id;
-      anchor.innerHTML = '<span class=\"sr-only\">Permalink</span><i class=\"fas fa-link\"></i>';
-      anchor.title = "Permalink";
+      anchor.innerHTML = '<i class=\"fas fa-link\"></i>';
       $(this).append(anchor);
     }
   });
