@@ -38,8 +38,9 @@ layout: archive
 {%- assign entries_layout = page.entries_layout | default: 'list' -%}
 
 {%- if page.only_list_update_logs == true -%}
+{%- for i in (1..2) reversed -%}
 {%- for category in site.categories -%}
-{%- if category[0] == "Update Logs" -%}
+{%- if i == 1 and category[0] == "Update Logs" -%}
 <section class="taxonomy__section">
   <div class="entries-{{ entries_layout }}">
     {%- for post in category.last -%}
@@ -49,7 +50,7 @@ layout: archive
     {%- endfor -%}
   </div>
 </section>
-{%- elsif category[0] == "Listed Old Update Logs" -%}
+{%- elsif i == 2 and category[0] == "Listed Old Update Logs" -%}
 <section class="taxonomy__section">
   <h2 class="archive__subtitle">Unmaintained Update Logs</h2>
   <div class="entries-{{ entries_layout }}">
@@ -60,6 +61,7 @@ layout: archive
   <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
 </section>
 {%- endif -%}
+{%- endfor -%}
 {%- endfor -%}
 {%- elsif page.only_list_update_logs != true -%}
 {%- for i in (1..categories_max) reversed -%}
