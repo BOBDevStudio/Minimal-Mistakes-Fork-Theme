@@ -22,7 +22,7 @@ layout: archive
             <strong>{{ category[0] }}</strong>
           </a>
         </li>
-        {%- else -%}
+        {%- elsif category[0] != "Listed Old Update Logs" -%}
         <li>
           <a href="#{{ category[0] | slugify }}">
             <strong>{{ category[0] }}</strong> <span class="taxonomy__count">{{ i }}</span>
