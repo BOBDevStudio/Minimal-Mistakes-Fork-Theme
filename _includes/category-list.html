@@ -14,7 +14,7 @@
     {%- for category_word in categories_sorted -%}
       {%- if site.redirect_update_logs_category == true and category_word == "Update Logs" -%}
       <a href="{{ "Update-Logs" | relative_url }}" class="page__taxonomy-item" rel="tag">{{ category_word }}</a>{%- unless forloop.last -%}<span class="sep">, </span>{%- endunless -%}
-      {%- else -%}
+      {%- elsif category_word != "Listed Old Update Logs" -%}
       <a href="{{ category_word | slugify | prepend: path_type | prepend: site.category_archive.path | relative_url }}" class="page__taxonomy-item" rel="tag">{{ category_word }}</a>{%- unless forloop.last -%}<span class="sep">, </span>{%- endunless -%}
       {%- endif -%}
     {%- endfor -%}
