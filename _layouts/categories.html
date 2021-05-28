@@ -38,7 +38,7 @@ layout: archive
 {%- assign entries_layout = page.entries_layout | default: 'list' -%}
 
 {%- if page.only_list_update_logs == true -%}
-{%- for i in (1..2) reversed -%}
+{%- for i in (1..2) -%}
 {%- for category in site.categories -%}
 {%- if i == 1 and category[0] == "Update Logs" -%}
 <section class="taxonomy__section">
