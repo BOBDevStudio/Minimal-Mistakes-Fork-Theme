@@ -29,7 +29,7 @@ layout: default
           {%- if page.title -%}
           {%- if page.is_post == true -%}
           <h1 id="page-title" {%- if page.uses_image_header == true -%}class="page__title"{%- else -%}class="page__title non-splash-page-title"{%- endif -%} itemprop="headline">
-            {%- if page.pinned == true -%}<i class="post-status-icon post-pinned-status-icon fas fa-thumbtack" title="This post is pinned"></i>{%- endif -%}{%- if page.listed == false -%}<i class="post-status-icon post-unlisted-status-icon fas fa-eye-slash" title="This post is unlisted from the main list of posts"></i>{%- endif -%}{%- if page.locked == true or page.comments == false -%}<i class="post-status-icon post-locked-status-icon fas fa-lock" title="This post does not accept new comments"></i>{%- endif -%}{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}
+            {%- include post-status-icons.html post=page -%}{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}
           </h1>
           {%- else -%}
           <h1 id="page-title" {%- if page.uses_image_header == true -%}class="page__title"{%- else -%}class="page__title non-splash-page-title"{%- endif -%} itemprop="headline">

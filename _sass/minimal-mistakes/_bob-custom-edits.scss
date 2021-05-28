@@ -1,21 +1,28 @@
+header.page__title-header .page__title .post-status-icon, article.archive__item .archive__item-title .post-status-icon {
+  margin-right: 10px;
+  
+  &.post-status-icon- {
+    &pinned {
+      color: #7d7d7d;
+    }
+    &unlisted {
+      color: #969696;
+    }
+    &locked {
+      color: #ff6464;
+    }
+    &old-update-log-listed {
+      color: #ffc800;
+    }
+  }
+}
+
 header.page__title-header .page__title .post-status-icon {
   margin-right: 10px;
 }
 
 article.archive__item .archive__item-title .post-status-icon {
   margin-right: 5px;
-}
-
-header.page__title-header .page__title .post-status-icon, article.archive__item .archive__item-title .post-status-icon {
-  &.post-pinned-status-icon {
-    color: #7d7d7d;
-  }
-  &.post-unlisted-status-icon {
-    color: #969696;
-  }
-  &.post-locked-status-icon {
-    color: #ff6464;
-  }
 }
 
 h6 {
