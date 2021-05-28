@@ -55,7 +55,9 @@ layout: archive
   <h2 class="archive__subtitle">Unmaintained Update Logs</h2>
   <div class="entries-{{ entries_layout }}">
     {%- for post in category.last -%}
+      {%- if post.update_log_listed == true -%}
       {%- include archive-single.html type=entries_layout -%}
+      {%- endif -%}
     {%- endfor -%}
   </div>
   <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
