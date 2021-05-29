@@ -46,7 +46,7 @@
     h5 {
       margin: 1em 0 0.75em 0;
       
-      .header-link {
+      a.title-link {
         position: relative;
         left: 0.5em;
         opacity: 0;
@@ -54,7 +54,7 @@
         transition: opacity 0.2s ease-in-out 0.1s;
       }
 
-      &:hover .header-link {
+      &:hover a.title-link {
           opacity: 1;
       }
     }
