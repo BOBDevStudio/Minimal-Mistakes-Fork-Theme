@@ -1,3 +1,12 @@
+# --//Added or edited settings:
+
+include:
+  - .htaccess
+  - _pages
+  - Assets
+
+# --//Pre-existing settings:
+
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your entire site, values
@@ -143,9 +152,9 @@ footer:
 
 
 # Reading Files
-include:
-  - .htaccess
-  - _pages
+#include:
+#  - .htaccess
+#  - _pages
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
