@@ -1,4 +1,4 @@
-document.body.addEventListener("load", function(){
+document.addEventListener("load", function(){
   var pagecontentelement = document.getElementById("page-content")
   
   var h = [pagecontentelement.getElementsByTagName("h1"), pagecontentelement.getElementsByTagName("h2"), pagecontentelement.getElementsByTagName("h3"), pagecontentelement.getElementsByTagName("h4"), pagecontentelement.getElementsByTagName("h5")];
