@@ -1,0 +1,8 @@
+var imagestoedit = document.getElementsByTagName("img");
+
+for (key in imagestoedit) {
+  if (key !== "length" && key !== "item" && key !== "namedItem") {
+    var elementediting = imagestoedit[key];
+    elementediting.draggable = "false";
+  };
+};
