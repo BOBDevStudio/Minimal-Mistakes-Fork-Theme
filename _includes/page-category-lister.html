@@ -1,4 +1,4 @@
-{%- if page.can_list_page_categories == true and page.listed_page_category -%}
+{%- if page.listed_page_category -%}
 {%- capture CategoryToList -%}{{ page.listed_page_category }}{%- endcapture -%}
 {%- assign PagesToList = site.pages | where_exp: "item", "item.page_categories[CategoryToList] == true" -%}
 <div class="feature__wrapper">
