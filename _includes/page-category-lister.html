@@ -1,0 +1,11 @@
+{%- if page.can_list_page_categories == true and page.listed_page_category -%}
+{%- capture CategoryToList -%}{{ page.listed_page_category }}{%- endcapture -%}
+{%- assign PagesToList = site.pages | where_exp: "item", "item.page_categories[CategoryToList] == true" -%}
+{%- for PageToList in PagesToList -%}
+<p>
+  <a href="{{ PageToList.url | relative_url }}">
+    Test: {{ PageToList.title }}
+  </a>
+</p>
+{%- endfor -%}
+{%- endif -%}
