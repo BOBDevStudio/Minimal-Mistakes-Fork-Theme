@@ -12,13 +12,13 @@
         </div>
         <div class="archive__item-body">
           <h2 class="archive__item-title">{{ PageToList.title }}</h2>
-          <div class="archive__item-excerpt">
+          <p class="archive__item-excerpt">
             {%- if PageToList.short_description -%}
             {{ PageToList.short_description | markdownify | strip_html | truncate: 160 }}
             {%- elsif PageToList.excerpt -%}
             {{ PageToList.excerpt | markdownify | strip_html | truncate: 160 }}
             {%- endif -%}
-          </div>
+          </p>
         </div>
       </div>
     </a>
