@@ -73,15 +73,29 @@
       margin: 1em 0 0.5em 0;
     }
     
-    .feature__item .archive__item .archive__item-body {
-      .archive__item-title {
-        border-bottom: none;
-        margin: 0.3em 0 0.2em 0;
-        padding-bottom: 0;
+    .feature__item {
+      .archive__item .archive__item-body {
+        .archive__item-title {
+          border-bottom: none;
+          margin: 0.3em 0 0.2em 0;
+          padding-bottom: 0;
+        }
+        
+        .archive__item-excerpt {
+           margin-bottom: 1em;
+           
+           &>* {
+            margin: unset;
+          }
+        }
       }
       
-      .archive__item-excerpt>* {
-        margin: 0 0 1em;
+      &.page-category-main-element a {
+        color: #3d4144;
+        
+        &:hover {
+          color: inherit;
+        }
       }
     }
     

@@ -1,7 +1,7 @@
 {%- if page.listed_page_category -%}
 {%- capture CategoryToList -%}{{ page.listed_page_category }}{%- endcapture -%}
 {%- assign PagesToList = site.pages | where_exp: "item", "item.page_categories[CategoryToList] == true" -%}
-<div class="feature__wrapper">
+<div class="feature__wrapper page-category-main-element">
   {%- for PageToList in PagesToList -%}
   {%- if PageToList.preview_image_path and PageToList.title and PageToList.short_description or PageToList.excerpt -%}
   <div class="feature__item">
@@ -12,15 +12,13 @@
         </div>
         <div class="archive__item-body">
           <h2 class="archive__item-title">{{ PageToList.title }}</h2>
-          <p>
-            <div class="archive__item-excerpt">
-              {%- if PageToList.short_description -%}
-              {{ PageToList.short_description | markdownify | strip_html | truncate: 160 }}
-              {%- elsif PageToList.excerpt -%}
-              {{ PageToList.excerpt | markdownify | strip_html | truncate: 160 }}
-              {%- endif -%}
-            </div>
-          </p>
+          <div class="archive__item-excerpt">
+            {%- if PageToList.short_description -%}
+            {{ PageToList.short_description | markdownify | strip_html | truncate: 160 }}
+            {%- elsif PageToList.excerpt -%}
+            {{ PageToList.excerpt | markdownify | strip_html | truncate: 160 }}
+            {%- endif -%}
+          </div>
         </div>
       </div>
     </a>
