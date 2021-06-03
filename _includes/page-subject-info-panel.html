@@ -1,24 +1,22 @@
-{%- capture page_subject_info -%}{{ page.page_subject_info }}{% endcapture %}
-
-{%- if page_subject_info -%}
+{%- if page.page_subject_info -%}
 <div>
-  {%- if page_subject_info.title -%}
+  {%- if page.page_subject_info.title -%}
   <div>
-    {{ page_subject_info.title | strip_html | markdownify }}
+    {{ page.page_subject_info.title | strip_html | markdownify }}
   </div>
   {%- endif -%}
-  {%- if page_subject_info.main_image.path -%}
+  {%- if page.page_subject_info.main_image.path -%}
   <div>
-    <img src="{{ page_subject_info.main_image.path | relative_url }}" alt="{%- if page_subject_info.main_image.alt -%}{{ page_subject_info.main_image.alt }}{%- endif -%}">
+    <img src="{{ page.page_subject_info.main_image.path | relative_url }}" alt="{%- if page.page_subject_info.main_image.alt -%}{{ page.page_subject_info.main_image.alt }}{%- endif -%}">
   </div>
   {%- endif -%}
-  {%- if page_subject_info.description -%}
+  {%- if page.page_subject_info.description -%}
   <div>
-    {{ page_subject_info.description | strip_html | markdownify }}
+    {{ page.page_subject_info.description | strip_html | markdownify }}
   </div>
   {%- endif -%}
-  {%- if page_subject_info.data -%}
-  {%- for page_subject_data_list in page_subject_info.data -%}
+  {%- if page.page_subject_info.data -%}
+  {%- for page_subject_data_list in page.page_subject_info.data -%}
   <div>
     {%- if page_subject_data_list.title -%}
     <div>
