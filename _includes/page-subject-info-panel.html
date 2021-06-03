@@ -1,44 +1,46 @@
 <div class="page-subject-info">
   {%- if page.page_subject_info -%}
-  {%- if page.page_subject_info.title -%}
-  <div class="page-subject-info-title">
-    {{ page.page_subject_info.title | strip_html | markdownify }}
-  </div>
-  {%- endif -%}
-  {%- if page.page_subject_info.main_image.path -%}
-  <div class="page-subject-info-main-image-holder">
-    <img class="page-subject-info-main-image" src="{{ page.page_subject_info.main_image.path | relative_url }}" alt="{%- if page.page_subject_info.main_image.alt -%}{{ page.page_subject_info.main_image.alt }}{%- endif -%}">
-  </div>
-  {%- endif -%}
-  {%- if page.page_subject_info.description -%}
-  <div class="page-subject-info-description">
-    {{ page.page_subject_info.description | strip_html | markdownify }}
-  </div>
-  {%- endif -%}
-  {%- if page.page_subject_info.data -%}
-  {%- for page_subject_data_list in page.page_subject_info.data -%}
-  <div class="page-subject-info-data-list">
-    {%- if page_subject_data_list.title -%}
-    <div class="page-subject-info-data-list-title">
-      {{ page_subject_data_list.title | strip_html | markdownify }}
+  <div class="page-subject-info-holder-box">
+    {%- if page.page_subject_info.title -%}
+    <div class="page-subject-info-title">
+      {{ page.page_subject_info.title | strip_html | markdownify }}
     </div>
     {%- endif -%}
-    {%- if page_subject_data_list.data -%}
-    {%- for page_subject_data in page_subject_data_list.data -%}
-    {%- if page_subject_data.key and page_subject_data.value -%}
-    <div class="page-subject-info-data-list-value">
-      <div class="page-subject-info-data-list-value-key">
-        {{ page_subject_data.key | strip_html | markdownify }}
-      </div>
-      <div class="page-subject-info-data-list-value-value">
-        {{ page_subject_data.value | strip_html | markdownify }}
-      </div>
+    {%- if page.page_subject_info.main_image.path -%}
+    <div class="page-subject-info-main-image-holder">
+      <img class="page-subject-info-main-image" src="{{ page.page_subject_info.main_image.path | relative_url }}" alt="{%- if page.page_subject_info.main_image.alt -%}{{ page.page_subject_info.main_image.alt }}{%- endif -%}">
     </div>
     {%- endif -%}
+    {%- if page.page_subject_info.description -%}
+    <div class="page-subject-info-description">
+      {{ page.page_subject_info.description | strip_html | markdownify }}
+    </div>
+    {%- endif -%}
+    {%- if page.page_subject_info.data -%}
+    {%- for page_subject_data_list in page.page_subject_info.data -%}
+    <div class="page-subject-info-data-list">
+      {%- if page_subject_data_list.title -%}
+      <div class="page-subject-info-data-list-title">
+        {{ page_subject_data_list.title | strip_html | markdownify }}
+      </div>
+      {%- endif -%}
+      {%- if page_subject_data_list.data -%}
+      {%- for page_subject_data in page_subject_data_list.data -%}
+      {%- if page_subject_data.key and page_subject_data.value -%}
+      <div class="page-subject-info-data-list-value">
+        <div class="page-subject-info-data-list-value-key">
+          {{ page_subject_data.key | strip_html | markdownify }}
+        </div>
+        <div class="page-subject-info-data-list-value-value">
+          {{ page_subject_data.value | strip_html | markdownify }}
+        </div>
+      </div>
+      {%- endif -%}
+      {%- endfor -%}
+      {%- endif -%}
+    </div>
     {%- endfor -%}
     {%- endif -%}
   </div>
-  {%- endfor -%}
-  {%- endif -%}
   {%- endif -%}
 </div>
