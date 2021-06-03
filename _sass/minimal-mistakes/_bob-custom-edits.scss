@@ -39,14 +39,16 @@
       }
       
       .sidebar {
-        flex-basis: calc(300px - 1em);
-        position: initial;
+        flex-basis: 280px;
+        width: 280px;
         height: auto;
+        position: initial;
         max-height: unset;
         overflow-y: initial;
         top: calc(2em + 66px);
         transition: initial;
         opacity: initial;
+        float: initial;
         
         &>* {
           margin-top: 0;
@@ -54,10 +56,18 @@
         }
       }
       
+      .page-subject-info {
+        flex-basis: 280px;
+        width: 280px;
+        height: auto;
+      }
+      
       .page {
-        padding: unset;
-        float: left;
+        flex-basis: calc(100% - 600px); // 600 = sidebar size + margin + page subject info size + margin
         width: calc(100% - 600px);
+        height: auto;
+        padding: unset;
+        float: initial;
         
         .page__inner-wrap {
           margin-top: unset;
