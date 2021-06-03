@@ -13,7 +13,7 @@
     {%- endif -%}
     {%- if page.page_subject_info.description -%}
     <div class="page-subject-info-description">
-      {{ page.page_subject_info.description | strip_html | markdownify }}
+      {{ page.page_subject_info.description | strip_html | markdownify | remove: "<p>" | remove: "</p>" }}
     </div>
     {%- endif -%}
     {%- if page.page_subject_info.data -%}
@@ -21,7 +21,7 @@
     <div class="page-subject-info-data-list">
       {%- if page_subject_data_list.title -%}
       <div class="page-subject-info-data-list-title">
-        {{ page_subject_data_list.title | strip_html | markdownify }}
+        {{ page_subject_data_list.title | strip_html | markdownify | remove: "<p>" | remove: "</p>" }}
       </div>
       {%- endif -%}
       {%- if page_subject_data_list.data -%}
@@ -29,10 +29,10 @@
       {%- if page_subject_data.key and page_subject_data.value -%}
       <div class="page-subject-info-data-list-value">
         <div class="page-subject-info-data-list-value-key">
-          {{ page_subject_data.key | strip_html | markdownify }}
+          {{ page_subject_data.key | strip_html | markdownify | remove: "<p>" | remove: "</p>" }}
         </div>
         <div class="page-subject-info-data-list-value-value">
-          {{ page_subject_data.value | strip_html | markdownify }}
+          {{ page_subject_data.value | strip_html | markdownify | remove: "<p>" | remove: "</p>" }}
         </div>
       </div>
       {%- endif -%}
