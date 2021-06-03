@@ -68,8 +68,18 @@
           &holder-box {
             color: #e1e1e1;
             background-color: #323232;
-            border-radius: 5px;
+            box-shadow: 0 0 15px #00000033;
+            // border-radius: 5px;
             overflow: hidden;
+          }
+          
+          &title {
+            text-align: center;
+            font-weight: bold;
+          }
+          
+          &main-image-holder img {
+            border-radius: unset;
           }
         }
       }
