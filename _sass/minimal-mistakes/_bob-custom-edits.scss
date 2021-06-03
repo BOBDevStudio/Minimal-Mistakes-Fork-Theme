@@ -30,7 +30,10 @@
     }
     
     .sidebar {
-      height: calc(100vh - 7em);
+      position: initial;
+      height: auto;
+      max-height: unset;
+      overflow-y: initial;
       
       &>* {
         margin-top: 0;
@@ -47,7 +50,7 @@
         margin-top: unset;
         
         header.page__title-header {
-          margin-bottom: 1.25em;
+          margin-bottom: .75em;
           padding-bottom: 0.5em;
           border-bottom: 3px solid #e6e6e6;
           
