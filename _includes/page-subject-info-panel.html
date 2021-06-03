@@ -20,7 +20,7 @@
     {%- for page_subject_data_list in page.page_subject_info.data -%}
     <div class="page-subject-info-data-list">
       {%- if page_subject_data_list.title -%}
-      <div class="page-subject-info-data-list-title">
+      <div class="page-subject-info-data-list-title" style="{%- if page.page_subject_info.color -%}background-color: {{ page.page_subject_info.color }};{%- endif -%}{%- if page.page_subject_info.titles_text_color -%}color: {{ page.page_subject_info.titles_text_color }};{%- endif -%}">
         {{ page_subject_data_list.title | strip_html | markdownify | remove: "<p>" | remove: "</p>" }}
       </div>
       {%- endif -%}
