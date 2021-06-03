@@ -13,10 +13,13 @@
     margin-right: auto;
     padding-left: 1em;
     padding-right: 1em;
+    width: calc(100% - 100px);
+    height: auto;
     
     main {
       height: 100% !important;
       width: 100% !important;
+      max-width: unset !important;
       margin: unset !important;
       padding: unset !important;
       display: inline-flex;
