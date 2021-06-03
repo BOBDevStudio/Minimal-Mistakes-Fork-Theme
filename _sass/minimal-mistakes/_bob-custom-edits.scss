@@ -15,10 +15,10 @@
     padding-right: 1em;
     
     main {
-      height: auto;
-      width: auto;
-      margin: unset;
-      padding: unset;
+      height: 100% !important;
+      width: 100% !important;
+      margin: unset !important;
+      padding: unset !important;
       display: inline-flex;
       flex-direction: row;
       flex-wrap: nowrap;
