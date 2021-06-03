@@ -22,11 +22,11 @@
     }
     
     &>*:first-child {
-      margin-right: unset;
+      margin-left: unset;
     }
     
     &>*:last-child {
-      margin-left: unset;
+      margin-right: unset;
     }
     
     .sidebar {
