@@ -6,156 +6,170 @@
   border-bottom: initial;
 }
 
-.sidebar {
-  top: calc(2em + 66px);
-  transition: initial;
-  opacity: initial;
-}
-
 .initial-content {
-  #main {
+  .main-holder {
     margin-top: 2.5em;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1em;
+    padding-right: 1em;
     
-    &>* {
-      margin-right: 20px;
-//      margin-left: 20px;
-    }
-    
-    &>*:first-child {
-      margin-left: unset;
-    }
-    
-    &>*:last-child {
-      margin-right: unset;
-    }
-    
-    .sidebar {
-      position: initial;
+    main {
       height: auto;
-      max-height: unset;
-      overflow-y: initial;
+      width: auto;
+      margin: unset;
+      padding: unset;
+      display: inline-flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: flex-start;
       
       &>* {
-        margin-top: 0;
-        margin-bottom: 0;
+        margin-right: 20px;
+        // margin-left: 20px;
       }
-    }
-    
-    .page {
-      padding: unset;
-      float: left;
-      width: calc(100% - 600px);
       
-      .page__inner-wrap {
-        margin-top: unset;
+      &>*:first-child {
+        margin-left: unset;
+      }
+      
+      &>*:last-child {
+        margin-right: unset;
+      }
+      
+      .sidebar {
+        flex-basis: calc(300px - 1em);
+        position: initial;
+        height: auto;
+        max-height: unset;
+        overflow-y: initial;
+        top: calc(2em + 66px);
+        transition: initial;
+        opacity: initial;
         
-        header.page__title-header {
-          margin-bottom: .75em;
-          padding-bottom: 0.5em;
-          border-bottom: 3px solid #e6e6e6;
-          
-          h1,
-          h2,
-          h3,
-          h4,
-          h5,
-          h6 {
-            margin-top: unset !important;
-            margin-bottom: unset !important;
-          }
-          
-          .non-splash-page-title {
-            text-align: center;
-            font-size: 2em;
-          }
+        &>* {
+          margin-top: 0;
+          margin-bottom: 0;
         }
+      }
+      
+      .page {
+        padding: unset;
+        float: left;
+        width: calc(100% - 600px);
         
-        .page__content {
-          .page-notices {
-            margin: 2em 0 2em 0;
-          }
+        .page__inner-wrap {
+          margin-top: unset;
           
-          table tbody tr td img.color-image {
-            box-shadow: 0 0 10px 0 #00000040;
-            
-            &.dock-type-light-color {
-              border-radius: 100%;
-            }
-          }
-          
-          h1.update-log-section-title {
-            text-align: center;
-            padding-bottom: 0;
-            border-bottom: 0;
-          }
-          
-          h1,
-          h2,
-          h3,
-          h4,
-          h5 {
-            margin: 1em 0 0.75em 0;
-            
-            a.title-link {
-              position: relative;
-              left: 0.5em;
-              opacity: 0;
-              font-size: 0.8em;
-              transition: opacity 0.2s ease-in-out 0.1s;
-            }
-          
-            &:hover a.title-link {
-                opacity: 1;
-            }
-          }
-          
-          h1,
-          h2 {
+          header.page__title-header {
+            margin-bottom: .75em;
             padding-bottom: 0.5em;
             border-bottom: 3px solid #e6e6e6;
-            margin: 1em 0 0.5em 0;
+            
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+              margin-top: unset !important;
+              margin-bottom: unset !important;
+            }
+            
+            .non-splash-page-title {
+              text-align: center;
+              font-size: 2em;
+            }
           }
           
-          .feature__wrapper {
-            .feature__item .archive__item .archive__item-body {
-              .archive__item-title {
-                border-bottom: none;
-                margin: 0.3em 0 0.2em 0;
-                padding-bottom: 0;
+          .page__content {
+            .page-notices {
+              margin: 2em 0 2em 0;
+            }
+            
+            table tbody tr td img.color-image {
+              box-shadow: 0 0 10px 0 #00000040;
+              
+              &.dock-type-light-color {
+                border-radius: 100%;
+              }
+            }
+            
+            h1.update-log-section-title {
+              text-align: center;
+              padding-bottom: 0;
+              border-bottom: 0;
+            }
+            
+            h1,
+            h2,
+            h3,
+            h4,
+            h5 {
+              margin: 1em 0 0.75em 0;
+              
+              a.title-link {
+                position: relative;
+                left: 0.5em;
+                opacity: 0;
+                font-size: 0.8em;
+                transition: opacity 0.2s ease-in-out 0.1s;
               }
               
-              .archive__item-excerpt {
-                margin-bottom: 1em;
+              &:hover a.title-link {
+                opacity: 1;
+              }
+            }
+            
+            h1,
+            h2 {
+              padding-bottom: 0.5em;
+              border-bottom: 3px solid #e6e6e6;
+              margin: 1em 0 0.5em 0;
+            }
+            
+            .feature__wrapper {
+              .feature__item .archive__item .archive__item-body {
+                .archive__item-title {
+                  border-bottom: none;
+                  margin: 0.3em 0 0.2em 0;
+                  padding-bottom: 0;
+                }
                 
-                * {
-                  margin: unset;
+                .archive__item-excerpt {
+                  margin-bottom: 1em;
+                  
+                  * {
+                    margin: unset;
+                  }
+                }
+              }
+              
+              &.page-category-main-element a {
+                color: inherit;
+                
+                &:hover {
+                  color: #2f7d95;
                 }
               }
             }
             
-            &.page-category-main-element a {
-              color: inherit;
-              
-              &:hover {
-                color: #2f7d95;
-              }
+            .language-plaintext.highlighter-rouge div.highlight code {
+              background: none;
             }
-          }
-          
-          .language-plaintext.highlighter-rouge div.highlight code {
-            background: none;
-          }
-          
-          img.dock-type-image {
-            background-color: #0000000d;
-          }
-          
-          p.no-format {
-            margin: unset;
-          }
-          
-          table {
-            margin-top: 1em;
+            
+            img.dock-type-image {
+              background-color: #0000000d;
+            }
+            
+            p.no-format {
+              margin: unset;
+            }
+            
+            table {
+              margin-top: 1em;
+            }
           }
         }
       }
