@@ -64,13 +64,11 @@
         width: 280px;
         height: auto;
         
-        .page-subject-info- {
-          &holder-box {
-            color: #e1e1e1;
-            background-color: #323232;
-            border-radius: 5px;
-            overflow: hidden;
-          }
+        .page-subject-info-holder-box {
+          color: #e1e1e1;
+          background-color: #323232;
+          border-radius: 5px;
+          overflow: hidden;
         }
       }
       
