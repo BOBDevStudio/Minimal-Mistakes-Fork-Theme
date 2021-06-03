@@ -63,6 +63,15 @@
         flex-basis: 280px;
         width: 280px;
         height: auto;
+        
+        .page-subject-info- {
+          &holder-box {
+            color: rgb(225 225 225);
+            background-color: rgb(50 50 50);
+            border-radius: 5px;
+            overflow: hidden;
+          }
+        }
       }
       
       .page {
