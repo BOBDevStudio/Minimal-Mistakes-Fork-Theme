@@ -37,6 +37,15 @@ layout: default
               {{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}
             </h1>
             {%- endif -%}
+            {%- if page.page_categories -%}
+            {%- for OtherPage in site.pages -%}
+            {%- if OtherPage.listed_page_category and page.page_categories[OtherPage.listed_page_category] == true -%}
+            <a class="back-to-page-category-home" href="{{ OtherPage.url | relative_url | remove: ".html" }}">
+              <i class="fas fa-arrow-left"></i> Back to category home page: {{ OtherPage.title }}
+            </a>
+            {%- endif -%}
+            {%- endfor -%}
+            {%- endif -%}
             {%- endif -%}
             {%- include page__meta.html -%}
           </header>
