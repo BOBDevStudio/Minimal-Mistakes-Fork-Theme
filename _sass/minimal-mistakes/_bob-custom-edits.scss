@@ -74,6 +74,7 @@ body {
           box-shadow: 0 0 15px #00000033;
           // border-radius: 5px;
           overflow: hidden;
+          padding-bottom: 5px;
           
           * {
             width: 100%;
@@ -124,17 +125,15 @@ body {
               &-title {
                 text-align: center;
                 font-weight: bold;
-                padding-left: unset;
-                padding-right: unset;
               }
               
               &-data-list {
-                padding-left: unset;
-                padding-right: unset;
+                // padding-left: unset;
+                // padding-right: unset;
                 
                 .psi-data-list-data {
-                  // padding-left: unset;
-                  // padding-right: unset;
+                  padding-left: unset;
+                  padding-right: unset;
                   
                   &-key {
                     display: inline-block;
