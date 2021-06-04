@@ -31,11 +31,6 @@ body {
       flex-wrap: nowrap;
       justify-content: center;
       align-items: flex-start;
-      overflow-x: overlay;
-
-      * {
-        overflow-x: overlay;
-      }
       
       &>* {
         margin-right: 20px;
@@ -159,7 +154,7 @@ body {
                       margin-inline-start: unset;
                       margin-inline-end: unset;
                       font-weight: 700;
-
+                      
                       &:last-child::after {
                         content: ":";
                       }
