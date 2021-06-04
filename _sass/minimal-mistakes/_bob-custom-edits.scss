@@ -93,6 +93,14 @@ body {
           }
           
           .psi-main-image-holder {
+            padding-left: unset;
+            padding-right: unset;
+            
+            * {
+              padding-left: unset;
+              padding-right: unset;
+            }
+            
             .psi-main-image {
               width: 100%;
               height: auto;
@@ -106,20 +114,40 @@ body {
           }
           
           .psi-data-lists {
+            padding-left: unset;
+            padding-right: unset;
+            
             .psi-data-list {
+              padding-left: unset;
+              padding-right: unset;
+              
               &-title {
                 text-align: center;
                 font-weight: bold;
+                padding-left: unset;
+                padding-right: unset;
               }
               
               &-data-list {
+                padding-left: unset;
+                padding-right: unset;
+                
                 .psi-data-list-data {
+                  // padding-left: unset;
+                  // padding-right: unset;
+                  
                   &-key {
                     display: inline-block;
+                    width: auto;
+                    padding-left: unset;
+                    padding-right: unset;
                   }
                   
                   &-value {
                     display: inline-block;
+                    width: auto;
+                    padding-left: unset;
+                    padding-right: unset;
                   }
                 }
               }
