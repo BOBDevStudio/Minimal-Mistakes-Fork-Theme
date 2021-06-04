@@ -1,32 +1,68 @@
-// Variables:
+// -- Variables:
 
 $sidebar-sizes: 350px;
 $sidebar-between-length: 20px;
 
-$large-screen-size: 64em;
-$medium-screen-size: 42em;
+// Most sizes here are taken from Chrome's inspect element menu presets
+$screen-size-highdesktop: 2560px;
+$screen-size-desktop: 1920px;
+$screen-size-highlaptop: 1440px;
+$screen-size-laptop: 1024px;
+$screen-size-tablet: 768px;
+$screen-size-phonelarge: 425px;
+$screen-size-phonemedium: 375px;
+$screen-size-phonesmall: 320px;
 
-// Screen size stuff:
+// -- Screen size stuff:
 
-@mixin large {
-  @media screen and (min-width: #{$large-screen-size}) {
+// Specific:
+
+
+
+// General:
+
+@mixin highdesktop {
+  @media screen and (min-width: #{$screen-size-highdesktop}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: #{$screen-size-desktop}) and (max-width: #{$screen-size-highdesktop}) {
+    @content;
+  }
+}
+@mixin highlaptop {
+  @media screen and (min-width: #{$screen-size-highlaptop}) and (max-width: #{$screen-size-desktop}) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media screen and (min-width: #{$screen-size-laptop}) and (max-width: #{$screen-size-highlaptop}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: #{$screen-size-tablet}) and (max-width: #{$screen-size-laptop}) {
+    @content;
+  }
+}
+@mixin phonelarge {
+  @media screen and (min-width: #{$screen-size-phonelarge}) and (max-width: #{$screen-size-tablet}) {
+    @content;
+  }
+}
+@mixin phonemedium {
+  @media screen and (min-width: #{$screen-size-phonemedium}) and (max-width: #{$screen-size-phonelarge}) {
+    @content;
+  }
+}
+@mixin phonesmall {
+  @media screen and (max-width: #{$screen-size-phonemedium}) {
     @content;
   }
 }
 
-@mixin medium {
-  @media screen and (min-width: #{$medium-screen-size}) and (max-width: #{$large-screen-size}) {
-    @content;
-  }
-}
-
-@mixin small {
-  @media screen and (max-width: #{$medium-screen-size}) {
-    @content;
-  }
-}
-
-// Epic rules:
+// -- Epic rules:
 
 body {
   line-height: initial;
@@ -47,8 +83,16 @@ body {
     margin-right: auto;
     padding-left: 1em;
     padding-right: 1em;
-    width: 75%;
+    width: calc(100% - 50px);
+    max-width: 1440px;
     height: auto;
+    
+    @include desktop {
+      width: 75%;
+    }
+    @include highlaptop {
+      width: 80%;
+    }
     
     main {
       height: 100% !important;
