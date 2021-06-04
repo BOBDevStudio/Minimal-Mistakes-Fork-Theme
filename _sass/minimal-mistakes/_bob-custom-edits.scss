@@ -75,41 +75,39 @@ body {
           // border-radius: 5px;
           overflow: hidden;
           
-          .psi-holder-box {
-            .psi-title {
-              text-align: center;
-              font-weight: bold;
+          .psi-title {
+            text-align: center;
+            font-weight: bold;
+          }
+          
+          .psi-main-image-holder {
+            .psi-main-image {
+              width: 100%;
+              height: auto;
+              border-radius: unset;
             }
-            
-            .psi-main-image-holder {
-              .psi-main-image {
-                width: 100%;
-                height: auto;
-                border-radius: unset;
+          }
+          
+          .psi-description {
+            text-align: center;
+            font-size: 20px;
+          }
+          
+          .psi-data-lists {
+            .psi-data-list {
+              &-title {
+                text-align: center;
+                font-weight: bold;
               }
-            }
-            
-            .psi-description {
-              text-align: center;
-              font-size: 20px;
-            }
-            
-            .psi-data-lists {
-              .psi-data-list {
-                &-title {
-                  text-align: center;
-                  font-weight: bold;
-                }
-                
-                &-data-list {
-                  .psi-data-list-data {
-                    &-key {
-                      display: inline-block;
-                    }
-                    
-                    &-value {
-                      display: inline-block;
-                    }
+              
+              &-data-list {
+                .psi-data-list-data {
+                  &-key {
+                    display: inline-block;
+                  }
+                  
+                  &-value {
+                    display: inline-block;
                   }
                 }
               }
