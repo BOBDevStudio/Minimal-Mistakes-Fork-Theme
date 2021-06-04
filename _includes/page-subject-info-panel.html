@@ -32,6 +32,8 @@
           <div class="psi-data-list-data">
             <div class="psi-data-list-data-key">
               {{ page_subject_data.key | strip_html | markdownify | remove: "<p>" | remove: "</p>" }}
+              <br>
+              {{ page_subject_data.key | strip_html | markdownify }}
             </div>
             <div class="psi-data-list-data-value">
               {{ page_subject_data.value | strip_html | markdownify | remove: "<p>" | remove: "</p>" }}
