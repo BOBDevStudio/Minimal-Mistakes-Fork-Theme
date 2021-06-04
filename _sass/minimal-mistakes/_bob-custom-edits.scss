@@ -197,7 +197,6 @@ body {
           header.page__title-header {
             margin-bottom: .75em;
             padding-bottom: 0.5em;
-            border-bottom: 3px solid #e6e6e6;
             
             h1,
             h2,
@@ -212,6 +211,13 @@ body {
             .non-splash-page-title {
               text-align: center;
               font-size: 2em;
+              border-bottom: 3px solid #e6e6e6;
+              padding-bottom: 10px;
+              margin-bottom: 10px !important;
+            }
+
+            .back-to-page-category-home
+              font-size: 17.5px;
             }
           }
           
