@@ -1,45 +1,49 @@
 <div class="page-subject-info">
   {%- if page.page_subject_info -%}
-  <div class="page-subject-info-holder-box">
+  <div class="psi-holder-box">
     {%- if page.page_subject_info.title -%}
-    <div class="page-subject-info-title" style="{%- if page.page_subject_info.color -%}background-color: {{ page.page_subject_info.color }};{%- endif -%}{%- if page.page_subject_info.titles_text_color -%}color: {{ page.page_subject_info.titles_text_color }};{%- endif -%}">
+    <div class="psi-title" style="{%- if page.page_subject_info.color -%}background-color: {{ page.page_subject_info.color }};{%- endif -%}{%- if page.page_subject_info.titles_text_color -%}color: {{ page.page_subject_info.titles_text_color }};{%- endif -%}">
       {{ page.page_subject_info.title | strip_html | markdownify | remove: "<p>" | remove: "</p>" }}
     </div>
     {%- endif -%}
     {%- if page.page_subject_info.main_image.path -%}
-    <div class="page-subject-info-main-image-holder">
-      <img class="page-subject-info-main-image" src="{{ page.page_subject_info.main_image.path | relative_url }}" alt="{%- if page.page_subject_info.main_image.alt -%}{{ page.page_subject_info.main_image.alt }}{%- endif -%}">
+    <div class="psi-main-image-holder">
+      <img class="psi-main-image" src="{{ page.page_subject_info.main_image.path | relative_url }}" alt="{%- if page.page_subject_info.main_image.alt -%}{{ page.page_subject_info.main_image.alt }}{%- endif -%}">
     </div>
     {%- endif -%}
     {%- if page.page_subject_info.description -%}
-    <div class="page-subject-info-description">
+    <div class="psi-description">
       {{ page.page_subject_info.description | strip_html | markdownify | remove: "<p>" | remove: "</p>" }}
     </div>
     {%- endif -%}
     {%- if page.page_subject_info.data -%}
-    {%- for page_subject_data_list in page.page_subject_info.data -%}
-    <div class="page-subject-info-data-list">
-      {%- if page_subject_data_list.title -%}
-      <div class="page-subject-info-data-list-title" style="{%- if page.page_subject_info.color -%}background-color: {{ page.page_subject_info.color }};{%- endif -%}{%- if page.page_subject_info.titles_text_color -%}color: {{ page.page_subject_info.titles_text_color }};{%- endif -%}">
-        {{ page_subject_data_list.title | strip_html | markdownify | remove: "<p>" | remove: "</p>" }}
-      </div>
-      {%- endif -%}
-      {%- if page_subject_data_list.data -%}
-      {%- for page_subject_data in page_subject_data_list.data -%}
-      {%- if page_subject_data.key and page_subject_data.value -%}
-      <div class="page-subject-info-data-list-value">
-        <div class="page-subject-info-data-list-value-key">
-          {{ page_subject_data.key | strip_html | markdownify | remove: "<p>" | remove: "</p>" }}
+    <div class="psi-data-lists">
+      {%- for page_subject_data_list in page.page_subject_info.data -%}
+      <div class="psi-data-list">
+        {%- if page_subject_data_list.title -%}
+        <div class="psi-data-list-title" style="{%- if page.page_subject_info.color -%}background-color: {{ page.page_subject_info.color }};{%- endif -%}{%- if page.page_subject_info.titles_text_color -%}color: {{ page.page_subject_info.titles_text_color }};{%- endif -%}">
+          {{ page_subject_data_list.title | strip_html | markdownify | remove: "<p>" | remove: "</p>" }}
         </div>
-        <div class="page-subject-info-data-list-value-value">
-          {{ page_subject_data.value | strip_html | markdownify | remove: "<p>" | remove: "</p>" }}
+        {%- endif -%}
+        {%- if page_subject_data_list.data -%}
+        <div class="psi-data-list-data-list">
+          {%- for page_subject_data in page_subject_data_list.data -%}
+          {%- if page_subject_data.key and page_subject_data.value -%}
+          <div class="psi-data-list-data">
+            <div class="psi-data-list-data-key">
+              {{ page_subject_data.key | strip_html | markdownify | remove: "<p>" | remove: "</p>" }}
+            </div>
+            <div class="psi-data-list-data-value">
+              {{ page_subject_data.value | strip_html | markdownify | remove: "<p>" | remove: "</p>" }}
+            </div>
+          </div>
+          {%- endif -%}
+          {%- endfor -%}
         </div>
+        {%- endif -%}
       </div>
-      {%- endif -%}
       {%- endfor -%}
-      {%- endif -%}
     </div>
-    {%- endfor -%}
     {%- endif -%}
   </div>
   {%- endif -%}
