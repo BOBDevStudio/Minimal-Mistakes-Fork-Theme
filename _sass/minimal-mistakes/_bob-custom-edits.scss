@@ -1,3 +1,33 @@
+// Variables:
+
+$sidebar-sizes: 350px
+$sidebar-between-length: 20px
+
+$large-screen-size: 64em;
+$medium-screen-size: 42em;
+
+// Screen size stuff:
+
+@mixin large {
+  @media screen and (min-width: #{$large-screen-size}) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media screen and (min-width: #{$medium-screen-size}) and (max-width: #{$large-screen-size}) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media screen and (max-width: #{$medium-screen-size}) {
+    @content;
+  }
+}
+
+// Epic rules:
+
 body {
   line-height: initial;
 }
@@ -17,7 +47,7 @@ body {
     margin-right: auto;
     padding-left: 1em;
     padding-right: 1em;
-    width: calc(100% - 100px);
+    width: 75%;
     height: auto;
     
     main {
@@ -33,8 +63,8 @@ body {
       align-items: flex-start;
       
       &>* {
-        margin-right: 20px;
-        // margin-left: 20px;
+        margin-right: $sidebar-between-length;
+        // margin-left: $sidebar-between-length;
       }
       
       &>*:first-child {
@@ -46,8 +76,8 @@ body {
       }
       
       .sidebar {
-        flex-basis: 280px;
-        width: 280px;
+        flex-basis: calc($sidebar-sizes - $sidebar-between-length);
+        width: calc($sidebar-sizes - $sidebar-between-length);
         height: auto;
         position: initial;
         max-height: unset;
@@ -64,8 +94,8 @@ body {
       }
       
       .page-subject-info {
-        flex-basis: 280px;
-        width: 280px;
+        flex-basis: calc($sidebar-sizes - $sidebar-between-length);
+        width: calc($sidebar-sizes - $sidebar-between-length);
         height: auto;
         font-size: 22.5px;
         
@@ -185,8 +215,8 @@ body {
       }
       
       .page {
-        flex-basis: calc(100% - 600px); // 600 = sidebar size + margin + page subject info size + margin
-        width: calc(100% - 600px);
+        flex-basis: calc(100% - $sidebar-sizes - $sidebar-sizes - $sidebar-between-length - $sidebar-between-length);
+        width: calc(100% - $sidebar-sizes - $sidebar-sizes - $sidebar-between-length - $sidebar-between-length);
         height: auto;
         padding: unset;
         float: initial;
