@@ -1,9 +1,5 @@
 // -- Variables:
 
-// These are just here for looks sadly
-// $sidebar-sizes: 350px;
-// $sidebar-between-length: 20px;
-
 // Most sizes here are taken from Chrome's inspect element menu presets
 $screen-size-highdesktop: 2560px;
 $screen-size-desktop: 1920px;
@@ -101,11 +97,35 @@ body {
       max-width: unset !important;
       margin: unset !important;
       padding: unset !important;
-      display: inline-flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: flex-start;
+      
+      @include highdesktop {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      @include desktop {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      @include highlaptop {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      @include laptop {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-start;
+      }
       
       &>* {
         margin-right: 20px;
@@ -121,8 +141,8 @@ body {
       }
       
       .sidebar {
-        flex-basis: calc(350px - 20px);
-        width: calc(350px - 20px);
+        flex-basis: calc(300px - 20px);
+        width: calc(300px - 20px);
         height: auto;
         position: initial;
         max-height: unset;
@@ -131,6 +151,26 @@ body {
         transition: initial;
         opacity: initial;
         float: initial;
+        display: none;
+        
+        @include highdesktop {
+          display: initial;
+          flex-basis: calc(350px - 20px);
+          width: calc(350px - 20px);
+        }
+        @include desktop {
+          display: initial;
+          flex-basis: calc(350px - 20px);
+          width: calc(350px - 20px);
+        }
+        @include highlaptop {
+          display: initial;
+          flex-basis: calc(350px - 20px);
+          width: calc(350px - 20px);
+        }
+        @include laptop {
+          display: initial;
+        }
         
         &>* {
           margin-top: 0;
@@ -139,20 +179,26 @@ body {
       }
       
       .page-subject-info {
-        flex-basis: calc(350px - 20px);
-        width: calc(350px - 20px);
+        flex-basis: calc(300px - 20px);
+        width: calc(300px - 20px);
         height: auto;
         font-size: 22.5px;
         display: none;
         
         @include highdesktop {
           display: initial;
+          flex-basis: calc(350px - 20px);
+          width: calc(350px - 20px);
         }
         @include desktop {
           display: initial;
+          flex-basis: calc(350px - 20px);
+          width: calc(350px - 20px);
         }
         @include highlaptop {
           display: initial;
+          flex-basis: calc(350px - 20px);
+          width: calc(350px - 20px);
         }
         @include laptop {
           display: initial;
@@ -274,8 +320,8 @@ body {
       }
       
       .page {
-        flex-basis: calc(100% - 350px - 20px);
-        width: calc(100% - 350px - 20px);
+        flex-basis: 100%;
+        width: 100%;
         height: auto;
         padding: unset;
         float: initial;
@@ -293,8 +339,8 @@ body {
           width: calc(100% - 350px - 350px - 20px - 20px);
         }
         @include laptop {
-          flex-basis: calc(100% - 350px - 350px - 20px - 20px);
-          width: calc(100% - 350px - 350px - 20px - 20px);
+          flex-basis: calc(100% - 300px - 300px - 20px - 20px);
+          width: calc(100% - 300px - 300px - 20px - 20px);
         }
         
         .page__inner-wrap {
