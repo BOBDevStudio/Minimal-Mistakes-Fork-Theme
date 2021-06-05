@@ -229,6 +229,7 @@ body {
             text-align: center;
             font-weight: bold;
             font-size: 27.5px;
+            text-shadow: 2px 2.5px 10px #000000;
             padding-top: 5px;
             padding-bottom: 5px;
             padding-left: 10px;
@@ -267,6 +268,7 @@ body {
               &-title {
                 text-align: center;
                 font-weight: bold;
+                text-shadow: 2px 2.5px 10px #000000;
               }
               
               &-data-list {
