@@ -1,7 +1,8 @@
 // -- Variables:
 
-$sidebar-sizes: 350px;
-$sidebar-between-length: 20px;
+// These are just here for looks sadly
+// $sidebar-sizes: 350px;
+// $sidebar-between-length: 20px;
 
 // Most sizes here are taken from Chrome's inspect element menu presets
 $screen-size-highdesktop: 2560px;
@@ -107,8 +108,8 @@ body {
       align-items: flex-start;
       
       &>* {
-        margin-right: $sidebar-between-length;
-        // margin-left: $sidebar-between-length;
+        margin-right: 20px;
+        // margin-left: 20px;
       }
       
       &>*:first-child {
@@ -120,8 +121,8 @@ body {
       }
       
       .sidebar {
-        flex-basis: calc($sidebar-sizes - $sidebar-between-length);
-        width: calc($sidebar-sizes - $sidebar-between-length);
+        flex-basis: calc(350px - 20px);
+        width: calc(350px - 20px);
         height: auto;
         position: initial;
         max-height: unset;
@@ -138,10 +139,24 @@ body {
       }
       
       .page-subject-info {
-        flex-basis: calc($sidebar-sizes - $sidebar-between-length);
-        width: calc($sidebar-sizes - $sidebar-between-length);
+        flex-basis: calc(350px - 20px);
+        width: calc(350px - 20px);
         height: auto;
         font-size: 22.5px;
+        display: none;
+        
+        @include highdesktop {
+          display: initial;
+        }
+        @include desktop {
+          display: initial;
+        }
+        @include highlaptop {
+          display: initial;
+        }
+        @include laptop {
+          display: initial;
+        }
         
         .psi-holder-box {
           color: #e1e1e1;
@@ -259,11 +274,28 @@ body {
       }
       
       .page {
-        flex-basis: calc(100% - $sidebar-sizes - $sidebar-sizes - $sidebar-between-length - $sidebar-between-length);
-        width: calc(100% - $sidebar-sizes - $sidebar-sizes - $sidebar-between-length - $sidebar-between-length);
+        flex-basis: calc(100% - 350px - 20px);
+        width: calc(100% - 350px - 20px);
         height: auto;
         padding: unset;
         float: initial;
+        
+        @include highdesktop {
+          flex-basis: calc(100% - 350px - 350px - 20px - 20px);
+          width: calc(100% - 350px - 350px - 20px - 20px);
+        }
+        @include desktop {
+          flex-basis: calc(100% - 350px - 350px - 20px - 20px);
+          width: calc(100% - 350px - 350px - 20px - 20px);
+        }
+        @include highlaptop {
+          flex-basis: calc(100% - 350px - 350px - 20px - 20px);
+          width: calc(100% - 350px - 350px - 20px - 20px);
+        }
+        @include laptop {
+          flex-basis: calc(100% - 350px - 350px - 20px - 20px);
+          width: calc(100% - 350px - 350px - 20px - 20px);
+        }
         
         .page__inner-wrap {
           margin-top: unset;
