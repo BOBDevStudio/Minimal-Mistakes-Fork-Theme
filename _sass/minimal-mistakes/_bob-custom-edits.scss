@@ -276,17 +276,23 @@ body {
                 // padding-right: unset;
                 
                 .psi-data-list-data {
-                  font-size: 17.5px;
+                  font-size: 15px;
                   margin-top: 5px;
                   margin-bottom: 5px;
                   padding-left: unset;
                   padding-right: unset;
+                  display: inline-flex;
+                  justify-content: flex-start;
+                  align-items: center;
+                  flex-wrap: nowrap;
+                  flex-direction: row;
                   
                   &-key {
-                    display: inline-block;
-                    width: auto;
+                    display: block;
+                    width: 100%;
+                    flex-basis: 35%;
                     padding-left: unset;
-                    padding-right: unset;
+                    padding-right: .25em;
                     
                     p {
                       width: auto;
@@ -309,8 +315,9 @@ body {
                   }
                   
                   &-value {
-                    display: inline-block;
-                    width: auto;
+                    display: block;
+                    width: 100%;
+                    flex-basis: 65%;
                     padding-left: unset;
                     padding-right: unset;
                   }
