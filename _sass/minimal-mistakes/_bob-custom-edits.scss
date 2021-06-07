@@ -454,8 +454,25 @@ body {
               }
             }
             
-            .language-plaintext.highlighter-rouge div.highlight code {
+            .language-plaintext.highlighter-rouge .highlight code {
               background: none;
+            }
+            
+            table.psi-panel-alternative {
+              display: initial;
+              
+              @include highdesktop {
+                display: none;
+              }
+              @include desktop {
+                display: none;
+              }
+              @include highlaptop {
+                display: none;
+              }
+              @include laptop {
+                display: none;
+              }
             }
             
             img.dock-type-image {
