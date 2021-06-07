@@ -459,7 +459,7 @@ body {
             }
             
             table.psi-panel-alternative {
-              display: initial;
+              display: block;
               
               @include highdesktop {
                 display: none;
