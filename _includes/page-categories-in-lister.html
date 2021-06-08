@@ -1,0 +1,18 @@
+{%- if page.page_categories -%}
+{%- assign CanListCategories = false -%}
+{%- for OtherPage in site.pages -%}
+{%- if OtherPage.listed_page_category and page.page_categories[OtherPage.listed_page_category] == true and site.page_category_names[OtherPage.listed_page_category] -%}
+{%- assign CanListCategories = true -%}
+{%- break -%}
+{%- endif -%}
+{%- endfor -%}
+{%- if CanListCategories == true -%}
+<div class="page-categories-in">
+  {%- for OtherPage in site.pages -%}
+  {%- if OtherPage.listed_page_category and page.page_categories[OtherPage.listed_page_category] == true and site.page_category_names[OtherPage.listed_page_category] -%}
+  <a class="page-category-in" href="{{ OtherPage.url | relative_url | remove: ".html" }}">{{ site.page_category_names[OtherPage.listed_page_category] }}</a>
+  {%- endif -%}
+  {%- endfor -%}
+</div>
+{%- endif -%}
+{%- endif -%}
