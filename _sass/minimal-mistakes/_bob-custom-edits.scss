@@ -296,6 +296,11 @@ body {
                     padding-left: unset;
                     padding-right: .25em;
                     
+                    * {
+                      padding-left: unset;
+                      padding-right: unset;
+                    }
+                    
                     p {
                       width: auto;
                       height: auto;
@@ -322,6 +327,11 @@ body {
                     flex-basis: 65%;
                     padding-left: unset;
                     padding-right: unset;
+                    
+                    * {
+                      padding-left: unset;
+                      padding-right: unset;
+                    }
                   }
                 }
               }
