@@ -479,6 +479,27 @@ body {
               }
             }
             
+            .page-category-page-list {
+              .page-category-other-page {
+                width: 49%;
+                float: left;
+                
+                &:nth-child(2n+2) {
+                  clear: none;
+                  margin-left: 2%;
+                }
+                
+                &:nth-child(2n+1) {
+                  clear: both;
+                  margin-left: unset;
+                }
+                
+                &-title {
+                  font-size: 1.25em;
+                }
+              }
+            }
+            
             .language-plaintext.highlighter-rouge .highlight code {
               background: none;
             }
