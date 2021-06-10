@@ -480,9 +480,18 @@ body {
             }
             
             .page-category-page-list {
+              a {
+                color: inherit;
+                
+                &:hover {
+                  color: #2f7d95;
+                }
+              }
+              
               .page-category-other-page {
                 width: 49%;
                 float: left;
+                margin-bottom: .25em;
                 
                 &:nth-child(2n+2) {
                   clear: none;
@@ -496,6 +505,11 @@ body {
                 
                 &-title {
                   font-size: 1.25em;
+                  font-weight: bold;
+                  
+                  &::before {
+                    content: "•";
+                  }
                 }
               }
             }
