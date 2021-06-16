@@ -17,13 +17,13 @@ layout: default
 <div class="main-holder">
   <main id="main" class="main" role="main">
     {%- include sidebar.html -%}
-
+    
     <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
       {%- if page.title -%}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{%- endif -%}
       {%- if page.excerpt -%}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{%- endif -%}
       {%- if page.date -%}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{%- endif -%}
       {%- if page.last_modified_at -%}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{%- endif -%}
-
+      
       <div class="page__inner-wrap">
         {%- unless page.header.overlay_color or page.header.overlay_image -%}
           <header class="page__title-header">
@@ -42,7 +42,7 @@ layout: default
             {%- include page__meta.html -%}
           </header>
         {%- endunless -%}
-
+        
         <section class="page__content" id="page-content" itemprop="text">
           {%- if page.toc -%}
             <aside class="sidebar__right {%- if page.toc_sticky -%}sticky{%- endif -%}">
@@ -56,7 +56,7 @@ layout: default
           {{ content }}
           {%- include page-category-lister.html -%}
         </section>
-
+        
         <footer class="page__meta">
           {%- if site.data.ui-text[site.locale].meta_label -%}
             <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
@@ -64,21 +64,17 @@ layout: default
           {%- include page__taxonomy.html -%}
           {%- include page__date.html -%}
         </footer>
-
+        
         {%- if page.share -%}{%- include social-share.html -%}{%- endif -%}
-
+        
         {%- include post_pagination.html -%}
       </div>
-
-      {%- if jekyll.environment == 'production' and site.comments.provider and page.comments -%}
+      
+      {%- if site.comments.provider and page.comments -%}
         {%- include comments.html -%}
       {%- endif -%}
-    </article>
-
-    {%- include page-subject-info-panel.html -%}
-
-    {%- comment -%}<!-- only show related on a post page when `related: true` -->{%- endcomment -%}
-    {%- if page.id and page.related == true and site.related_posts.size > 0 -%}
+      
+      {%- if page.id and page.related == true and site.related_posts.size > 0 -%}
       <div class="page__related">
         <h4 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "Other Posts" }}</h4>
         <div class="grid__wrapper">
@@ -87,8 +83,7 @@ layout: default
           {%- endfor -%}
         </div>
       </div>
-    {%- comment -%}<!-- otherwise show recent posts if no related when `related: true` -->{%- endcomment -%}
-    {%- elsif page.id and page.related == true -%}
+      {%- elsif page.id and page.related == true -%}
       <div class="page__related">
         <h4 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "Other Posts" }}</h4>
         <div class="grid__wrapper">
@@ -100,6 +95,9 @@ layout: default
           {%- endfor -%}
         </div>
       </div>
-    {%- endif -%}
+      {%- endif -%}
+    </article>
+    
+    {%- include page-subject-info-panel.html -%}
   </main>
 </div>
