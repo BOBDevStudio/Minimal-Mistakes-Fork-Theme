@@ -1,2 +1,2 @@
-{%- capture image_url -%}{{ site.color_images_base_path | relative_url }}{{ include.name }}.{{ include.color_images_file_type }}{%- endcapture -%}
+{%- capture image_url -%}{{ site.color_images_base_path | relative_url }}{{ include.name }}.{{ site.color_images_file_type }}{%- endcapture -%}
 <img class="color-image {%- if include.fordocktypecolor == true -%}dock-type-color-color-image{%- endif -%}" src="{{ image_url }}" alt="{{ include.alt }}">
