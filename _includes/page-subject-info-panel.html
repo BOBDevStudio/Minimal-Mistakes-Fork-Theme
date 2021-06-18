@@ -28,7 +28,8 @@
         {%- if page_subject_data_list.data -%}
         <div class="psi-data-list-data-list">
           {%- for page_subject_data in page_subject_data_list.data -%}
-          {%- if page_subject_data.key and page_subject_data.value -%}
+          {%- if page_subject_data.key -%}
+          {%- if page_subject_data.value -%}
           <div class="psi-data-list-data">
             <div class="psi-data-list-data-key">
               {{ page_subject_data.key | strip_html | markdownify }}
@@ -37,6 +38,16 @@
               {{ page_subject_data.value | strip_html | markdownify | remove: "<p>" | remove: "</p>" }}
             </div>
           </div>
+          {%- elsif page_subject_data.color_image -%}
+          <div class="psi-data-list-data">
+            <div class="psi-data-list-data-key">
+              {{ page_subject_data.key | strip_html | markdownify }}
+            </div>
+            <div class="psi-data-list-data-value">
+              {%- include color-image fordocktypecolor=page_subject_data.color_image.dock_type_color name=page_subject_data.color_image.name alt="" -%}
+            </div>
+          </div>
+          {%- endif -%}
           {%- endif -%}
           {%- endfor -%}
         </div>
