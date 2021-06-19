@@ -1,9 +1,8 @@
-test2
 {%- if page.author_profile or layout.author_profile -%}
 {%- assign author = page.author | default: page.authors[0] | default: site.author -%}
 {%- assign author = site.data.authors[author] | default: author -%}
 
-{%- comment -%}{%- if author.name and author.avatar and author.avatar.path -%}{%- endcomment -%}
+{%- if author.name and author.avatar and author.avatar.path -%}
 <div class="page-author-panel">
   {%- if author.avatar.link -%}
   <a class="pap-author-image-link {% if author.avatar.is_roblox_avatar == true %}pap-author-image-roblox-avatar{% endif %}" href="{{ author.avatar.link | relative_url }}">
@@ -28,5 +27,5 @@ test2
     {%- endif -%}
   </div>
 </div>
-{%- comment -%}{%- endif -%}{%- endcomment -%}
+{%- endif -%}
 {%- endif -%}
