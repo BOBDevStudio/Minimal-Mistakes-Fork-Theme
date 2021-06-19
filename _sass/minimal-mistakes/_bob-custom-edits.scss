@@ -571,6 +571,7 @@ body>.page__footer {
         }
         
         .page-author-panel {
+          display: none;
           float: left;
           width: 100%;
           height: 150px;
@@ -586,6 +587,13 @@ body>.page__footer {
           flex-wrap: nowrap;
           justify-content: flex-start;
           align-items: flex-start;
+          
+          @include highdesktop {
+            display: initial;
+          }
+          @include desktop {
+            display: initial;
+          }
           
           .pap-author-image {
             background-color: #00000026;
@@ -633,6 +641,28 @@ body>.page__footer {
               flex-basis: 30px;
               width: 100%;
               height: 30px;
+              display: inline-flex;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              justify-content: center;
+              align-items: stretch;
+              
+              .pap-author-link {
+                padding-left: 5px;
+                padding-right: 5px;
+                
+                a {
+                  color: inherit;
+                  
+                  &:hover {
+                    color: #2f7d95;
+                  }
+                }
+                
+                .fa, .far, .fas {
+                  color: #3d4144;
+                }
+              }
             }
           }
         }
