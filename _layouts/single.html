@@ -57,13 +57,7 @@ layout: default
           {%- include page-category-lister.html -%}
         </section>
         
-        <footer class="page__meta">
-          {%- if site.data.ui-text[site.locale].meta_label -%}
-            <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
-          {%- endif -%}
-          {%- include page__taxonomy.html -%}
-          {%- include page__date.html -%}
-        </footer>
+        {%- include page-data-footer.html -%}
         
         {%- if page.share -%}{%- include social-share.html -%}{%- endif -%}
         

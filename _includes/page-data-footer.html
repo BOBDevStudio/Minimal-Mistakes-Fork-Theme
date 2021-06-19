@@ -1,0 +1,53 @@
+{%- assign HasStuffToShow = false -%}
+
+{%- if site.tag_archive.type and page.tags[0] -%}
+{%- assign HasStuffToShow = true -%}
+{%- endif -%}
+
+{%- if site.category_archive.type and page.categories[0] -%}
+{%- assign HasStuffToShow = true -%}
+{%- endif -%}
+
+{%- if page.is_post -%}
+
+{%- if page.is_update_log == true and page.update_published_at -%}
+{%- assign HasStuffToShow = true -%}
+{%- endif -%}
+
+{%- if page.post_created_at -%}
+{%- assign HasStuffToShow = true -%}
+{%- endif -%}
+
+{%- if page.post_updated_at -%}
+{%- assign HasStuffToShow = true -%}
+{%- endif -%}
+
+{%- endif -%}
+
+{%- if HasStuffToShow == true -%}
+<footer class="page__meta">
+  {%- if site.tag_archive.type and page.tags[0] -%}
+  {%- include tag-list.html -%}
+  {%- endif -%}
+  
+  {%- if site.category_archive.type and page.categories[0] -%}
+  {%- include category-list.html -%}
+  {%- endif -%}
+  
+  {%- if page.is_post -%}
+  
+  {%- if page.is_update_log == true and page.update_published_at -%}
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Update published to RBAP:</strong> {{ page.update_published_at | date: "%A, %B %e, %Y at %l:%M %p" }} ({%- if page.published_time_uses_pst == true and page.published_time_uses_pdt == false -%}PST{%- elsif page.published_time_uses_pst == false and page.published_time_uses_pdt == true -%}PDT{%- else -%}PST/PDT{%- endif -%})</p>
+  {%- endif -%}
+  
+  {%- if page.post_created_at -%}
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Post Created:</strong> {{ page.post_created_at | date: "%A, %B %e, %Y" }}</p>
+  {%- endif -%}
+  
+  {%- if page.post_updated_at -%}
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Post Updated:</strong> {{ page.post_updated_at | date: "%A, %B %e, %Y" }}</p>
+  {%- endif -%}
+  
+  {%- endif -%}
+</footer>
+{%- endif -%}
