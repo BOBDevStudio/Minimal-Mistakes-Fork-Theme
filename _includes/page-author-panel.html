@@ -11,11 +11,20 @@
   {%- else -%}
   <img class="pap-author-image" src="{{ author.avatar.path | relative_url }}" alt="">
   {%- endif -%}
-  <div class="pap-author-name">
-    {{ author.name }}
-  </div>
-  <div class="pap-author-affiliation">
-    {{ author.affiliation }}
+  <div class="pap-main-details-holder">
+    <div class="pap-author-name">
+      {{ author.name }}
+    </div>
+    {%- if author.affiliation -%}
+    <div class="pap-author-affiliation">
+      {{ author.affiliation }}
+    </div>
+    {%- endif -%}
+    {%- if author.info -%}
+    <div class="pap-author-info">
+      {{ author.info }}
+    </div>
+    {%- endif -%}
   </div>
 </div>
 {%- endif -%}
