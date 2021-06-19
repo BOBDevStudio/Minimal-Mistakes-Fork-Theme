@@ -5,7 +5,7 @@
 {%- if author.name and author.avatar and author.avatar.path -%}
 <div class="page-author-panel">
   {%- if author.avatar.link -%}
-  <a class="pap-author-image-link" href="{{ author.avatar.link | relative_url }}">
+  <a class="pap-author-image-link {% if author.avatar.is_roblox_avatar == true %}pap-author-image-roblox-avatar{% endif %}" href="{{ author.avatar.link | relative_url }}">
     <img class="pap-author-image" src="{{ author.avatar.path | relative_url }}" alt="">
   </a>
   {%- else -%}
