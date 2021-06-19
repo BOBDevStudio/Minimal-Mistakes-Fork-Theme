@@ -1,0 +1,22 @@
+{%- if page.author_profile or layout.author_profile -%}
+{%- assign author = page.author | default: page.authors[0] | default: site.author -%}
+{%- assign author = site.data.authors[author] | default: author -%}
+
+{%- if author.name and author.avatar and author.avatar.path -%}
+<div class="page-author-panel">
+  {%- if author.avatar.link -%}
+  <a class="pap-author-image-link" href="{{ author.avatar.link | relative_url }}">
+    <img class="pap-author-image" src="{{ author.avatar.path | relative_url }}" alt="">
+  </a>
+  {%- else -%}
+  <img class="pap-author-image" src="{{ author.avatar.path | relative_url }}" alt="">
+  {%- endif -%}
+  <div class="pap-author-name">
+    {{ author.name }}
+  </div>
+  <div class="pap-author-affiliation">
+    {{ author.affiliation }}
+  </div>
+</div>
+{%- endif -%}
+{%- endif -%}

@@ -64,8 +64,12 @@ layout: default
         {%- include post_pagination.html -%}
       </div>
       
+      {%- if site.remade_author_panel_enabled != true -%}
+      {%- include page-author-panel.html -%}
+      {%- endif -%}
+      
       {%- if site.comments.provider and page.comments -%}
-        {%- include comments.html -%}
+      {%- include comments.html -%}
       {%- endif -%}
       
       {%- if page.id and page.related == true and site.related_posts.size > 0 -%}
