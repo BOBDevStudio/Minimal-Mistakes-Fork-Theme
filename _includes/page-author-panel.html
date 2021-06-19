@@ -2,7 +2,7 @@
 {%- assign author = page.author | default: page.authors[0] | default: site.author -%}
 {%- assign author = site.data.authors[author] | default: author -%}
 
-{%- if author.name and author.avatar and author.avatar.path -%}
+{%- comment -%}{%- if author.name and author.avatar and author.avatar.path -%}{%- endcomment -%}
 <div class="page-author-panel">
   {%- if author.avatar.link -%}
   <a class="pap-author-image-link {% if author.avatar.is_roblox_avatar == true %}pap-author-image-roblox-avatar{% endif %}" href="{{ author.avatar.link | relative_url }}">
@@ -27,5 +27,5 @@
     {%- endif -%}
   </div>
 </div>
-{%- endif -%}
+{%- comment -%}{%- endif -%}{%- endcomment -%}
 {%- endif -%}
