@@ -74,6 +74,10 @@ body {
   animation: none;
 }
 
+body>.page__footer {
+  animation: unset;
+}
+
 .initial-content {
   .main-holder {
     margin-top: 2.5em;
