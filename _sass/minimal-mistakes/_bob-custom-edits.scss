@@ -678,7 +678,9 @@ body>.page__footer {
                 top: -2.5px;
                 padding-left: 5px;
                 padding-right: 5px;
-                line-height: unset;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 0;
                 
                 a {
                   color: inherit;
