@@ -608,10 +608,10 @@ body>.page__footer {
             justify-content: flex-start;
             align-items: flex-start;
             
-			&.pap-top-no-content {
-			  display: none;
-			}
-			
+            &.pap-top-no-content {
+              display: none;
+            }
+            
             .pap-author-image {
               height: calc(150px - 20px);
               width: calc(150px - 20px);
@@ -663,10 +663,10 @@ body>.page__footer {
             &.pap-bottom-roblox-avatar-used {
               background-color: #0000001a;
             }
-			
-			&.pap-bottom-no-content {
-			  display: none;
-			}
+            
+            &.pap-bottom-no-content {
+              display: none;
+            }
             
             .pap-author-links-list {
               flex-basis: 100%;
