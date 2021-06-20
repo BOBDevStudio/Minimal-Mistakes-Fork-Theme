@@ -23,7 +23,7 @@
       {%- endif -%}
     </div>
   </div>
-  <div class="pap-bottom">
+  <div class="pap-bottom {% if author.avatar.is_roblox_avatar == true %}pap-bottom-roblox-avatar-used{% endif %}">
     {%- if author.links -%}
     {%- assign LinkToBePlaced = false -%}
     {%- if author.links.link1 and author.links.link1.name and author.links.link1.icon -%}
