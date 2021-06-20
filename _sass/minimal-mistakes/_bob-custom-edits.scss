@@ -673,7 +673,7 @@ body>.page__footer {
               
               .pap-author-link {
                 max-width: calc(100% / 3 - 10px);
-                height: 100%;
+                height: calc(100% - 6px);
                 position: relative;
                 top: -2.5px;
                 padding-left: 5px;
