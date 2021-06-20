@@ -672,8 +672,13 @@ body>.page__footer {
               align-items: stretch;
               
               .pap-author-link {
+                max-width: calc(100% / 3 - 10px);
+                height: 100%;
+                position: relative;
+                top: -2.5px;
                 padding-left: 5px;
                 padding-right: 5px;
+                line-height: unset;
                 
                 a {
                   color: inherit;
