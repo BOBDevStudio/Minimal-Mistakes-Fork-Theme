@@ -659,6 +659,11 @@ body>.page__footer {
             flex-basis: 30px;
             width: 100%;
             height: 30px;
+            display: inline-flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: stretch;
             
             &.pap-bottom-roblox-avatar-used {
               background-color: #0000001a;
@@ -681,14 +686,13 @@ body>.page__footer {
               
               .pap-author-link {
                 max-width: calc(100% / 3 - 10px);
-                height: calc(100% - 6px);
-                position: relative;
-                top: -2.5px;
+                height: 100%;
                 padding-left: 5px;
                 padding-right: 5px;
                 overflow: hidden;
+                white-space: nowrap;
                 text-overflow: ellipsis;
-                line-height: 0;
+                line-height: 1.75;
                 
                 a {
                   color: inherit;
