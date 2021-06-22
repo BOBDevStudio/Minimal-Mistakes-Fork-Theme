@@ -3,77 +3,85 @@
 {%- assign author = site.data.authors[author] | default: author -%}
 
 {%- if author.name and author.avatar and author.avatar.path -%}
-<div class="page-author-panel">
-  <div class="pap-top">
-    {%- if author.avatar.link -%}
-    <a class="pap-author-image-link" href="{{ author.avatar.link | relative_url }}">
+<div class="page-author-panel-holder">
+  {%- if author.page_path -%}
+  <a class="pap-author-page-link" href="{{ author.page_path | relative_url }}">
+  {%- endif -%}
+  <div class="page-author-panel">
+    <div class="pap-top">
+      {%- if author.avatar.link -%}
+      <a class="pap-author-image-link" href="{{ author.avatar.link | relative_url }}">
+        <img class="pap-author-image {% if author.avatar.is_roblox_avatar == true %}pap-author-image-roblox-avatar{% endif %}" src="{{ author.avatar.path | relative_url }}" alt="">
+      </a>
+      {%- else -%}
       <img class="pap-author-image {% if author.avatar.is_roblox_avatar == true %}pap-author-image-roblox-avatar{% endif %}" src="{{ author.avatar.path | relative_url }}" alt="">
-    </a>
-    {%- else -%}
-    <img class="pap-author-image {% if author.avatar.is_roblox_avatar == true %}pap-author-image-roblox-avatar{% endif %}" src="{{ author.avatar.path | relative_url }}" alt="">
-    {%- endif -%}
-    <div class="pap-main-details-holder">
-      <div class="pap-author-name">
-        {{ author.name }}
-      </div>
-      {%- if author.info -%}
-      <div class="pap-author-info">
-        {{ author.info }}
-      </div>
       {%- endif -%}
+      <div class="pap-main-details-holder">
+        <div class="pap-author-name">
+          {{ author.name }}
+        </div>
+        {%- if author.info -%}
+        <div class="pap-author-info">
+          {{ author.info }}
+        </div>
+        {%- endif -%}
+      </div>
     </div>
-  </div>
-  {%- assign LinkToBePlaced = false -%}
-  {%- if author.links -%}
-  {%- if author.links.link1 and author.links.link1.name and author.links.link1.icon -%}
-  {%- assign LinkToBePlaced = true -%}
-  {%- endif -%}
-  {%- if author.links.link2 and author.links.link2.name and author.links.link2.icon -%}
-  {%- assign LinkToBePlaced = true -%}
-  {%- endif -%}
-  {%- if author.links.link3 and author.links.link3.name and author.links.link3.icon -%}
-  {%- assign LinkToBePlaced = true -%}
-  {%- endif -%}
-  {%- endif -%}
-  <div class="pap-bottom {% if LinkToBePlaced != true %}pap-bottom-no-content{% endif %} {% if author.avatar.is_roblox_avatar == true %}pap-bottom-roblox-avatar-used{% endif %}">
-    {%- if LinkToBePlaced == true -%}
-    <div class="pap-author-links-list">
-      {%- if author.links.link1 and author.links.link1.url and author.links.link1.name and author.links.link1.icon -%}
-      <div class="pap-author-link pap-author-link1">
-        {%- if author.links.link1 and author.links.link1.url -%}
-        <a href="{{ author.links.link1.url | relative_url }}">
+    {%- assign LinkToBePlaced = false -%}
+    {%- if author.links -%}
+    {%- if author.links.link1 and author.links.link1.name and author.links.link1.icon -%}
+    {%- assign LinkToBePlaced = true -%}
+    {%- endif -%}
+    {%- if author.links.link2 and author.links.link2.name and author.links.link2.icon -%}
+    {%- assign LinkToBePlaced = true -%}
+    {%- endif -%}
+    {%- if author.links.link3 and author.links.link3.name and author.links.link3.icon -%}
+    {%- assign LinkToBePlaced = true -%}
+    {%- endif -%}
+    {%- endif -%}
+    <div class="pap-bottom {% if LinkToBePlaced != true %}pap-bottom-no-content{% endif %} {% if author.avatar.is_roblox_avatar == true %}pap-bottom-roblox-avatar-used{% endif %}">
+      {%- if LinkToBePlaced == true -%}
+      <div class="pap-author-links-list">
+        {%- if author.links.link1 and author.links.link1.url and author.links.link1.name and author.links.link1.icon -%}
+        <div class="pap-author-link pap-author-link1">
+          {%- if author.links.link1 and author.links.link1.url -%}
+          <a href="{{ author.links.link1.url | relative_url }}">
+            <i class="{{ author.links.link1.icon }}"></i>{{ author.links.link1.name }}
+          </a>
+          {%- else -%}
           <i class="{{ author.links.link1.icon }}"></i>{{ author.links.link1.name }}
-        </a>
-        {%- else -%}
-        <i class="{{ author.links.link1.icon }}"></i>{{ author.links.link1.name }}
+          {%- endif -%}
+        </div>
         {%- endif -%}
-      </div>
-      {%- endif -%}
-      {%- if author.links.link2 and author.links.link2.url and author.links.link2.name and author.links.link2.icon -%}
-      <div class="pap-author-link pap-author-link2">
-        {%- if author.links.link2 and author.links.link2.url -%}
-        <a href="{{ author.links.link2.url | relative_url }}">
+        {%- if author.links.link2 and author.links.link2.url and author.links.link2.name and author.links.link2.icon -%}
+        <div class="pap-author-link pap-author-link2">
+          {%- if author.links.link2 and author.links.link2.url -%}
+          <a href="{{ author.links.link2.url | relative_url }}">
+            <i class="{{ author.links.link2.icon }}"></i>{{ author.links.link2.name }}
+          </a>
+          {%- else -%}
           <i class="{{ author.links.link2.icon }}"></i>{{ author.links.link2.name }}
-        </a>
-        {%- else -%}
-        <i class="{{ author.links.link2.icon }}"></i>{{ author.links.link2.name }}
+          {%- endif -%}
+        </div>
         {%- endif -%}
-      </div>
-      {%- endif -%}
-      {%- if author.links.link3 and author.links.link3.url and author.links.link3.name and author.links.link3.icon -%}
-      <div class="pap-author-link pap-author-link3">
-        {%- if author.links.link3 and author.links.link3.url -%}
-        <a href="{{ author.links.link3.url | relative_url }}">
+        {%- if author.links.link3 and author.links.link3.url and author.links.link3.name and author.links.link3.icon -%}
+        <div class="pap-author-link pap-author-link3">
+          {%- if author.links.link3 and author.links.link3.url -%}
+          <a href="{{ author.links.link3.url | relative_url }}">
+            <i class="{{ author.links.link3.icon }}"></i>{{ author.links.link3.name }}
+          </a>
+          {%- else -%}
           <i class="{{ author.links.link3.icon }}"></i>{{ author.links.link3.name }}
-        </a>
-        {%- else -%}
-        <i class="{{ author.links.link3.icon }}"></i>{{ author.links.link3.name }}
+          {%- endif -%}
+        </div>
         {%- endif -%}
       </div>
       {%- endif -%}
     </div>
-    {%- endif -%}
   </div>
+  {%- if author.page_path -%}
+  </a>
+  {%- endif -%}
 </div>
 {%- endif -%}
 {%- endif -%}

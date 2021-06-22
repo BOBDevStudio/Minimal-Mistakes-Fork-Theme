@@ -570,141 +570,158 @@ body>.page__footer {
           width: initial;
         }
         
-        .page-author-panel {
-          display: none;
+        .page-author-panel-holder {
           float: left;
           width: 100%;
           // height: 180px;
-          background-color: #e1e1e1;
-          border-radius: 10px;
-          overflow: hidden;
-          // padding-left: 10px;
-          // padding-right: 10px;
-          margin-top: 1.5em;
-          font-size: 22px;
           
-          @include highdesktop {
-            display: inline-flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: flex-start;
-            align-items: flex-start;
-          }
-          @include desktop {
-            display: inline-flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: flex-start;
-            align-items: flex-start;
+          a.pap-author-page-link {
+            color: inherit;
+            
+            &:hover {
+              color: inherit;
+            }
           }
           
-          .pap-top {
-            flex-basis: 150px;
-            height: 150px;
+          .page-author-panel {
+            display: none;
             width: 100%;
-            display: inline-flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            justify-content: flex-start;
-            align-items: flex-start;
+            // height: 100%;
+            background-color: #e1e1e1;
+            border-radius: 10px;
+            overflow: hidden;
+            // padding-left: 10px;
+            // padding-right: 10px;
+            margin-top: 1.5em;
+            font-size: 22px;
             
-            &.pap-top-no-content {
-              display: none;
-            }
-            
-            .pap-author-image {
-              height: calc(150px - 20px);
-              width: calc(150px - 20px);
-              background-color: #00000026;
-              border-radius: 50%;
-              margin-top: 10px;
-              margin-bottom: 10px;
-              margin-left: 10px;
-              margin-right: 10px;
-              
-              &.pap-author-image-roblox-avatar {
-                height: 150px;
-                width: 150px;
-                margin: unset;
-                background-color: initial;
-                border-radius: unset;
-              }
-            }
-            
-            .pap-main-details-holder {
+            @include highdesktop {
               display: inline-flex;
               flex-direction: column;
               flex-wrap: nowrap;
-              justify-content: center;
+              justify-content: flex-start;
+              align-items: flex-start;
+            }
+            @include desktop {
+              display: inline-flex;
+              flex-direction: column;
+              flex-wrap: nowrap;
+              justify-content: flex-start;
+              align-items: flex-start;
+            }
+            
+            .pap-top {
+              flex-basis: 150px;
+              height: 150px;
+              width: 100%;
+              display: inline-flex;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              justify-content: flex-start;
               align-items: flex-start;
               
-              .pap-author-name {
-                flex-basis: 40px;
-                width: 100%;
-                height: 40px;
-                font-weight: bold;
-                font-size: 30px;
+              &.pap-top-no-content {
+                display: none;
               }
               
-              .pap-author-info {
-                flex-basis: 110px;
-                width: 100%;
-                height: 110px;
-                font-size: 18px;
+              .pap-author-image {
+                height: calc(150px - 20px);
+                width: calc(150px - 20px);
+                background-color: #00000026;
+                border-radius: 50%;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                margin-left: 10px;
+                margin-right: 10px;
+                
+                &.pap-author-image-roblox-avatar {
+                  height: 150px;
+                  width: 150px;
+                  margin: unset;
+                  background-color: initial;
+                  border-radius: unset;
+                }
+              }
+              
+              .pap-main-details-holder {
+                display: inline-flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+                
+                .pap-author-name {
+                  flex-basis: 40px;
+                  width: 100%;
+                  height: 40px;
+                  font-weight: bold;
+                  font-size: 30px;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                }
+                
+                .pap-author-info {
+                  flex-basis: 110px;
+                  width: 100%;
+                  height: 110px;
+                  font-size: 18px;
+                  overflow: hidden;
+                }
               }
             }
-          }
-          
-          .pap-bottom {
-            flex-basis: 30px;
-            width: 100%;
-            height: 30px;
-            display: inline-flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            justify-content: center;
-            align-items: stretch;
             
-            &.pap-bottom-roblox-avatar-used {
-              background-color: #0000001a;
-            }
-            
-            &.pap-bottom-no-content {
-              display: none;
-            }
-            
-            .pap-author-links-list {
-              flex-basis: 100%;
+            .pap-bottom {
+              flex-basis: 30px;
               width: 100%;
-              height: 100%;
-              font-size: 18px;
+              height: 30px;
               display: inline-flex;
               flex-direction: row;
               flex-wrap: nowrap;
               justify-content: center;
               align-items: stretch;
               
-              .pap-author-link {
-                max-width: calc(100% / 3 - 10px);
+              &.pap-bottom-roblox-avatar-used {
+                background-color: #0000001a;
+              }
+              
+              &.pap-bottom-no-content {
+                display: none;
+              }
+              
+              .pap-author-links-list {
+                flex-basis: 100%;
+                width: 100%;
                 height: 100%;
-                padding-left: 5px;
-                padding-right: 5px;
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                line-height: 1.75;
+                font-size: 18px;
+                display: inline-flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: stretch;
                 
-                a {
-                  color: inherit;
-                  
-                  &:hover {
-                    color: #2f7d95;
-                  }
-                }
-                
-                .fa, .far, .fas, .fab {
+                .pap-author-link {
+                  max-width: calc(100% / 3 - 10px);
+                  height: 100%;
+                  padding-left: 5px;
                   padding-right: 5px;
-                  color: #3d4144;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  line-height: 1.75;
+                  
+                  a {
+                    color: inherit;
+                    
+                    &:hover {
+                      color: #2f7d95;
+                    }
+                  }
+                  
+                  .fa, .far, .fas, .fab {
+                    padding-right: 5px;
+                    color: #3d4144;
+                  }
                 }
               }
             }
