@@ -63,6 +63,48 @@ $screen-size-phonesmall: 321px; // Was 320px
 
 body {
   line-height: initial;
+  font-size: 22px;
+}
+
+h6 {
+  font-size: .7em;
+  margin: 0 0 1.3em 0;
+  font-weight: normal;
+  color: #3d4144bf;
+}
+
+img {
+  border-radius: 5px;
+}
+
+hr {
+  border-top: 3px solid #e6e6e6;
+}
+
+blockquote {
+  font-style: normal;
+}
+
+s.spoiler {
+  filter: blur(8px);
+  text-decoration: none;
+  
+  &:hover {
+    filter: none;
+  }
+}
+
+code {
+  color: #3d4144;
+  background-color: #efefef;
+}
+
+a {
+  text-decoration: none;
+  
+  code {
+    color: #087ea2;
+  }
 }
 
 .masthead {
@@ -236,6 +278,10 @@ body>.page__footer {
             color: #ffffff;
             background-color: #555555;
             // box-shadow: 0 0 5px #ffffff66;
+          }
+          
+          a code {
+            color: #7de0ff;
           }
           
           .psi-title {
@@ -883,44 +929,4 @@ div.bob-name-easter-egg {
   padding-right: initial;
 //  text-shadow: 0 4px #00000040;
 //  font-size: 1.25em;
-}
-
-h6 {
-  font-size: .7em;
-  margin: 0 0 1.3em 0;
-  font-weight: normal;
-  color: #3d4144bf;
-}
-
-img {
-  border-radius: 5px;
-}
-
-hr {
-  border-top: 3px solid #e6e6e6;
-}
-
-code {
-  background: #efefef;
-}
-
-blockquote {
-  font-style: normal;
-}
-
-s.spoiler {
-  filter: blur(8px);
-  text-decoration: none;
-  
-  &:hover {
-    filter: none;
-  }
-}
-
-a {
-  text-decoration: none;
-  
-  code {
-    color: #3d4144;
-  }
 }
