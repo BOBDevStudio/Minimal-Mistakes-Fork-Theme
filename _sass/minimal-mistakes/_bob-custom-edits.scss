@@ -598,6 +598,11 @@ body>.page__footer {
               }
             }
             
+            img.dock-image, img.dock-type-image {
+              margin: auto;
+              display: block;
+            }
+            
             img.dock-type-image {
               background-color: #ebebeb;
             }
