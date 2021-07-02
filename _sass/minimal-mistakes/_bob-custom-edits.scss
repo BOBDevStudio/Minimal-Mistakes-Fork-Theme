@@ -145,33 +145,35 @@ body>.page__footer {
       margin: unset !important;
       padding: unset !important;
       
-      @include highdesktop {
-        display: inline-flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: flex-start;
-      }
-      @include desktop {
-        display: inline-flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: flex-start;
-      }
-      @include highlaptop {
-        display: inline-flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: flex-start;
-      }
-      @include laptop {
-        display: inline-flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: flex-start;
+      &.full-page-off {
+        @include highdesktop {
+          display: inline-flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: center;
+          align-items: flex-start;
+        }
+        @include desktop {
+          display: inline-flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: center;
+          align-items: flex-start;
+        }
+        @include highlaptop {
+          display: inline-flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: center;
+          align-items: flex-start;
+        }
+        @include laptop {
+          display: inline-flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: center;
+          align-items: flex-start;
+        }
       }
       
       &>* {
@@ -196,9 +198,6 @@ body>.page__footer {
       }
       
       .sidebar {
-        flex-basis: calc(300px - 20px);
-        width: calc(300px - 20px);
-        height: auto;
         position: initial;
         max-height: unset;
         overflow-y: initial;
@@ -206,26 +205,6 @@ body>.page__footer {
         transition: initial;
         opacity: initial;
         float: initial;
-        display: none;
-        
-        @include highdesktop {
-          display: initial;
-          flex-basis: calc(350px - 20px);
-          width: calc(350px - 20px);
-        }
-        @include desktop {
-          display: initial;
-          flex-basis: calc(350px - 20px);
-          width: calc(350px - 20px);
-        }
-        @include highlaptop {
-          display: initial;
-          flex-basis: calc(350px - 20px);
-          width: calc(350px - 20px);
-        }
-        @include laptop {
-          display: initial;
-        }
         
         &>* {
           margin-top: 0;
@@ -234,30 +213,7 @@ body>.page__footer {
       }
       
       .page-subject-info {
-        flex-basis: calc(300px - 20px);
-        width: calc(300px - 20px);
-        height: auto;
         font-size: 22.5px;
-        display: none;
-        
-        @include highdesktop {
-          display: initial;
-          flex-basis: calc(350px - 20px);
-          width: calc(350px - 20px);
-        }
-        @include desktop {
-          display: initial;
-          flex-basis: calc(350px - 20px);
-          width: calc(350px - 20px);
-        }
-        @include highlaptop {
-          display: initial;
-          flex-basis: calc(350px - 20px);
-          width: calc(350px - 20px);
-        }
-        @include laptop {
-          display: initial;
-        }
         
         .psi-holder-box {
           color: #e1e1e1;
@@ -405,28 +361,8 @@ body>.page__footer {
       }
       
       .page {
-        flex-basis: 100%;
-        width: 100%;
-        height: auto;
         padding: unset;
         float: initial;
-        
-        @include highdesktop {
-          flex-basis: calc(100% - 350px - 350px - 20px - 20px);
-          width: calc(100% - 350px - 350px - 20px - 20px);
-        }
-        @include desktop {
-          flex-basis: calc(100% - 350px - 350px - 20px - 20px);
-          width: calc(100% - 350px - 350px - 20px - 20px);
-        }
-        @include highlaptop {
-          flex-basis: calc(100% - 350px - 350px - 20px - 20px);
-          width: calc(100% - 350px - 350px - 20px - 20px);
-        }
-        @include laptop {
-          flex-basis: calc(100% - 300px - 300px - 20px - 20px);
-          width: calc(100% - 300px - 300px - 20px - 20px);
-        }
         
         &>.archive {
           width: 100% !important;
@@ -783,6 +719,98 @@ body>.page__footer {
               }
             }
           }
+        }
+      }
+      
+      &.full-page-off {
+        .sidebar {
+          flex-basis: calc(300px - 20px);
+          width: calc(300px - 20px);
+          height: auto;
+          display: none;
+          
+          @include highdesktop {
+            display: initial;
+            flex-basis: calc(350px - 20px);
+            width: calc(350px - 20px);
+          }
+          @include desktop {
+            display: initial;
+            flex-basis: calc(350px - 20px);
+            width: calc(350px - 20px);
+          }
+          @include highlaptop {
+            display: initial;
+            flex-basis: calc(350px - 20px);
+            width: calc(350px - 20px);
+          }
+          @include laptop {
+            display: initial;
+          }
+        }
+        
+        .page-subject-info {
+          flex-basis: calc(300px - 20px);
+          width: calc(300px - 20px);
+          height: auto;
+          display: none;
+          
+          @include highdesktop {
+            display: initial;
+            flex-basis: calc(350px - 20px);
+            width: calc(350px - 20px);
+          }
+          @include desktop {
+            display: initial;
+            flex-basis: calc(350px - 20px);
+            width: calc(350px - 20px);
+          }
+          @include highlaptop {
+            display: initial;
+            flex-basis: calc(350px - 20px);
+            width: calc(350px - 20px);
+          }
+          @include laptop {
+            display: initial;
+          }
+        }
+        
+        .page {
+          flex-basis: 100%;
+          width: 100%;
+          height: auto;
+          
+          @include highdesktop {
+            flex-basis: calc(100% - 350px - 350px - 20px - 20px);
+            width: calc(100% - 350px - 350px - 20px - 20px);
+          }
+          @include desktop {
+            flex-basis: calc(100% - 350px - 350px - 20px - 20px);
+            width: calc(100% - 350px - 350px - 20px - 20px);
+          }
+          @include highlaptop {
+            flex-basis: calc(100% - 350px - 350px - 20px - 20px);
+            width: calc(100% - 350px - 350px - 20px - 20px);
+          }
+          @include laptop {
+            flex-basis: calc(100% - 300px - 300px - 20px - 20px);
+            width: calc(100% - 300px - 300px - 20px - 20px);
+          }
+        }
+      }
+      
+      &.full-page-on {
+        .sidebar {
+          display: none;
+        }
+        
+        .page-subject-info {
+          display: none;
+        }
+        
+        .page {
+          width: 100%;
+          height: auto;
         }
       }
     }
