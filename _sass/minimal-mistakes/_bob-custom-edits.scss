@@ -483,12 +483,6 @@ body>.page__footer {
               margin: unset;
             }
             
-            h1.update-log-section-title {
-              text-align: center;
-              padding-bottom: 0;
-              border-bottom: 0;
-            }
-            
             h1,
             h2,
             h3,
@@ -514,6 +508,16 @@ body>.page__footer {
               padding-bottom: 0.5em;
               border-bottom: 3px solid #e6e6e6;
               margin: 1em 0 0.5em 0;
+              
+              &.credits-title {
+                text-align: center;
+              }
+            }
+            
+            h1.update-log-section-title {
+              text-align: center;
+              padding-bottom: 0;
+              border-bottom: 0;
             }
             
             .feature__wrapper {
