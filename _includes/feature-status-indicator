@@ -1,4 +1,2 @@
 {%- capture type_class -%}feature-status-type-{{ include.type }}{%- endcapture -%}
-<div class="feature-status-indicator {% if include.type %}{{ type_class }}{% endif %}">
-  {{ include.status }}
-</div>
+<div class="feature-status-indicator {% if include.type %}{{ type_class }}{% endif %}">{{ include.status }}</div>
