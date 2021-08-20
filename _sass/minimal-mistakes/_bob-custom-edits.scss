@@ -375,9 +375,6 @@ body>.page__footer {
           margin-top: unset;
           
           header.page__title-header {
-            margin-bottom: .75em;
-            padding-bottom: 0.5em;
-            
             h1,
             h2,
             h3,
@@ -393,7 +390,7 @@ body>.page__footer {
               font-size: 2em;
               border-bottom: 3px solid #e6e6e6;
               padding-bottom: 10px;
-              margin-bottom: 10px !important;
+              margin-bottom: unset !important;
             }
 
             .page-categories-in {
