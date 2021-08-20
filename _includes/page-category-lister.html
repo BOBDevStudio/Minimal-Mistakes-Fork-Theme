@@ -5,14 +5,14 @@
 <div class="pages-in-page-category-lists-holder">
   {%- for Letter in Alphabet -%}
   <div class="pages-in-page-category-list">
+    <div class="pages-in-page-category-list-title">
+      {{ PageToList.Letter }}
+    </div>
     {%- for PageToList in PagesToList -%}
     {%- if PageToList.title -%}
     {%- assign PageTitleToLookAt = PageToList.title | remove_first: "Dock: " | remove_first: "Dock Type: " -%}
     {%- assign FirstCharacter = PageTitleToLookAt | truncate: 1, "" | upcase -%}
     {%- if FirstCharacter == Letter -%}
-    <div class="pages-in-page-category-list-title">
-      {{ PageToList.Letter }}
-    </div>
     <div class="page-in-page-category">
       <a href="{{ PageToList.url | relative_url | remove: ".html" }}">
         <div class="page-in-page-category-page-title">
