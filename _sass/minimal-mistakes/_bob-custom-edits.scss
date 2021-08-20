@@ -518,6 +518,7 @@ body>.page__footer {
                     
                     &::before {
                       content: "•";
+                      padding-right: 5px;
                     }
                   }
                 }
@@ -553,6 +554,10 @@ body>.page__footer {
             
             p.no-format {
               margin: unset;
+            }
+            
+            .center-text {
+              text-align: center;
             }
             
             table {
