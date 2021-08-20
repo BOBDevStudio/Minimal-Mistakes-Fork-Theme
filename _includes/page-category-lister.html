@@ -10,9 +10,9 @@
     {%- assign PageTitleToLookAt = PageToList.title | remove_first: "Dock: " | remove_first: "Dock Type: " -%}
     {%- assign FirstCharacter = PageTitleToLookAt | truncate: 1, "" | upcase -%}
     {%- if FirstCharacter == Letter -%}
-    <div class="page-in-category-page">
+    <div class="page-in-page-category">
       <a href="{{ PageToList.url | relative_url | remove: ".html" }}">
-        <div class="page-category-other-page-title">
+        <div class="page-in-page-category-page-title">
           {{ PageToList.title }}
         </div>
       </a>
