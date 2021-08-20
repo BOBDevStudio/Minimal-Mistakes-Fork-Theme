@@ -491,7 +491,6 @@ body>.page__footer {
               .pages-in-page-category-list {
                 width: 49%;
                 float: left;
-                margin-bottom: .25em;
                 
                 &:nth-child(2n+2) {
                   clear: none;
@@ -503,7 +502,14 @@ body>.page__footer {
                   margin-left: unset;
                 }
                 
+                .pages-in-page-category-list-title {
+                  font-size: 1.25em;
+                  font-weight: bold;
+                }
+                
                 .page-in-page-category {
+                  margin-bottom: .25em;
+                  
                   .page-in-page-category-page-title {
                     font-size: 1.25em;
                     font-weight: bold;
