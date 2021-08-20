@@ -1,17 +1,26 @@
 {%- if page.listed_page_category -%}
 {%- capture CategoryToList -%}{{ page.listed_page_category }}{%- endcapture -%}
 {%- assign PagesToList = site.pages | where_exp: "item", "item.page_categories[CategoryToList] == true" -%}
-<div class="page-category-page-list">
-  {%- for PageToList in PagesToList -%}
-  {%- if PageToList.title -%}
-  <div class="page-category-other-page">
-    <a href="{{ PageToList.url | relative_url | remove: ".html" }}">
-      <div class="page-category-other-page-title">
-        {{ PageToList.title }}
-      </div>
-    </a>
+{%- assign Alphabet = "A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z" | split: ", " -%}
+<div class="pages-in-page-category-lists-holder">
+  {%- for Letter in Alphabet -%}
+  <div class="pages-in-page-category-list">
+    {%- for PageToList in PagesToList -%}
+    {%- if PageToList.title -%}
+    {%- assign PageTitleToLookAt = PageToList.title | remove_first: "Dock: " | remove_first: "Dock Type: " -%}
+    {%- assign FirstCharacter = PageTitleToLookAt | truncate: 1, "" | upcase -%}
+    {%- if FirstCharacter == Letter -%}
+    <div class="page-in-category-page">
+      <a href="{{ PageToList.url | relative_url | remove: ".html" }}">
+        <div class="page-category-other-page-title">
+          {{ PageToList.title }}
+        </div>
+      </a>
+    </div>
+    {%- endif -%}
+    {%- endif -%}
+    {%- endfor -%}
   </div>
-  {%- endif -%}
   {%- endfor -%}
 </div>
 {%- endif -%}

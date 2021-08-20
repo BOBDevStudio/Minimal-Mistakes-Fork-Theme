@@ -487,16 +487,8 @@ body>.page__footer {
               }
             }
             
-            .page-category-page-list {
-              a {
-                color: inherit;
-                
-                &:hover {
-                  color: #2f7d95;
-                }
-              }
-              
-              .page-category-other-page {
+            .pages-in-page-category-lists-holder {
+              .pages-in-page-category-list {
                 width: 49%;
                 float: left;
                 margin-bottom: .25em;
@@ -511,12 +503,14 @@ body>.page__footer {
                   margin-left: unset;
                 }
                 
-                &-title {
-                  font-size: 1.25em;
-                  font-weight: bold;
-                  
-                  &::before {
-                    content: "•";
+                .page-in-category-page {
+                  &-title {
+                    font-size: 1.25em;
+                    font-weight: bold;
+                    
+                    &::before {
+                      content: "•";
+                    }
                   }
                 }
               }
