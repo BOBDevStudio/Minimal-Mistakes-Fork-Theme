@@ -375,6 +375,8 @@ body>.page__footer {
           margin-top: unset;
           
           header.page__title-header {
+            margin-bottom: 15px;
+            
             h1,
             h2,
             h3,
@@ -395,6 +397,7 @@ body>.page__footer {
 
             .page-categories-in {
               font-size: 15px;
+              margin-top: 5px;
               
               &::before {
                 content: "In:";
