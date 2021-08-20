@@ -4,8 +4,8 @@
 {%- assign Alphabet = "A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z" | split: ", " -%}
 <div class="pages-in-page-category-lists-holder">
   {%- for Letter in Alphabet -%}
-  <div class="pages-in-page-category-list">
-    <div class="pages-in-page-category-list-title" id="category-part-{{- Letter | downcase -}}">
+  <div class="pages-in-page-category-list" id="page-category-section-{{- Letter | downcase -}}">
+    <div class="pages-in-page-category-list-title">
       {{- Letter -}}
     </div>
     {%- for PageToList in PagesToList -%}
