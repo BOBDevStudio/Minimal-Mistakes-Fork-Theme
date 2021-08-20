@@ -5,8 +5,8 @@
 <div class="pages-in-page-category-lists-holder">
   {%- for Letter in Alphabet -%}
   <div class="pages-in-page-category-list">
-    <div class="pages-in-page-category-list-title">
-      {{ Letter }}
+    <div class="pages-in-page-category-list-title" id="category-part-{{- Letter | downcase -}}">
+      {{- Letter -}}
     </div>
     {%- for PageToList in PagesToList -%}
     {%- if PageToList.title -%}
@@ -16,7 +16,7 @@
     <div class="page-in-page-category">
       <a href="{{ PageToList.url | relative_url | remove: ".html" }}">
         <div class="page-in-page-category-page-title">
-          {{ PageToList.title }}
+          {{- PageToList.title -}}
         </div>
       </a>
     </div>

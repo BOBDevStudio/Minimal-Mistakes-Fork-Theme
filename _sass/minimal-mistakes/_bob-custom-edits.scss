@@ -505,13 +505,15 @@ body>.page__footer {
                 .pages-in-page-category-list-title {
                   font-size: 1.25em;
                   font-weight: bold;
+                  text-align: center;
+                  border-bottom: 3px solid #e6e6e6;
+                  margin-bottom: .25em;
                 }
                 
                 .page-in-page-category {
                   margin-bottom: .25em;
                   
                   .page-in-page-category-page-title {
-                    font-size: 1.25em;
                     font-weight: bold;
                     
                     &::before {
