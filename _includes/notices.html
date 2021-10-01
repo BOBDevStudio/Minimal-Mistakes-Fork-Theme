@@ -3,7 +3,7 @@
   {%- for NoticeData in page.notices -%}
     {%- if NoticeData.text -%}
     <div class="page-notice {% if NoticeData.type %}page-notice-{{ NoticeData.type }}{% endif %}">
-      {{- NoticeData.text -}}
+      {{- NoticeData.text | markdownify | remove: "<p>" | remove: "</p>" -}}
     </div>
 	{%- endif -%}
   {%- endfor -%}
