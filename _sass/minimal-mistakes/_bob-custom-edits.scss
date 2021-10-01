@@ -920,40 +920,45 @@ article.archive__item .archive__item-title .post-status-icon {
   border-radius: 10px;
   
   a {
-    color: #afafaf;
+    font-weight: 600;
+    text-decoration-line: underline;
   }
   
   &.page-notice- {
     &info {
       background-color: #c8ebfa;
       
-      a {
-        color: #008cc8;
-      }
+//      a {
+//        color: #008cc8;
+//      }
     }
     
     &success {
       background-color: #c8fad2;
       
-      a {
-        color: #00af23;
-      }
+//      a {
+//        color: #00af23;
+//      }
     }
     
     &warning {
       background-color: #fae6c8;
       
-      a {
-        color: #af6900;
-      }
+//      a {
+//        color: #af6900;
+//      }
     }
     
     &danger {
       background-color: #fad7d7;
       
-      a {
-        color: #af0000;
-      }
+//      a {
+//        color: #af0000;
+//      }
+    }
+    
+    &merge {
+      background-color: #c8c8ff;
     }
   }
 }
