@@ -1,0 +1,14 @@
+var ListsHolder = document.getElementById("page-category-page-list")
+if (ListsHolder) {
+  var Alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+  for (key in Alphabet) {
+    var Letter = Alphabet[key]
+    var ListOn = document.getElementById("page-category-page-list-" + Letter.toLowerCase())
+    if (ListOn) {
+      var PagesInList = ListOn.getElementsByClassName("page-in-page-category")
+      if (PagesInList && PagesInList.length < 1) {
+        ListOn.remove()
+      }
+    }
+  }
+}
