@@ -2,9 +2,9 @@
 {%- capture CategoryToList -%}{{ page.listed_page_category }}{%- endcapture -%}
 {%- assign PagesToList = site.pages | where_exp: "item", "item.page_categories[CategoryToList] == true" -%}
 {%- assign Alphabet = "A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z" | split: ", " -%}
-<div class="pages-in-page-category-lists-holder">
+<div class="pages-in-page-category-lists-holder" id="page-category-page-list">
   {%- for Letter in Alphabet -%}
-  <div class="pages-in-page-category-list" id="page-category-section-{{- Letter | downcase -}}">
+  <div class="pages-in-page-category-list" id="page-category-page-list-{{- Letter | downcase -}}">
     <div class="pages-in-page-category-list-title">
       {{- Letter -}}
     </div>
