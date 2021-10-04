@@ -26,8 +26,8 @@ layout: default
       
       <div class="page__inner-wrap">
         {%- unless page.header.overlay_color or page.header.overlay_image -%}
+          {%- if page.title -%}
           <header class="page__title-header">
-            {%- if page.title -%}
             {%- if page.is_post == true -%}
             <h1 id="page-title" {%- if page.uses_image_header == true -%}class="page__title"{%- else -%}class="page__title non-splash-page-title"{%- endif -%} itemprop="headline">
               {%- include post-status-icons.html post=page -%}{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}
@@ -38,9 +38,9 @@ layout: default
             </h1>
             {%- endif -%}
             {%- include page-categories-in-lister.html -%}
-            {%- endif -%}
             {%- include page__meta.html -%}
           </header>
+          {%- endif -%}
         {%- endunless -%}
         
         <section class="page__content" id="page-content" itemprop="text">
