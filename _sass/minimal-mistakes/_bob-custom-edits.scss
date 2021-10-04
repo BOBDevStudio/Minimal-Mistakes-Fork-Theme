@@ -364,6 +364,46 @@ body>.page__footer {
         padding: unset;
         float: initial;
         
+        .page__inner-wrap header.page__title-header, &>.archive header.page-title-header {
+          margin-bottom: 15px;
+          
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6 {
+            margin-top: unset !important;
+            margin-bottom: unset !important;
+          }
+          
+          .non-splash-page-title {
+            text-align: center;
+            font-size: 2em;
+            border-bottom: 3px solid #e6e6e6;
+            padding-bottom: 10px;
+            margin-bottom: unset !important;
+          }
+          
+          .page-categories-in {
+            font-size: 15px;
+            margin-top: 5px;
+            
+            &::before {
+              content: "In:";
+              font-weight: bold;
+            }
+            
+            .page-category-in {
+              padding-left: 5px;
+            }
+            
+            a.page-category-in:hover {
+              font-weight: bold;
+            }
+          }
+        }
+        
         &>.archive {
           width: 100% !important;
           padding: unset !important;
@@ -373,46 +413,6 @@ body>.page__footer {
         
         .page__inner-wrap {
           margin-top: unset;
-          
-          header.page__title-header {
-            margin-bottom: 15px;
-            
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-              margin-top: unset !important;
-              margin-bottom: unset !important;
-            }
-            
-            .non-splash-page-title {
-              text-align: center;
-              font-size: 2em;
-              border-bottom: 3px solid #e6e6e6;
-              padding-bottom: 10px;
-              margin-bottom: unset !important;
-            }
-
-            .page-categories-in {
-              font-size: 15px;
-              margin-top: 5px;
-              
-              &::before {
-                content: "In:";
-                font-weight: bold;
-              }
-              
-              .page-category-in {
-                padding-left: 5px;
-              }
-
-              a.page-category-in:hover {
-                font-weight: bold;
-              }
-            }
-          }
           
           .page__content {
             .page-notices {
