@@ -593,7 +593,8 @@ body>.page__footer {
 						}
 						
 						.archive__item-excerpt {
-							margin-top: 0;
+							margin: initial;
+							margin-bottom: 1.3em;
 							font-size: .75em;
 						}
 					}
