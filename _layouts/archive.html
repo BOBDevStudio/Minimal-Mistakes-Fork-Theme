@@ -45,7 +45,10 @@ layout: default
         
         <section class="page__content" id="page-content" itemprop="text">
           {%- include notices.html -%}
-          {{ content }}
+          
+          <section id="archive-main" class="archive-layout-main">
+            {{ content }}
+          </section>
         </section>
       </div>
       
