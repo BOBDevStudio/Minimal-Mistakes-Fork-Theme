@@ -583,6 +583,20 @@ body>.page__footer {
 							background-color: #c8c8c8;
 						}
 					}
+					
+					.archive-main [
+						.archive__item-title {
+							margin: initial;
+							margin-bottom: 0.25em;
+							padding: initial;
+							border: initial;
+						}
+						
+						.archive__item-excerpt {
+							margin-top: 0;
+							font-size: .75em;
+						}
+					}
 				}
 				
 				.page__related {
