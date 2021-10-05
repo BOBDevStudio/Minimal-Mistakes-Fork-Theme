@@ -1,0 +1,19 @@
+var TableValuesToEdit = document.getElementsByTagName("td")
+if (TableValuesToEdit) {
+  for (Key in TableValuesToEdit) {
+    if (Key != "length" && Key != "item" && Key != "namedItem") {
+      var TableValueToEdit = TableValuesToEdit[Key]
+	  if (TableValueToEdit) {
+        if (TableValueToEdit.innerText === "✔️" || TableValueToEdit.innerText.toLowerCase() === "true" || TableValueToEdit.innerText.toLowerCase() === "yes") {
+	      TableValueToEdit.style.backgroundColor = "#96ff96bf"
+		  TableValueToEdit.style.textAlign = "center"
+		  TableValueToEdit.innerText = "✔️"
+		} else if (TableValueToEdit.innerText === "❌" || TableValueToEdit.innerText.toLowerCase() === "false" || TableValueToEdit.innerText.toLowerCase() === "no") {
+	      TableValueToEdit.style.backgroundColor = "#ff9696bf"
+		  TableValueToEdit.style.textAlign = "center"
+		  TableValueToEdit.innerText = "❌"
+		}
+	  }
+    }
+  }
+}

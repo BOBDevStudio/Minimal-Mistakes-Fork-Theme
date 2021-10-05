@@ -7,3 +7,8 @@
 <script>
 {%- include BOB-Scripts/Page-Category-Unneeded-Lists-Remover-Script -%}
 </script>
+{%- if page.color_coded_table_boolean_enabled == true -%}
+<script>
+{%- include BOB-Scripts/Color-Coded-Table-Boolean-Script -%}
+</script>
+{%- endif -%}
