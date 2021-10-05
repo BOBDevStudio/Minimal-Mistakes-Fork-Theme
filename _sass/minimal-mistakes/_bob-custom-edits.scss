@@ -574,6 +574,11 @@ body>.page__footer {
 							font-size: 17.5px;
 						}
 						
+						td {
+							border-right: 1px solid #b6b6b633;
+							border-left: 1px solid #b6b6b633;
+						}
+						
 						table tbody tr td div.feature-status-indicator {
 							min-width: 150px;
 							padding-top: 5px;
