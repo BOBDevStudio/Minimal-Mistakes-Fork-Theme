@@ -29,11 +29,11 @@ layout: default
         {%- if page.title -%}
         <header class="page__title-header">
           {%- if page.is_post == true -%}
-          <h1 id="page-title" class="page__title {% if page.uses_image_header == true %}non-splash-page-title{% endif %}" itemprop="headline">
+          <h1 id="page-title" class="page__title {% if page.uses_image_header != true %}non-splash-page-title{% endif %}" itemprop="headline">
             {%- include post-status-icons.html post=page -%}{{- page.title | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines -}}
           </h1>
           {%- else -%}
-          <h1 id="page-title" class="page__title {% if page.uses_image_header == true %}{% else %}non-splash-page-title{% endif %}" itemprop="headline">
+          <h1 id="page-title" class="page__title {% if page.uses_image_header != true %}non-splash-page-title{% endif %}" itemprop="headline">
             {{- page.title | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines -}}
           </h1>
           {%- endif -%}
