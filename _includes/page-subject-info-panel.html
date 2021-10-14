@@ -1,8 +1,16 @@
+{%- capture DecorativeColor -%}{{- page.page_subject_info.color | default: page.page_subject_info_panel_defaults.color -}}{%- endcapture -%}
+{%- unless DecorativeColor -%}
+{% assign DecorativeColor = "#000000" %}
+{%- endunless -%}
+{%- capture DecorativeTextColor -%}{{- page.page_subject_info.titles_text_color | default: page.page_subject_info_panel_defaults.titles_text_color -}}{%- endcapture -%}
+{%- unless DecorativeTextColor -%}
+{% assign DecorativeTextColor = "#FFFFFF" %}
+{%- endunless -%}
 <div class="page-subject-info">
   {%- if page.page_subject_info -%}
   <div class="psi-holder-box">
     {%- if page.page_subject_info.title -%}
-    <div class="psi-title" style="background-color: {{ page.page_subject_info.color | page.page_subject_info_panel_defaults.color | "#000000" }}; color: {{ page.page_subject_info.titles_text_color | page.page_subject_info_panel_defaults.titles_text_color | "#FFFFFF" }};">
+    <div class="psi-title" style="background-color: {{ DecorativeColor }}; color: {{ DecorativeTextColor }}">
       {{ page.page_subject_info.title | strip_html | markdownify | remove: "<p>" | remove: "</p>" }}
     </div>
     {%- endif -%}
@@ -21,7 +29,7 @@
       {%- for page_subject_data_list in page.page_subject_info.data -%}
       <div class="psi-data-list">
         {%- if page_subject_data_list.title -%}
-        <div class="psi-data-list-title" style="background-color: {{ page.page_subject_info.color | page.page_subject_info_panel_defaults.color | "#000000" }}; color: {{ page.page_subject_info.titles_text_color | page.page_subject_info_panel_defaults.titles_text_color | "#FFFFFF" }};">
+        <div class="psi-data-list-title" style="background-color: {{ DecorativeColor }}; color: {{ DecorativeTextColor }}">
           {{ page_subject_data_list.title | strip_html | markdownify | remove: "<p>" | remove: "</p>" }}
         </div>
         {%- endif -%}
