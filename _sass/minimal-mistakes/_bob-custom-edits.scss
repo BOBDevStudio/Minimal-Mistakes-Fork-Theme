@@ -405,11 +405,21 @@ body>.page__footer {
 							}
 							
 							.page-category-in {
+								display: inline-block;
 								padding-left: 5px;
-							}
-
-							a.page-category-in:hover {
-								font-weight: bold;
+								
+								a&:hover {
+									font-weight: bold;
+								}
+								
+								&::after {
+									content: " +";
+									color: #3d4144;
+								}
+								
+								&:last-of-type::after {
+									content: none;
+								}
 							}
 						}
 					}
