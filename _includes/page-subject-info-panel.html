@@ -1,11 +1,11 @@
-{%- capture DecorativeColor -%}{{- page.page_subject_info.color | default: page.page_subject_info_panel_defaults.color -}}{%- endcapture -%}
+{%- capture DecorativeColor -%}{{- page.page_subject_info.color | default: site.page_subject_info_panel_defaults.color -}}{%- endcapture -%}
 {%- if DecorativeColor == "" -%}
 {% assign DecorativeColor = "#000000" %}
 {%- endif -%}
 {%- unless DecorativeColor -%}
 {% assign DecorativeColor = "#000000" %}
 {%- endunless -%}
-{%- capture DecorativeTextColor -%}{{- page.page_subject_info.titles_text_color | default: page.page_subject_info_panel_defaults.titles_text_color -}}{%- endcapture -%}
+{%- capture DecorativeTextColor -%}{{- page.page_subject_info.titles_text_color | default: site.page_subject_info_panel_defaults.titles_text_color -}}{%- endcapture -%}
 {%- if DecorativeTextColor == "" -%}
 {% assign DecorativeTextColor = "#FFFFFF" %}
 {%- endif -%}
