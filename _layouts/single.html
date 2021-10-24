@@ -27,13 +27,13 @@ layout: default
       <div class="page__inner-wrap">
         {%- unless page.header.overlay_color or page.header.overlay_image -%}
         {%- if page.title -%}
-        <header class="page__title-header">
+        <header class="page-header">
           {%- if page.is_post == true -%}
-          <h1 id="page-title" class="page__title {% if page.uses_image_header != true %}non-splash-page-title{% endif %}" itemprop="headline">
+          <h1 id="page-title" class="page-title {% if page.uses_image_header != true %}non-splash-page-title{% endif %}">
             {%- include post-status-icons.html post=page -%}{{- page.title | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines -}}
           </h1>
           {%- else -%}
-          <h1 id="page-title" class="page__title {% if page.uses_image_header != true %}non-splash-page-title{% endif %}" itemprop="headline">
+          <h1 id="page-title" class="page-title {% if page.uses_image_header != true %}non-splash-page-title{% endif %}">
             {{- page.title | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines -}}
           </h1>
           {%- endif -%}
@@ -56,6 +56,10 @@ layout: default
           {{ content }}
           {%- include page-category-lister.html -%}
         </section>
+        
+        <footer class="page-footer">
+            <!-- WIP -->
+        </footer>
         
         {%- include page-data-footer.html -%}
         

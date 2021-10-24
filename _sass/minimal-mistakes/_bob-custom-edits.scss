@@ -374,7 +374,7 @@ body>.page__footer {
 				.page__inner-wrap {
 					margin-top: unset;
 					
-					header.page__title-header {
+					header.page-header {
 						margin-bottom: 15px;
 						
 						h1,
@@ -387,6 +387,10 @@ body>.page__footer {
 							margin-bottom: unset !important;
 						}
 						
+						.page-title {
+							line-height: 1;
+						}
+						
 						.non-splash-page-title {
 							text-align: center;
 							font-size: 2em;
@@ -394,7 +398,7 @@ body>.page__footer {
 							padding-bottom: 10px;
 							margin-bottom: unset !important;
 						}
-
+						
 						.page-categories-in {
 							font-size: 15px;
 							margin-top: 5px;
@@ -423,6 +427,11 @@ body>.page__footer {
 								font-weight: bold;
 							}
 						}
+					}
+					
+					footer.page-footer {
+						display: none;
+						margin-top: 2em;
 					}
 					
 					.page__content {
