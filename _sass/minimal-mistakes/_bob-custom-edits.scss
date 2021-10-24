@@ -432,6 +432,16 @@ body>.page__footer {
 					footer.page-footer {
 						display: none;
 						margin-top: 2em;
+						
+						.page-footer-data-items-list {
+							.page-footer-data-item {
+								margin-top: 10px;
+								
+								&:nth-child(1) {
+									margin-top: unset;
+								}
+							}
+						|
 					}
 					
 					.page__content {

@@ -25,23 +25,7 @@ layout: default
       {%- if page.last_modified_at -%}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{%- endif -%}
       
       <div class="page__inner-wrap">
-        {%- unless page.header.overlay_color or page.header.overlay_image -%}
-        {%- if page.title -%}
-        <header class="page-header">
-          {%- if page.is_post == true -%}
-          <h1 id="page-title" class="page-title {% if page.uses_image_header != true %}non-splash-page-title{% endif %}">
-            {%- include post-status-icons.html post=page -%}{{- page.title | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines -}}
-          </h1>
-          {%- else -%}
-          <h1 id="page-title" class="page-title {% if page.uses_image_header != true %}non-splash-page-title{% endif %}">
-            {{- page.title | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines -}}
-          </h1>
-          {%- endif -%}
-          {%- include page-categories-in-lister.html -%}
-          {%- include page__meta.html -%}
-        </header>
-        {%- endif -%}
-        {%- endunless -%}
+        {%- include page-header.html -%}
         
         <section class="page__content" id="page-content" itemprop="text">
           {%- include notices.html -%}
@@ -52,9 +36,7 @@ layout: default
         </section>
       </div>
       
-      <footer class="page-footer">
-        <!-- WIP -->
-      </footer>
+      {%- include page-footer.html -%}
 	  
       {%- if site.remade_author_panel_enabled == true -%}
       {%- include page-author-panel.html -%}
