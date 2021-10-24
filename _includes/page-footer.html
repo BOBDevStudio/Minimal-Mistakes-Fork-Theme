@@ -12,11 +12,11 @@
   <div class="page-footer-data-items-list">
     {%- if page.mentioned_game_content and page.mentioned_game_content.last_status_check_start_text and page.mentioned_game_content.last_status_check -%}
     {%- if page.mentioned_game_content.last_status_check_explanation_page -%}
-	<div class="page-footer-data-item"><b><a href="{{ page.mentioned_game_content.last_status_check_explanation_page | relative_url }}"><i class="fas fa-question-circle"></i> Status of all listed game content last checked:</a></b> {{ page.mentioned_game_content.last_status_check_start_text }} {{ page.mentioned_game_content.last_status_check }}</div>
+    <div class="page-footer-data-item"><b><a href="{{ page.mentioned_game_content.last_status_check_explanation_page | relative_url }}"><i class="fas fa-question-circle"></i> Status of all listed game content last checked:</a></b> {{ page.mentioned_game_content.last_status_check_start_text }} {{ page.mentioned_game_content.last_status_check }}</div>
     {%- else -%}
-	<div class="page-footer-data-item"><b><i class="fas fa-question-circle"></i> Status of all listed game content last checked:</b> {{ page.mentioned_game_content.last_status_check_start_text }} {{ page.mentioned_game_content.last_status_check }}</div>
-	{%- endif -%}
-	{%- endif -%}
+    <div class="page-footer-data-item"><b><i class="fas fa-question-circle"></i> Status of all listed game content last checked:</b> {{ page.mentioned_game_content.last_status_check_start_text }} {{ page.mentioned_game_content.last_status_check }}</div>
+    {%- endif -%}
+    {%- endif -%}
   </div>
   {%- endif -%}
 </footer>
