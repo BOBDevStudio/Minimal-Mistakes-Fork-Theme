@@ -71,6 +71,10 @@
 {%- assign page_image = page_image | escape -%}
 {%- endif -%}
 
+{%- if page.page_subject_info and page.page_subject_info.main_image and page.page_subject_info.main_image.path -%}
+{%- assign page_image = page.page_subject_info.main_image.path | absolute_url | escape -%}
+{%- endif -%}
+
 {%- if page.outside_preview.image -%}
 {%- assign page_image = page.outside_preview.image | absolute_url | escape -%}
 {%- endif -%}
