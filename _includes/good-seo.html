@@ -55,8 +55,8 @@
 
 {%- comment -%} <!-- canonical_url --> {%- endcomment -%}
 
-{%- if page.canonical_url -%}
-{%- assign canonical_url = page.canonical_url -%}
+{%- if page.outside_preview.canonical_url -%}
+{%- assign canonical_url = page.outside_preview.canonical_url -%}
 {%- else -%}
 {%- assign canonical_url = page.url | replace: "index.html", "" | absolute_url -%}
 {%- endif -%}
@@ -69,6 +69,10 @@
 {%- if page.header.overlay_image or page.header.image or page.header.teaser -%}
 {%- assign page_image = page.header.overlay_image | page.header.image | page.header.teaser | absolute_url -%}
 {%- assign page_image = page_image | escape -%}
+{%- endif -%}
+
+{%- if page.outside_preview.default_image -%}
+{%- assign page_image = page.outside_preview.default_image | absolute_url | escape -%}
 {%- endif -%}
 
 {%- if page.page_subject_info and page.page_subject_info.main_image and page.page_subject_info.main_image.path -%}
@@ -108,7 +112,7 @@
 {%- endif -%}
 
 {%- if page.outside_preview.twitter.username -%}
-<meta name="twitter:site" content="{{ page.outside_preview.twitter.username | replace: "@", "" }}">
+<meta name="twitter:site" content="@{{ page.outside_preview.twitter.username | replace: "@", "" }}">
 {%- endif -%}
 
 {%- if page.outside_preview.twitter.image -%}
