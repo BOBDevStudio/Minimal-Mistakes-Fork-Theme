@@ -58,7 +58,7 @@
 {%- if page.outside_preview.canonical_url -%}
 {%- assign canonical_url = page.outside_preview.canonical_url -%}
 {%- else -%}
-{%- assign canonical_url = page.url | replace: "index.html", "" | absolute_url -%}
+{%- assign canonical_url = page.url | replace: "index.html", "/" | absolute_url -%}
 {%- endif -%}
 
 <meta property="og:url" content="{{ canonical_url }}">
