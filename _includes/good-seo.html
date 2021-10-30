@@ -64,18 +64,19 @@
 <meta property="og:url" content="{{ canonical_url }}">
 <link rel="canonical" href="{{ canonical_url }}">
 
-{%- comment -%} <!-- page_large_image + page_teaser_image --> {%- endcomment -%}
+{%- comment -%} <!-- page_image --> {%- endcomment -%}
 
-{%- assign page_large_image = page.header.og_image | default: page.header.overlay_image | default: page.header.image | absolute_url -%}
-{%- assign page_large_image = page_large_image | escape -%}
+{%- if page.header.overlay_image or page.header.image or page.header.teaser -%}
+{%- assign page_image = page.header.overlay_image | page.header.image | page.header.teaser | absolute_url -%}
+{%- assign page_image = page_image | escape -%}
+{%- endif -%}
 
-{%- assign page_teaser_image = page.header.teaser | default: site.og_image | absolute_url -%}
-{%- assign page_teaser_image = page_teaser_image | escape -%}
+{%- if page.outside_preview.image -%}
+{%- assign page_image = page.outside_preview.image | absolute_url | escape -%}
+{%- endif -%}
 
-{%- if page_large_image -%}
-<meta property="og:image" content="{{ page_large_image }}">
-{%- elsif page_teaser_image -%}
-<meta property="og:image" content="{{ page_teaser_image }}">
+{%- if page_image -%}
+<meta property="og:image" content="{{ page_image }}">
 {%- endif -%}
 
 {%- comment -%} <!-- author_twitter --> {%- endcomment -%}
@@ -88,22 +89,37 @@
 <meta name="twitter:creator" content="@{{ author_twitter }}">
 {%- endif -%}
 
-{%- comment -%} <!-- complex twitter stuff --> {%- endcomment -%}
+{%- comment -%} <!-- twitter stuff --> {%- endcomment -%}
 
-{%- if site.twitter.username -%}
-<meta name="twitter:site" content="@{{ site.twitter.username | replace: "@", "" }}">
-<meta name="twitter:title" content="{{ seo_title }}">
-<meta name="twitter:description" content="{{ seo_description }}">
-<meta name="twitter:url" content="{{ canonical_url }}">
-{%- if page_large_image -%}
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{{ page_large_image }}">
-{%- else -%}
-<meta name="twitter:card" content="summary">
-{%- if page_teaser_image -%}
-<meta name="twitter:image" content="{{ page_teaser_image }}">
+{%- if page.outside_preview.twitter -%}
+
+{%- assign card_type_to_use = "summary" -%}
+
+{%- if page.outside_preview.twitter.title -%}
+<meta name="twitter:title" content="{{ page.outside_preview.twitter.title }}">
 {%- endif -%}
+
+{%- if page.outside_preview.twitter.description -%}
+<meta name="twitter:description" content="{{ page.outside_preview.twitter.description }}">
 {%- endif -%}
+
+{%- if page.outside_preview.twitter.username -%}
+<meta name="twitter:site" content="{{ page.outside_preview.twitter.username | replace: "@", "" }}">
+{%- endif -%}
+
+{%- if page.outside_preview.twitter.image -%}
+<meta name="twitter:image" content="{{ page.outside_preview.twitter.image | absolute_url | escape }}">
+{%- unless page.outside_preview.twitter.card_type -%}
+{%- assign card_type_to_use = "summary" -%}
+{%- endunless -%}
+{%- endif -%}
+
+{%- if page.outside_preview.twitter.card_type -%}
+{%- assign card_type_to_use = page.outside_preview.twitter.card_type -%}
+{%- endif -%}
+
+<meta name="twitter:card" content="{{ card_type_to_use }}">
+
 {%- endif -%}
 
 {%- comment -%} <!-- end --> {%- endcomment -%}
