@@ -440,6 +440,15 @@ body {
 									&:nth-child(1) {
 										margin-top: unset;
 									}
+									
+									&-title {
+										display: inline;
+										font-weight: bold;
+									}
+									
+									&-text {
+										display: inline;
+									}
 								}
 							}
 						}
