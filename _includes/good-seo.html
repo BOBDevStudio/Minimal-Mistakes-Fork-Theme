@@ -16,7 +16,9 @@
 {%- assign seo_site_title = page.outside_preview.site_title -%}
 {%- endif -%}
 
+{%- if seo_site_title -%}
 <meta property="og:site_name" content="{{ seo_site_title }}">
+{%- endif -%}
 
 {%- comment -%} <!-- seo_title --> {%- endcomment -%}
 
@@ -73,6 +75,16 @@
 
 {%- if seo_mask_icon and seo_mask_icon_color -%}
 <link rel="mask-icon" sizes="any" href="{{ seo_mask_icon }}" color="{{ seo_mask_icon_color }}">
+{%- endif -%}
+
+{%- comment -%} <!-- seo_shortcut_icon --> {%- endcomment -%}
+
+{%- if site.logo -%}
+{%- assign seo_shortcut_icon = site.logo | absolute_url | escape -%}
+{%- endif -%}
+
+{%- if seo_shortcut_icon -%}
+<link rel="shortcut icon" href="{{ seo_shortcut_icon }}" type="image/x-icon">
 {%- endif -%}
 
 {%- comment -%} <!-- page_image --> {%- endcomment -%}
