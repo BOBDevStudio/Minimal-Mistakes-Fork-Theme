@@ -64,6 +64,17 @@
 <meta property="og:url" content="{{ canonical_url }}">
 <link rel="canonical" href="{{ canonical_url }}">
 
+{%- comment -%} <!-- seo_mask_icon + seo_mask_icon_color --> {%- endcomment -%}
+
+{%- if page.outside_preview.logo and page.outside_preview.logo.path and page.outside_preview.logo.color -%}
+{%- assign seo_mask_icon = page.outside_preview.logo.path | absolute_url | escape -%}
+{%- assign seo_mask_icon_color = page.outside_preview.logo.color -%}
+{%- endif -%}
+
+{%- if seo_mask_icon and seo_mask_icon_color -%}
+<link rel="mask-icon" sizes="any" href="{{ seo_mask_icon }}" color="{{ seo_mask_icon_color }}">
+{%- endif -%}
+
 {%- comment -%} <!-- page_image --> {%- endcomment -%}
 
 {%- if page.header.overlay_image or page.header.image or page.header.teaser -%}
