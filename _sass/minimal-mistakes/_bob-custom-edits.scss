@@ -430,24 +430,30 @@ body {
 						
 						footer.page-footer {
 							display: none;
-							margin-top: 2em;
+							margin-top: 3em;
 							font-size: 0.75em;
 							
-							.page-footer-data-items-list {
-								.page-footer-data-item {
-									margin-top: 10px;
+							.page-footer-data-items-list-holder {
+								.page-footer-data-items-list-title {
 									
-									&:nth-child(1) {
-										margin-top: unset;
-									}
-									
-									&-title {
-										display: inline;
-										font-weight: bold;
-									}
-									
-									&-text {
-										display: inline;
+								}
+								
+								.page-footer-data-items-list {
+									.page-footer-data-item {
+										margin-top: 10px;
+										
+										&:nth-child(1) {
+											margin-top: unset;
+										}
+										
+										&-title {
+											display: inline;
+											font-weight: bold;
+										}
+										
+										&-text {
+											display: inline;
+										}
 									}
 								}
 							}
