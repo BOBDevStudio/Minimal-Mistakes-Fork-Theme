@@ -932,7 +932,7 @@ body {
 		margin-left: 0;
 	}
 	
-	.page__title-header .page__title .post-status-icon, .archive__item .archive__item-title .post-status-icon {
+	header.page-header .page-title .post-status-icon, .archive__item .archive__item-title .post-status-icon {
 		margin-right: 10px;
 		
 		&.post-status-icon- {
@@ -951,11 +951,7 @@ body {
 		}
 	}
 	
-	header.page__title-header .page__title .post-status-icon {
-		margin-right: 10px;
-	}
-	
-	article.archive__item .archive__item-title .post-status-icon {
+	.archive__item .archive__item-title .post-status-icon {
 		margin-right: 5px;
 	}
 	
