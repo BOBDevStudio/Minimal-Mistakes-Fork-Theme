@@ -431,6 +431,7 @@ body {
 						footer.page-footer {
 							display: none;
 							margin-top: 2em;
+							font-size: 0.75em;
 							
 							.page-footer-data-items-list {
 								.page-footer-data-item {
@@ -444,6 +445,8 @@ body {
 						}
 						
 						.page__content {
+							float: unset;
+							
 							.page-notices {
 								margin: unset;
 							}
