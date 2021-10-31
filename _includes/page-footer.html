@@ -12,9 +12,9 @@
   <div class="page-footer-data-items-list">
     {%- if page.mentioned_game_content and page.mentioned_game_content.last_status_check -%}
     {%- if page.mentioned_game_content.last_status_check_explanation_page -%}
-    <div class="page-footer-data-item"><div class="page-footer-data-item-title"><a href="{{ page.mentioned_game_content.last_status_check_explanation_page | relative_url }}"><i class="fas fa-question-circle"></i> Status of all listed game content last checked:</a></div> <div class="page-footer-data-item-text>{{ page.mentioned_game_content.last_status_check | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines }}</div></div>
+    <div class="page-footer-data-item"><div class="page-footer-data-item-title"><a href="{{ page.mentioned_game_content.last_status_check_explanation_page | relative_url }}"><i class="fas fa-question-circle"></i> Status of all listed game content last checked:</a></div> <div class="page-footer-data-item-text">{{ page.mentioned_game_content.last_status_check | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines }}</div></div>
     {%- else -%}
-    <div class="page-footer-data-item"><div class="page-footer-data-item-title"><i class="fas fa-question-circle"></i> Status of all listed game content last checked:</div> <div class="page-footer-data-item-text>{{ page.mentioned_game_content.last_status_check | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines }}</div></div>
+    <div class="page-footer-data-item"><div class="page-footer-data-item-title"><i class="fas fa-question-circle"></i> Status of all listed game content last checked:</div> <div class="page-footer-data-item-text">{{ page.mentioned_game_content.last_status_check | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines }}</div></div>
     {%- endif -%}
     {%- endif -%}
   </div>
