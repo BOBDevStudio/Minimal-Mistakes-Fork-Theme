@@ -110,16 +110,6 @@
 <meta property="og:image" content="{{ page_image }}">
 {%- endif -%}
 
-{%- comment -%} <!-- author_twitter --> {%- endcomment -%}
-
-{%- if author.twitter -%}
-{%- assign author_twitter = author.twitter | replace: "@", "" -%}
-{%- endif -%}
-
-{%- if author_twitter -%}
-<meta name="twitter:creator" content="@{{ author_twitter }}">
-{%- endif -%}
-
 {%- comment -%} <!-- twitter stuff --> {%- endcomment -%}
 
 {%- if page.outside_preview.twitter -%}
@@ -134,8 +124,12 @@
 <meta name="twitter:description" content="{{ page.outside_preview.twitter.description }}">
 {%- endif -%}
 
-{%- if page.outside_preview.twitter.username -%}
-<meta name="twitter:site" content="@{{ page.outside_preview.twitter.username | replace: "@", "" }}">
+{%- if page.outside_preview.twitter.owner_username -%}
+<meta name="twitter:site" content="@{{ page.outside_preview.twitter.owner_username | replace: "@", "" }}">
+{%- endif -%}
+
+{%- if page.outside_preview.twitter.writer_username -%}
+<meta name="twitter:creator" content="@{{ page.outside_preview.twitter.writer_username | replace: "@", "" }}">
 {%- endif -%}
 
 {%- if page.outside_preview.twitter.image -%}
