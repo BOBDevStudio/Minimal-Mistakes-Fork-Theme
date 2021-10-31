@@ -10,7 +10,7 @@
 <footer class="page-footer">
   {%- if HasStuffToShowForDataItemsList == true -%}
   <div class="page-footer-data-items-list-holder">
-    <div class="page-footer-data-items-list-title">Page Info</div>
+    <div class="page-footer-data-items-list-title">{%- if page.is_post == true -%}Post Info{%- else -%}Page Info{%- endif -%}</div>
     <div class="page-footer-data-items-list">
       {%- if page.mentioned_game_content and page.mentioned_game_content.last_status_check -%}
       {%- if page.mentioned_game_content.last_status_check_explanation_page -%}
