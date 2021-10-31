@@ -6,6 +6,11 @@
 {%- assign HasStuffToShowForDataItemsList = true -%}
 {%- endif -%}
 
+{%- if page.show_footer == false -%}
+{%- assign HasStuffToShow = false -%}
+{%- assign HasStuffToShowForDataItemsList = false -%}
+{%- endif -%}
+
 {%- if HasStuffToShow == true -%}
 <footer class="page-footer">
   {%- if HasStuffToShowForDataItemsList == true -%}
