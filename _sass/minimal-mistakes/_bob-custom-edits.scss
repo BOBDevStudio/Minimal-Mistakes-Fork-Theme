@@ -434,15 +434,14 @@ body {
 							
 							.page-footer-data-items-list-holder {
 								.page-footer-data-items-list-title {
-									text-align: center;
 									font-size: 1.5em;
 									font-weight: bold;
-									padding-bottom: 0.1em;
-									border-bottom: 2px solid #e6e6e6;
 									margin-bottom: 10px;
 								}
 								
 								.page-footer-data-items-list {
+									color: #646769;
+									
 									.page-footer-data-item {
 										margin-top: 10px;
 										
@@ -457,6 +456,14 @@ body {
 										
 										&-text {
 											display: inline;
+										}
+										
+										&-list {
+											display: inline;
+											
+											&-item {
+												display: inline-block;
+											}
 										}
 									}
 								}

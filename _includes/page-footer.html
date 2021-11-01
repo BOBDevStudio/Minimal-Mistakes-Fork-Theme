@@ -49,7 +49,7 @@
       {%- if page.is_post -%}
       
       {%- if page.is_update_log == true and page.update_published_at -%}
-      <div class="page-footer-data-item"><div class="page-footer-data-item-title"><i class="fas fa-cloud-upload-alt"></i> Update published to the main build::</div> <div class="page-footer-data-item-text">{{ page.update_published_at | date: "%A, %B %e, %Y at %l:%M %p" }} ({%- if page.published_time_uses_pst == true and page.published_time_uses_pdt == false -%}PST{%- elsif page.published_time_uses_pst == false and page.published_time_uses_pdt == true -%}PDT{%- else -%}PST/PDT{%- endif -%})</div></div>
+      <div class="page-footer-data-item"><div class="page-footer-data-item-title"><i class="fas fa-cloud-upload-alt"></i> Update published to the main build:</div> <div class="page-footer-data-item-text">{{ page.update_published_at | date: "%A, %B %e, %Y at %l:%M %p" }} ({%- if page.published_time_uses_pst == true and page.published_time_uses_pdt == false -%}PST{%- elsif page.published_time_uses_pst == false and page.published_time_uses_pdt == true -%}PDT{%- else -%}PST/PDT{%- endif -%})</div></div>
       {%- endif -%}
       
       {%- if site.tag_archive.path and site.tag_archive.type and page.tags[0] -%}
