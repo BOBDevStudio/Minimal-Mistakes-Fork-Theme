@@ -41,11 +41,11 @@ layout: default
           {%- include page-category-lister.html -%}
         </section>
         
-        {%- if site.enabled_features.new_footer_enabled == true -%}
+        {%- if site.enabled_features.new_footer == true -%}
         {%- include page-footer.html -%}
         {%- endif -%}
         
-        {%- if site.enabled_features.old_footer_enabled == true -%}
+        {%- if site.enabled_features.old_footer == true -%}
         {%- include page-data-footer.html -%}
         {%- endif -%}
         
