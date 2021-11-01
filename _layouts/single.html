@@ -41,9 +41,13 @@ layout: default
           {%- include page-category-lister.html -%}
         </section>
         
+        {%- if site.enabled_features.new_footer_enabled == true -%}
         {%- include page-footer.html -%}
+        {%- endif -%}
         
+        {%- if site.enabled_features.old_footer_enabled == true -%}
         {%- include page-data-footer.html -%}
+        {%- endif -%}
         
         {%- if page.share -%}{%- include social-share.html -%}{%- endif -%}
         
