@@ -461,8 +461,25 @@ body {
 										&-list {
 											display: inline;
 											
-											&-item {
+											&>a.page-footer-data-item-list-item {
 												display: inline-block;
+												padding-top: 5px;
+												padding-bottom: 5px;
+												padding-right: 10px;
+												padding-left: 10px;
+												border: 1px solid #b6b6b6;
+												border-radius: 4px;
+												margin-left: 5px;
+												color: inherit;
+												
+												:first-child {
+													margin-left: unset;
+												}
+												
+												&:hover {
+													color: #2f7d95;
+													border-color: #2f7d95;
+												}
 											}
 										}
 									}
