@@ -34,6 +34,10 @@ layout: default
             {{ content }}
           </section>
         </section>
+        
+        {%- if site.enabled_features.new_footer_enabled == true -%}
+        {%- include page-footer.html -%}
+        {%- endif -%}
       </div>
       
       {%- include page-footer.html -%}
