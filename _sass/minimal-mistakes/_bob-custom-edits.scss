@@ -461,7 +461,7 @@ body {
 										&-list {
 											display: inline;
 											
-											&>a.page-footer-data-item-list-item {
+											&-item {
 												display: inline-block;
 												padding-top: 5px;
 												padding-bottom: 5px;
@@ -472,7 +472,7 @@ body {
 												margin-left: 5px;
 												color: inherit;
 												
-												:first-child {
+												&:first-child {
 													margin-left: unset;
 												}
 												
