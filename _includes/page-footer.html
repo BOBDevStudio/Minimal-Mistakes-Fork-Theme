@@ -6,6 +6,35 @@
 {%- assign HasStuffToShowForDataItemsList = true -%}
 {%- endif -%}
 
+{%- if page.is_post -%}
+
+{%- if page.is_update_log == true and page.update_published_at -%}
+{%- assign HasStuffToShow = true -%}
+{%- assign HasStuffToShowForDataItemsList = true -%}
+{%- endif -%}
+
+{%- if site.tag_archive.type and page.tags[0] -%}
+{%- assign HasStuffToShow = true -%}
+{%- assign HasStuffToShowForDataItemsList = true -%}
+{%- endif -%}
+
+{%- if site.category_archive.type and page.categories[0] -%}
+{%- assign HasStuffToShow = true -%}
+{%- assign HasStuffToShowForDataItemsList = true -%}
+{%- endif -%}
+
+{%- if page.post_created_at -%}
+{%- assign HasStuffToShow = true -%}
+{%- assign HasStuffToShowForDataItemsList = true -%}
+{%- endif -%}
+
+{%- if page.post_updated_at -%}
+{%- assign HasStuffToShow = true -%}
+{%- assign HasStuffToShowForDataItemsList = true -%}
+{%- endif -%}
+
+{%- endif -%}
+
 {%- if page.show_footer == false -%}
 {%- assign HasStuffToShow = false -%}
 {%- assign HasStuffToShowForDataItemsList = false -%}
@@ -17,6 +46,30 @@
   <div class="page-footer-data-items-list-holder">
     <div class="page-footer-data-items-list-title">{%- if page.is_post == true -%}Post Info{%- else -%}Page Info{%- endif -%}</div>
     <div class="page-footer-data-items-list">
+      {%- if page.is_post -%}
+      
+      {%- if page.is_update_log == true and page.update_published_at -%}
+      <div class="page-footer-data-item"><div class="page-footer-data-item-title"><i class="fas fa-cloud-upload-alt"></i> Update published to the main build::</div> <div class="page-footer-data-item-text">{{ page.update_published_at | date: "%A, %B %e, %Y at %l:%M %p" }} ({%- if page.published_time_uses_pst == true and page.published_time_uses_pdt == false -%}PST{%- elsif page.published_time_uses_pst == false and page.published_time_uses_pdt == true -%}PDT{%- else -%}PST/PDT{%- endif -%})</div></div>
+      {%- endif -%}
+      
+      {%- if site.tag_archive.type and page.tags[0] -%}
+      <div class="page-footer-data-item"><div class="page-footer-data-item-title"><i class="fas fa-fw fa-tags"></i> Tags:</div> <div class="page-footer-data-item-text"></div>(List Coming Soon)</div>
+      {%- endif -%}
+      
+      {%- if site.category_archive.type and page.categories[0] -%}
+      <div class="page-footer-data-item"><div class="page-footer-data-item-title"><i class="fas fa-fw fa-folder-open"></i> Categories:</div> <div class="page-footer-data-item-text"></div>(List Coming Soon)</div>
+      {%- endif -%}
+      
+      {%- if page.post_created_at -%}
+      <div class="page-footer-data-item"><div class="page-footer-data-item-title"><i class="fas fa-fw fa-calendar-alt"></i> Post created:</div> <div class="page-footer-data-item-text">{{ page.post_created_at | date: "%A, %B %e, %Y" }}</div></div>
+      {%- endif -%}
+      
+      {%- if page.post_updated_at -%}
+      <div class="page-footer-data-item"><div class="page-footer-data-item-title"><i class="fas fa-fw fa-calendar-alt"></i> Post updated:</div> <div class="page-footer-data-item-text">{{ page.post_updated_at | date: "%A, %B %e, %Y" }}</div></div>
+      {%- endif -%}
+      
+      {%- endif -%}
+      
       {%- if page.mentioned_game_content and page.mentioned_game_content.last_status_check -%}
       {%- if page.mentioned_game_content.last_status_check_explanation_page -%}
       <div class="page-footer-data-item"><div class="page-footer-data-item-title"><a href="{{ page.mentioned_game_content.last_status_check_explanation_page | relative_url }}"><i class="fas fa-question-circle"></i> Status of all listed game content last checked:</a></div> <div class="page-footer-data-item-text">{{ page.mentioned_game_content.last_status_check | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines }}</div></div>
