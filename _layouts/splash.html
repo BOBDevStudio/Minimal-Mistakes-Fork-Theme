@@ -17,7 +17,7 @@ layout: default
       {%- if page.last_modified_at -%}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{%- endif -%}
 
       <section class="page__content" id="page-content" itemprop="text">
-        {%- include notices.html -%}
+        {%- include page-notices.html -%}
         {{ content }}
       </section>
     </article>

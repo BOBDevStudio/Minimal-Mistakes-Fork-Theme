@@ -1,0 +1,67 @@
+{%- comment -%} | <!-- Old --> {%- endcomment -%}
+{%- if page.notices or page.global_notices or page.used_set_notices and page.set_notices -%}
+<div class="page-notices">
+  {%- if page.used_set_notices and page.set_notices -%}
+  {%- for PreSetNoticeData in page.set_notices -%}
+  {%- if PreSetNoticeData.name and PreSetNoticeData.text -%}
+  {%- if page.used_set_notices[PreSetNoticeData.name] == true -%}
+  <div class="page-notice {% if PreSetNoticeData.type %}page-notice-{{ PreSetNoticeData.type }}{% endif %}">
+    {{- PreSetNoticeData.text | markdownify | remove: "<p>" | remove: "</p>" -}}
+  </div>
+  {%- endif -%}
+  {%- endif -%}
+  {%- endfor -%}
+  {%- endif -%}
+  
+  {%- if page.global_notices -%}
+  {%- for NoticeData in page.global_notices -%}
+  {%- if NoticeData.text -%}
+  <div class="page-notice {% if NoticeData.type %}page-notice-{{ NoticeData.type }}{% endif %}">
+    {{- NoticeData.text | markdownify | remove: "<p>" | remove: "</p>" -}}
+  </div>
+  {%- endif -%}
+  {%- endfor -%}
+  {%- endif -%}
+  
+  {%- if page.notices -%}
+  {%- for NoticeData in page.notices -%}
+  {%- if NoticeData.text -%}
+  <div class="page-notice {% if NoticeData.type %}page-notice-{{ NoticeData.type }}{% endif %}">
+    {{- NoticeData.text | markdownify | remove: "<p>" | remove: "</p>" -}}
+  </div>
+  {%- endif -%}
+  {%- endfor -%}
+  {%- endif -%}
+</div>
+{%- endif -%}
+
+{%- comment -%} | <!-- New --> {%- endcomment -%}
+{%- if page.notices or page.global_notices or page.used_set_notices and page.set_notices -%}
+<div class="page-notices wip">
+  {%- if page.used_set_notices and page.set_notices -%}
+  {%- for PreSetNoticeData in page.set_notices -%}
+  {%- if PreSetNoticeData.name and PreSetNoticeData.title and PreSetNoticeData.text -%}
+  {%- if page.used_set_notices[PreSetNoticeData.name] == true -%}
+  {%- include page-notice type=PreSetNoticeData.type title=PreSetNoticeData.title text=PreSetNoticeData.text -%}
+  {%- endif -%}
+  {%- endif -%}
+  {%- endfor -%}
+  {%- endif -%}
+  
+  {%- if page.global_notices -%}
+  {%- for NoticeData in page.global_notices -%}
+  {%- if NoticeData.title and NoticeData.text -%}
+  {%- include page-notice type=NoticeData.type title=NoticeData.title text=NoticeData.text -%}
+  {%- endif -%}
+  {%- endfor -%}
+  {%- endif -%}
+  
+  {%- if page.notices -%}
+  {%- for NoticeData in page.notices -%}
+  {%- if NoticeData.title and NoticeData.text -%}
+  {%- include page-notice type=NoticeData.type title=NoticeData.title text=NoticeData.text -%}
+  {%- endif -%}
+  {%- endfor -%}
+  {%- endif -%}
+</div>
+{%- endif -%}
