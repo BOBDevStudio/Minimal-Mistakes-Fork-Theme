@@ -1,8 +1,8 @@
 <div class="page-notice {% if include.type %}page-notice-{{ include.type }}{% endif %}">
   <div class="page-notice-title">
-    {{- include.title | markdownify | remove: "<p>" | remove: "</p>" -}}
+    <i class="fas fa-exclamation-circle"></i> {{ include.title | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines }}
   </div>
   <div class="page-notice-text">
-    {{- include.text | markdownify | remove: "<p>" | remove: "</p>" -}}
+    {{ include.text | markdownify | remove: "<p>" | remove: "</p>" }}
   </div>
 </div>
