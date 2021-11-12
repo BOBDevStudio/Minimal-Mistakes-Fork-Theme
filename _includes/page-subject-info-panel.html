@@ -17,17 +17,17 @@
   <div class="psi-holder-box">
     {%- if page.page_subject_info.title -%}
     <div class="psi-title" style="background-color: {{ DecorativeColor }}; color: {{ DecorativeTextColor }}">
-      {{ page.page_subject_info.title | markdownify | strip_html | strip_newlines }}
+      {{- page.page_subject_info.title | markdownify | strip_html | strip_newlines -}}
     </div>
     {%- endif -%}
     {%- if page.page_subject_info.main_image.path -%}
     <div class="psi-main-image-holder">
-      <img class="psi-main-image" src="{{ page.page_subject_info.main_image.path | relative_url }}" alt="{%- if page.page_subject_info.main_image.alt -%}{{ page.page_subject_info.main_image.alt | markdownify | strip_html | strip_newlines }}{%- endif -%}">
+      <img class="psi-main-image" src="{{ page.page_subject_info.main_image.path | relative_url }}" alt="{%- if page.page_subject_info.main_image.alt -%}{{- page.page_subject_info.main_image.alt | markdownify | strip_html | strip_newlines -}}{%- endif -%}">
     </div>
     {%- endif -%}
     {%- if page.page_subject_info.description -%}
     <div class="psi-description">
-      {{ page.page_subject_info.description | markdownify | strip_html | strip_newlines }}
+      {{- page.page_subject_info.description | markdownify | strip_html | strip_newlines -}}
     </div>
     {%- endif -%}
     {%- if page.page_subject_info.data -%}
@@ -36,7 +36,7 @@
       <div class="psi-data-list">
         {%- if page_subject_data_list.title -%}
         <div class="psi-data-list-title" style="background-color: {{ DecorativeColor }}; color: {{ DecorativeTextColor }}">
-          {{ page_subject_data_list.title | markdownify | strip_html | strip_newlines }}
+          {{- page_subject_data_list.title | markdownify | strip_html | strip_newlines -}}
         </div>
         {%- endif -%}
         {%- if page_subject_data_list.data -%}
@@ -46,16 +46,16 @@
           {%- if page_subject_data.value -%}
           <div class="psi-data-list-data">
             <div class="psi-data-list-data-key">
-              {{ page_subject_data.key | markdownify | strip_html | strip_newlines }}
+              {{- page_subject_data.key | markdownify | strip_html | strip_newlines -}}
             </div>
             <div class="psi-data-list-data-value">
-              {{ page_subject_data.value | markdownify | strip_html | strip_newlines }}
+              {{- page_subject_data.value | markdownify | strip_html | strip_newlines -}}
             </div>
           </div>
           {%- elsif page_subject_data.color_image -%}
           <div class="psi-data-list-data">
             <div class="psi-data-list-data-key">
-              {{ page_subject_data.key | markdownify | strip_html | strip_newlines }}
+              {{- page_subject_data.key | markdownify | strip_html | strip_newlines -}}
             </div>
             <div class="psi-data-list-data-value">
               {%- include color-image fordockentrancetypecolor=page_subject_data.color_image.dock_entrance_type_color name=page_subject_data.color_image.name alt="" -%}

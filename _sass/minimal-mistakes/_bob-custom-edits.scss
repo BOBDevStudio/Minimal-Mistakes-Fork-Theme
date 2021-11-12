@@ -316,29 +316,15 @@ body {
 											flex-basis: 35%;
 											padding-left: unset;
 											padding-right: .25em;
+											font-weight: 700;
 											
 											* {
 												padding-left: unset;
 												padding-right: unset;
 											}
 											
-											p {
-												width: auto;
-												height: auto;
-												padding-left: unset;
-												padding-right: unset;
-												margin-top: unset;
-												margin-bottom: unset;
-												display: inline-block;
-												margin-block-start: unset;
-												margin-block-end: unset;
-												margin-inline-start: unset;
-												margin-inline-end: unset;
-												font-weight: 700;
-												
-												&:last-child::after {
-													content: ":";
-												}
+											&::after {
+												content: ":";
 											}
 										}
 										
