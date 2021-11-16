@@ -77,6 +77,10 @@
 <link rel="mask-icon" sizes="any" href="{{ seo_mask_icon }}" color="{{ seo_mask_icon_color }}">
 {%- endif -%}
 
+{%- if seo_mask_icon_color -%}
+<meta name="theme-color" content="{{ seo_mask_icon_color }}">
+{%- endif -%}
+
 {%- comment -%} <!-- seo_shortcut_icon --> {%- endcomment -%}
 
 {%- if site.logo -%}
