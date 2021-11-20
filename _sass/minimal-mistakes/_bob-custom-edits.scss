@@ -610,9 +610,10 @@ body {
 								}
 							}
 							
-							img.dock-image, img.dock-entrance-type-image {
-								margin: auto;
+							&>p>img {
 								display: block;
+								margin-right: auto;
+								margin-left: auto;
 								background-color: #ebebeb;
 							}
 							
