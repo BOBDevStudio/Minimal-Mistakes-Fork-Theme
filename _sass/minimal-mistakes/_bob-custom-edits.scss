@@ -202,23 +202,12 @@ body {
 					}
 				}
 				
-				.sidebar, .sidebar-left {
+				.sidebar-right, .sidebar-left {
 					font-size: 15px;
 				}
 				
-				.sidebar {
-					position: initial;
-					max-height: unset;
-					overflow-y: initial;
-					top: calc(2em + 66px);
-					transition: initial;
-					opacity: initial;
-					float: initial;
+				.sidebar-right {
 					
-					&>* {
-						margin-top: 0;
-						margin-bottom: 0;
-					}
 				}
 				
 				.sidebar-left {
@@ -744,7 +733,7 @@ body {
 				}
 				
 				&.full-page-off {
-					.sidebar {
+					.sidebar-right {
 						flex-basis: calc(300px - 20px);
 						width: calc(300px - 20px);
 						height: auto;
@@ -821,7 +810,7 @@ body {
 				}
 				
 				&.full-page-on {
-					.sidebar {
+					.sidebar-right {
 						display: none;
 					}
 					
