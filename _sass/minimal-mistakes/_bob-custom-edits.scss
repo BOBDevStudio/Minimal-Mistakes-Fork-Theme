@@ -432,6 +432,7 @@ body {
 							
 							.toc-item {
 								color: #3d4144;
+								padding-left: 15px;
 								
 								&>.toc-item-text {
 									font-size: 15px;
@@ -439,19 +440,9 @@ body {
 								}
 								
 								&-layer-1 {
-									padding-left: calc(15px * 0);
-									
 									&>.toc-item-text {
 										font-weight: bold;
 									}
-								}
-								
-								&-layer-2 {
-									padding-left: calc(15px * 1);
-								}
-								
-								&-layer-3 {
-									padding-left: calc(15px * 2);
 								}
 								
 								&>a {
@@ -461,6 +452,10 @@ body {
 										color: #2f7d95;
 									}
 								}
+							}
+							
+							&>.toc-item {
+								padding-left: unset;
 							}
 						}
 					}
