@@ -209,6 +209,7 @@ body {
 				.sidebar-right {
 					.page-navigation {
 						overflow: hidden;
+						width: 100%;
 						
 						.page-navigation-item {
 							display: block;
@@ -216,32 +217,29 @@ body {
 							color: #3d4144;
 							margin-bottom: 7px;
 							
-							&.page-navigation-item-page-link:hover {
-								color: #2f7d95;
-							}
-							
-							&::before {
-								content: ">";
-							}
-						}
-						
-						.page-navigation-items-layer {
-							display: block;
-							width: 100%;
-							
-							&.page-navigation-items-layer-1 {
-								&>.page-navigation-item {
-									font-weight: bold;
+							&>.page-navigation-item-title {
+								display: block;
+								
+								* {
+									display: inline;
+								}
+								
+								&-arrow {
+									display: inline-block;
+								}
+								
+								a:hover {
+									color: #2f7d95;
 								}
 							}
 							
-							&.page-navigation-items-layer-2 {
-								
+							&>.page-navigation-sub-items-holder {
+								padding-left: 15px;
 							}
-							
-							&.page-navigation-items-layer-3 {
-								
-							}
+						}
+						
+						&>.page-navigation-item {
+							font-weight: bold;
 						}
 					}
 				}
