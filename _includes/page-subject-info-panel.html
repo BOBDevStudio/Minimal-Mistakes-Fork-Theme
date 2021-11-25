@@ -1,37 +1,37 @@
-{%- capture DecorativeColor -%}{{- page.page_subject_info.color | default: site.page_subject_info_panel_defaults.color -}}{%- endcapture -%}
+{%- capture DecorativeColor -%}{{- page.sidebars.page_subject_info.color | default: site.page_subject_info_panel_defaults.color -}}{%- endcapture -%}
 {%- if DecorativeColor == "" -%}
 {% assign DecorativeColor = "#000000" %}
 {%- endif -%}
 {%- unless DecorativeColor -%}
 {% assign DecorativeColor = "#000000" %}
 {%- endunless -%}
-{%- capture DecorativeTextColor -%}{{- page.page_subject_info.titles_text_color | default: site.page_subject_info_panel_defaults.titles_text_color -}}{%- endcapture -%}
+{%- capture DecorativeTextColor -%}{{- page.sidebars.page_subject_info.titles_text_color | default: site.page_subject_info_panel_defaults.titles_text_color -}}{%- endcapture -%}
 {%- if DecorativeTextColor == "" -%}
 {% assign DecorativeTextColor = "#FFFFFF" %}
 {%- endif -%}
 {%- unless DecorativeTextColor -%}
 {% assign DecorativeTextColor = "#FFFFFF" %}
 {%- endunless -%}
-{%- if page.page_subject_info -%}
+{%- if page.sidebars and page.sidebars.page_subject_info -%}
 <div class="page-subject-info">
-  {%- if page.page_subject_info.title -%}
+  {%- if page.sidebars.page_subject_info.title -%}
   <div class="psi-title" style="background-color: {{ DecorativeColor }}; color: {{ DecorativeTextColor }}">
-    {{- page.page_subject_info.title | markdownify | strip_html | strip_newlines -}}
+    {{- page.sidebars.page_subject_info.title | markdownify | strip_html | strip_newlines -}}
   </div>
   {%- endif -%}
-  {%- if page.page_subject_info.main_image.path -%}
+  {%- if page.sidebars.page_subject_info.main_image.path -%}
   <div class="psi-main-image-holder">
-    <img class="psi-main-image" src="{{ page.page_subject_info.main_image.path | relative_url }}" alt="{%- if page.page_subject_info.main_image.alt -%}{{- page.page_subject_info.main_image.alt | markdownify | strip_html | strip_newlines -}}{%- endif -%}">
+    <img class="psi-main-image" src="{{ page.sidebars.page_subject_info.main_image.path | relative_url }}" alt="{%- if page.sidebars.page_subject_info.main_image.alt -%}{{- page.sidebars.page_subject_info.main_image.alt | markdownify | strip_html | strip_newlines -}}{%- endif -%}">
   </div>
   {%- endif -%}
-  {%- if page.page_subject_info.description -%}
+  {%- if page.sidebars.page_subject_info.description -%}
   <div class="psi-description">
-    {{- page.page_subject_info.description | strip_html | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines -}}
+    {{- page.sidebars.page_subject_info.description | strip_html | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines -}}
   </div>
   {%- endif -%}
-  {%- if page.page_subject_info.data -%}
+  {%- if page.sidebars.page_subject_info.data -%}
   <div class="psi-data-lists">
-    {%- for page_subject_data_list in page.page_subject_info.data -%}
+    {%- for page_subject_data_list in page.sidebars.page_subject_info.data -%}
     <div class="psi-data-list">
       {%- if page_subject_data_list.title -%}
       <div class="psi-data-list-title" style="background-color: {{ DecorativeColor }}; color: {{ DecorativeTextColor }}">
