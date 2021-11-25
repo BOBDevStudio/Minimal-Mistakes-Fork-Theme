@@ -1,0 +1,42 @@
+{%- if page.sidebars and page.sidebars.page_navigation_panel and page.sidebars.page_navigation_panel.list_name_used and site.data.navigation[page.sidebars.page_navigation_panel.list_name_used] -%}
+{%- assign NavigationList = site.data.navigation[page.sidebars.page_navigation_panel.list_name_used] -%}
+<div class="page-navigation">
+  <div class="page-navigation-items-layer-1">
+    {%- for Item1 in NavigationList -%}
+    {%- if Item1.title -%}
+    {%- if Item1.url -%}
+    <a class="page-navigation-item page-navigation-item-page-link" href="{{ Item1.url | relative_url }}">{{- Item1.title | markdownify | strip_html | strip_newlines -}}</a>
+    {%- else -%}
+    <div class="page-navigation-item page-navigation-item-no-page-link">{{- Item1.title | markdownify | strip_html | strip_newlines -}}</div>
+    {%- endif -%}
+    {%- if Item1.children -%}
+    <div class="page-navigation-items-layer-2">
+      {%- for Item2 in Item1.children -%}
+      {%- if Item2.title -%}
+      {%- if Item2.url -%}
+      <a class="page-navigation-item page-navigation-item-page-link" href="{{ Item2.url | relative_url }}">{{- Item2.title | markdownify | strip_html | strip_newlines -}}</a>
+      {%- else -%}
+      <div class="page-navigation-item page-navigation-item-no-page-link">{{- Item2.title | markdownify | strip_html | strip_newlines -}}</div>
+      {%- endif -%}
+      {%- if Item2.children -%}
+      <div class="page-navigation-items-layer-3">
+        {%- for Item3 in Item2.children -%}
+        {%- if Item3.title -%}
+        {%- if Item3.url -%}
+        <a class="page-navigation-item page-navigation-item-page-link" href="{{ Item3.url | relative_url }}">{{- Item3.title | markdownify | strip_html | strip_newlines -}}</a>
+        {%- else -%}
+        <div class="page-navigation-item page-navigation-item-no-page-link">{{- Item3.title | markdownify | strip_html | strip_newlines -}}</div>
+        {%- endif -%}
+        {%- endif -%}
+        {%- endfor -%}
+      </div>
+      {%- endif -%}
+      {%- endif -%}
+      {%- endfor -%}
+    </div>
+    {%- endif -%}
+    {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+{%- endif -%}
