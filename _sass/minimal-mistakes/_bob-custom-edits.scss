@@ -214,22 +214,27 @@ body {
 						.page-navigation-item {
 							display: block;
 							width: 100%;
-							color: #3d4144;
 							margin-bottom: 7px;
 							
 							&>.page-navigation-item-title {
 								display: block;
+								color: #3d4144;
 								
-								* {
+								&>* {
 									display: inline;
 								}
 								
-								&-arrow {
+								*>.page-navigation-item-title-arrow {
 									display: inline-block;
+									margin-right: 3px;
 								}
 								
-								a:hover {
-									color: #2f7d95;
+								&>a {
+									color: inherit;
+									
+									&:hover {
+										color: #2f7d95;
+									}
 								}
 							}
 							
@@ -240,6 +245,10 @@ body {
 						
 						&>.page-navigation-item {
 							font-weight: bold;
+							
+							&>* {
+								font-weight: unset;
+							}
 						}
 					}
 				}
