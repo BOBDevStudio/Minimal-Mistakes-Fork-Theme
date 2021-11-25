@@ -208,19 +208,17 @@ body {
 				
 				.sidebar-right {
 					.page-navigation {
-						overflow: hidden;
 						width: 100%;
+						overflow: hidden;
 						
 						.page-navigation-item {
 							display: block;
 							width: 100%;
 							
-							&>.page-navigation-item-title, &>.page-navigation-sub-items-holder {
-								margin-bottom: 7px;
-							}
-							
 							&>.page-navigation-item-title {
 								display: block;
+								width: 100%;
+								margin-bottom: 10px;
 								color: #3d4144;
 								
 								&>* {
@@ -228,7 +226,7 @@ body {
 								}
 								
 								&>.page-navigation-item-title-arrow {
-									display: inline-block;
+									display: none; // Was inline-block
 									margin-right: 3px;
 								}
 								
