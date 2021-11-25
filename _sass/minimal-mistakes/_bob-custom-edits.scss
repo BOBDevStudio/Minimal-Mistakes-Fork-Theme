@@ -243,12 +243,8 @@ body {
 							}
 						}
 						
-						&>.page-navigation-item {
+						&>.page-navigation-item>.page-navigation-item-title {
 							font-weight: bold;
-							
-							&>* {
-								font-weight: unset;
-							}
 						}
 					}
 				}
