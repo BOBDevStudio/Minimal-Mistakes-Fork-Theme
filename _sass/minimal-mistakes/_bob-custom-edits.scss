@@ -214,7 +214,10 @@ body {
 						.page-navigation-item {
 							display: block;
 							width: 100%;
-							margin-bottom: 7px;
+							
+							&>.page-navigation-item-title, &>.page-navigation-sub-items-holder {
+								margin-bottom: 7px;
+							}
 							
 							&>.page-navigation-item-title {
 								display: block;
