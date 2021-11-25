@@ -207,7 +207,13 @@ body {
 				}
 				
 				.sidebar-right {
-					
+					.page-navigation {
+						overflow: hidden;
+						
+						.page-navigation-item {
+							display: block;
+						}
+					}
 				}
 				
 				.sidebar-left {
