@@ -48,7 +48,7 @@
             {{- page_subject_data.key | markdownify | strip_html | strip_newlines -}}
           </div>
           <div class="psi-data-list-data-value">
-            {{- page_subject_data.value | strip_html | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines | replace: "{", "Test<br><br>Test" -}}
+            {{- page_subject_data.value | strip_html | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines | replace: "{NewLine}", "<br>" -}}
           </div>
         </div>
         {%- elsif page_subject_data.color_image -%}
