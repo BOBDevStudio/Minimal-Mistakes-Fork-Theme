@@ -18,11 +18,11 @@
       </div>
     {%- endif -%}
 	{%- if post.title != "Random Buildings And Parts Update Logs" -%}
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title toc-excluded" itemprop="headline">
       <a href="{{ post.url | relative_url }}" rel="permalink">{%- include post-status-icons.html post=post -%}{{ title }}</a>
     </h2>
 	{%- else -%}
-	<h2 class="archive__item-title no_toc" itemprop="headline">
+	<h2 class="archive__item-title toc-excluded" itemprop="headline">
       <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
     </h2>
 	{%- endif -%}
