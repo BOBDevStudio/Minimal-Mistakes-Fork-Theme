@@ -204,6 +204,14 @@ body {
 				
 				.sidebar-left, .sidebar-right {
 					font-size: 15px;
+					
+					&>* {
+						margin-top: 15px;
+						
+						&:first-child {
+							margin-top: unset;
+						}
+					}
 				}
 				
 				.sidebar-left {
@@ -381,6 +389,26 @@ body {
 										}
 									}
 								}
+							}
+						}
+					}
+					
+					.table-of-contents {
+						
+						
+						.toc-main {
+							ul {
+								list-style-type: initial;
+								margin-block-start: initial;
+								margin-block-end: initial;
+								margin-inline-start: initial;
+								margin-inline-end: initial;
+								padding-inline-start: initial;
+							}
+							
+							li {
+								margin-bottom: initial;
+								display: block;
 							}
 						}
 					}
