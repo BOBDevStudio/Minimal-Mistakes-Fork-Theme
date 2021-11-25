@@ -248,6 +248,10 @@ body {
 						
 						&>.page-navigation-item>.page-navigation-item-title {
 							font-weight: bold;
+							
+							&>.page-navigation-item-title-arrow {
+								display: none;
+							}
 						}
 					}
 				}
