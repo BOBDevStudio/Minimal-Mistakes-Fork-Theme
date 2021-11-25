@@ -16,7 +16,7 @@ layout: default
 
 <div class="main-holder">
   <main id="main" class="main main-position-misbehaves {% if page.show_sidebars != false %}full-page-off{% elsif page.show_sidebars == false %}full-page-on{% endif %}" role="main">
-    {%- include page-sidebar-right.html -%}
+    {%- include page-sidebar-left.html -%}
     
     <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
       {%- if page.title -%}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{%- endif -%}
@@ -45,6 +45,6 @@ layout: default
       {%- endif -%}
     </article>
     
-    {%- include page-sidebar-left.html -%}
+    {%- include page-sidebar-right.html -%}
   </main>
 </div>

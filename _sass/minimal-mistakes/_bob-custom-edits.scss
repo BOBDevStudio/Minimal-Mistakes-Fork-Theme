@@ -202,11 +202,11 @@ body {
 					}
 				}
 				
-				.sidebar-right, .sidebar-left {
+				.sidebar-left, .sidebar-right {
 					font-size: 15px;
 				}
 				
-				.sidebar-right {
+				.sidebar-left {
 					.page-navigation {
 						width: 100%;
 						overflow: hidden;
@@ -254,7 +254,7 @@ body {
 					}
 				}
 				
-				.sidebar-left {
+				.sidebar-right {
 					.page-subject-info {
 						background-color: #d7d7d7;
 						box-shadow: 0 0 15px #00000033;
@@ -777,7 +777,7 @@ body {
 				}
 				
 				&.full-page-off {
-					.sidebar-right {
+					.sidebar-left {
 						flex-basis: calc(300px - 20px);
 						width: calc(300px - 20px);
 						height: auto;
@@ -803,7 +803,7 @@ body {
 						}
 					}
 					
-					.sidebar-left {
+					.sidebar-right {
 						flex-basis: calc(300px - 20px);
 						width: calc(300px - 20px);
 						height: auto;
@@ -854,11 +854,11 @@ body {
 				}
 				
 				&.full-page-on {
-					.sidebar-right {
+					.sidebar-left {
 						display: none;
 					}
 					
-					.sidebar-left {
+					.sidebar-right {
 						display: none;
 					}
 					

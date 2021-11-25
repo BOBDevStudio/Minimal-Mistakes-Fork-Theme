@@ -1,0 +1,5 @@
+{%- if page.sidebars and page.sidebars.table_of_contents and page.sidebars.table_of_contents.enabled == true -%}
+<div class="table-of-contents">
+  {%- include toc.html sanitize=true html=content h_min=1 h_max=3 class="toc-main" skip_no_ids=true -%}
+</div>
+{%- endif -%}
