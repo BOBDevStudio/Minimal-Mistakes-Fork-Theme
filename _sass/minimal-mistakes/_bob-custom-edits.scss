@@ -394,22 +394,22 @@ body {
 					}
 					
 					.table-of-contents {
+						ul {
+							list-style-type: initial;
+							margin-block-start: initial;
+							margin-block-end: initial;
+							margin-inline-start: initial;
+							margin-inline-end: initial;
+							padding-inline-start: initial;
+						}
 						
+						li {
+							margin-bottom: initial;
+							display: block;
+						}
 						
 						.toc-main {
-							ul {
-								list-style-type: initial;
-								margin-block-start: initial;
-								margin-block-end: initial;
-								margin-inline-start: initial;
-								margin-inline-end: initial;
-								padding-inline-start: initial;
-							}
 							
-							li {
-								margin-bottom: initial;
-								display: block;
-							}
 						}
 					}
 				}
