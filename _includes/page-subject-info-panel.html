@@ -27,7 +27,7 @@
     {%- endif -%}
     {%- if page.page_subject_info.description -%}
     <div class="psi-description">
-      {{- page.page_subject_info.description | markdownify | strip_html | strip_newlines -}}
+      {{- page.page_subject_info.description | strip_html | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines -}}
     </div>
     {%- endif -%}
     {%- if page.page_subject_info.data -%}
@@ -49,7 +49,7 @@
               {{- page_subject_data.key | markdownify | strip_html | strip_newlines -}}
             </div>
             <div class="psi-data-list-data-value">
-              {{- page_subject_data.value | markdownify | strip_html | strip_newlines -}}
+              {{- page_subject_data.value | strip_html | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines -}}
             </div>
           </div>
           {%- elsif page_subject_data.color_image -%}
