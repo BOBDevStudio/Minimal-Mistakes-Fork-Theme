@@ -433,25 +433,25 @@ body {
 							.toc-item {
 								color: #3d4144;
 								
+								&>.toc-item-text {
+									font-size: 15px;
+									font-weight: normal;
+								}
+								
 								&-layer-1 {
+									padding-left: calc(15px * 0);
+									
 									&>.toc-item-text {
-										font-size: 15px;
-										font-weight: normal;
+										font-weight: bold;
 									}
 								}
 								
 								&-layer-2 {
-									&>.toc-item-text {
-										font-size: 15px;
-										font-weight: normal;
-									}
+									padding-left: calc(15px * 1);
 								}
 								
 								&-layer-3 {
-									&>.toc-item-text {
-										font-size: 15px;
-										font-weight: normal;
-									}
+									padding-left: calc(15px * 2);
 								}
 								
 								&>a {
@@ -615,7 +615,7 @@ body {
 							
 							h1,
 							h2 {
-								padding-bottom: 0.5em;
+								padding-bottom: 0.3em;
 								border-bottom: 3px solid #e6e6e6;
 								margin-bottom: 0.5em;
 							}
