@@ -212,6 +212,36 @@ body {
 						
 						.page-navigation-item {
 							display: block;
+							width: 100%;
+							color: #3d4144;
+							margin-bottom: 7px;
+							
+							&.page-navigation-item-page-link:hover {
+								color: #2f7d95;
+							}
+							
+							&::before {
+								content: ">";
+							}
+						}
+						
+						.page-navigation-items-layer {
+							display: block;
+							width: 100%;
+							
+							&.page-navigation-items-layer-1 {
+								&>.page-navigation-item {
+									font-weight: bold;
+								}
+							}
+							
+							&.page-navigation-items-layer-2 {
+								
+							}
+							
+							&.page-navigation-items-layer-3 {
+								
+							}
 						}
 					}
 				}
