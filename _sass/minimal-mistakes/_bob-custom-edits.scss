@@ -468,6 +468,10 @@ body {
 					.page__inner-wrap {
 						margin-top: unset;
 						
+						code {
+							font-size: 0.8em;
+						}
+						
 						header.page-header {
 							margin-bottom: 15px;
 							
@@ -625,10 +629,6 @@ body {
 								overflow: visible;
 							}
 							
-							code {
-								font-size: 0.8em;
-							}
-							
 							.feature__wrapper {
 								.feature__item .archive__item .archive__item-body {
 									.archive__item-title {
@@ -666,16 +666,17 @@ body {
 							
 							.pages-in-page-category-lists-holder {
 								.pages-in-page-category-list {
+									display: inline-block;
 									width: 49%;
-									float: left;
+									// float: left;
 									
 									&:nth-child(2n+2) {
-										clear: none;
+										// clear: none;
 										margin-left: 2%;
 									}
 									
 									&:nth-child(2n+1) {
-										clear: both;
+										// clear: both;
 										margin-left: unset;
 									}
 									
