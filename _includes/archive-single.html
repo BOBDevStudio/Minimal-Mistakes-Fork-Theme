@@ -17,7 +17,7 @@
         <img src="{{ teaser | relative_url }}" alt="">
       </div>
     {%- endif -%}
-	{%- if post.title != "Random Buildings And Parts Update Logs" -%}
+	{%- if page.page_reference_id != site.update_logs_list_page -%}
     <h2 class="archive__item-title toc-excluded" itemprop="headline">
       <a href="{{ post.url | relative_url }}" rel="permalink">{%- include post-status-icons.html post=post -%}{{ title }}</a>
     </h2>

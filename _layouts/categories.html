@@ -11,7 +11,7 @@ layout: archive
   {%- endif -%}
 {%- endfor -%}
 
-{%- if page.only_list_update_logs != true -%}
+{%- if page.page_reference_id != site.update_logs_list_page -%}
 <ul class="taxonomy__index">
   {%- for i in (1..categories_max) reversed -%}
     {%- for category in site.categories -%}
@@ -37,14 +37,14 @@ layout: archive
 
 {%- assign entries_layout = page.entries_layout | default: 'list' -%}
 
-{%- if page.only_list_update_logs == true -%}
+{%- if page.page_reference_id == site.update_logs_list_page -%}
 {%- for i in (1..2) -%}
 {%- for category in site.categories -%}
 {%- if i == 1 and category[0] == "Update Logs" -%}
 <section class="taxonomy__section">
   <div class="entries-{{ entries_layout }}">
     {%- for post in category.last -%}
-      {%- if post.title != "Random Buildings And Parts Update Logs" -%}
+      {%- if post.page_reference_id != site.update_logs_list_page -%}
       {%- include archive-single.html type=entries_layout -%}
       {%- endif -%}
     {%- endfor -%}
@@ -65,7 +65,7 @@ layout: archive
 {%- endif -%}
 {%- endfor -%}
 {%- endfor -%}
-{%- elsif page.only_list_update_logs != true -%}
+{%- elsif page.page_reference_id != site.update_logs_list_page -%}
 {%- for i in (1..categories_max) reversed -%}
   {%- for category in site.categories -%}
     {%- if category[1].size == i -%}
@@ -74,11 +74,11 @@ layout: archive
         <h2 class="archive__subtitle">{{ category[0] }}</h2>
         <div class="entries-{{ entries_layout }}">
           {%- for post in category.last -%}
-            {%- if site.redirect_update_logs_category == true and category[0] == "Update Logs" and post.title == "Random Buildings And Parts Update Logs" -%}
+            {%- if site.redirect_update_logs_category == true and category[0] == "Update Logs" and page.page_reference_id == site.update_logs_list_page -%}
             {%- include archive-single.html type=entries_layout -%}
             {%- elsif site.redirect_update_logs_category == true and category[0] != "Update Logs" -%}
             {%- include archive-single.html type=entries_layout -%}
-            {%- elsif site.redirect_update_logs_category != true and post.title != "Random Buildings And Parts Update Logs" -%}
+            {%- elsif site.redirect_update_logs_category != true and page.page_reference_id != site.update_logs_list_page -%}
             {%- include archive-single.html type=entries_layout -%}
             {%- endif -%}
           {%- endfor -%}
