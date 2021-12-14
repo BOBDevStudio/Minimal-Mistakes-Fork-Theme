@@ -21,7 +21,7 @@
   {%- endif -%}
   {%- if page.sidebars.page_subject_info.main_image.path -%}
   <div class="psi-main-image-holder">
-    <img class="psi-main-image" src="{{ page.sidebars.page_subject_info.main_image.path | relative_url }}" alt="{%- if page.sidebars.page_subject_info.main_image.alt -%}{{- page.sidebars.page_subject_info.main_image.alt | markdownify | strip_html | strip_newlines -}}{%- endif -%}">
+    <img class="psi-main-image {% if page.sidebars.page_subject_info.main_image.full_width == false %}psi-main-image-full-width-off{% endif %}" src="{{ page.sidebars.page_subject_info.main_image.path | relative_url }}" alt="{%- if page.sidebars.page_subject_info.main_image.alt -%}{{- page.sidebars.page_subject_info.main_image.alt | markdownify | strip_html | strip_newlines -}}{%- endif -%}">
   </div>
   {%- endif -%}
   {%- if page.sidebars.page_subject_info.description -%}
