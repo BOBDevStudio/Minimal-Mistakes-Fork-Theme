@@ -16,7 +16,7 @@ author_profile: false
 {%- endif -%}
 
 <div class="main-holder">
-  <main id="main" class="main {% if page.show_sidebars != false %}full-page-off{% elsif page.show_sidebars == false %}full-page-on{% endif %}" role="main">
+  <main id="main" class="main {% if site.enabled_features.sidebar_structuring_use_float == true %}page-structuring-float{% else %}page-structuring-flex{% endif %} {% if page.show_sidebars == false %}full-page-on{% else %}full-page-off{% endif %}" role="main">
     {%- include sidebar.html -%}
 
     <div class="archive">

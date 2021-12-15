@@ -9,7 +9,7 @@ layout: default
 {%- endif -%}
 
 <div class="main-holder">
-  <main id="main" class="main {% if page.show_sidebars != false %}full-page-off{% elsif page.show_sidebars == false %}full-page-on{% endif %}" role="main">
+  <main id="main" class="main {% if site.enabled_features.sidebar_structuring_use_float == true %}page-structuring-float{% else %}page-structuring-flex{% endif %} {% if page.show_sidebars == false %}full-page-on{% else %}full-page-off{% endif %}" role="main">
     <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
       {%- if page.title -%}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{%- endif -%}
       {%- if page.excerpt -%}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{%- endif -%}

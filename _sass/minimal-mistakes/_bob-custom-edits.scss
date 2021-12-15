@@ -144,40 +144,221 @@ body {
 				max-width: unset !important;
 				margin: unset !important;
 				padding: unset !important;
+				clear: unset !important;
 				
 				&.main-position-misbehaves {
 					position: relative;
 					top: -25px;
 				}
 				
-				&.full-page-off {
-					@include highdesktop {
-						display: inline-flex;
-						flex-direction: row;
-						flex-wrap: nowrap;
-						justify-content: center;
-						align-items: flex-start;
+				&.page-structuring-float {
+					&.full-page-off {
+						.sidebar-left, .sidebar-right, .page {
+							float: left;
+							height: auto;
+						}
+						
+						.sidebar-left, .sidebar-right {
+							display: none;
+						}
+						
+						.sidebar-left {
+							width: calc(300px - 20px);
+							
+							@include highdesktop {
+								display: initial;
+								width: calc(350px - 20px);
+							}
+							@include desktop {
+								display: initial;
+								width: calc(350px - 20px);
+							}
+							@include highlaptop {
+								display: initial;
+								width: calc(350px - 20px);
+							}
+							@include laptop {
+								display: initial;
+							}
+						}
+						
+						.sidebar-right {
+							width: calc(300px - 20px);
+							
+							@include highdesktop {
+								display: initial;
+								width: calc(350px - 20px);
+							}
+							@include desktop {
+								display: initial;
+								width: calc(350px - 20px);
+							}
+							@include highlaptop {
+								display: initial;
+								width: calc(350px - 20px);
+							}
+							@include laptop {
+								display: initial;
+							}
+						}
+						
+						.page {
+							width: 100%;
+							
+							@include highdesktop {
+								width: calc(100% - 350px - 350px);
+							}
+							@include desktop {
+								width: calc(100% - 350px - 350px);
+							}
+							@include highlaptop {
+								width: calc(100% - 350px - 350px);
+							}
+							@include laptop {
+								width: calc(100% - 300px - 300px);
+							}
+						}
 					}
-					@include desktop {
-						display: inline-flex;
-						flex-direction: row;
-						flex-wrap: nowrap;
-						justify-content: center;
-						align-items: flex-start;
+					
+					&.full-page-on {
+						.sidebar-left {
+							display: none;
+						}
+						
+						.sidebar-right {
+							display: none;
+						}
+						
+						.page {
+							width: 100%;
+							height: auto;
+						}
 					}
-					@include highlaptop {
-						display: inline-flex;
-						flex-direction: row;
-						flex-wrap: nowrap;
-						justify-content: center;
-						align-items: flex-start;
+				}
+				
+				&.page-structuring-flex {
+					&.full-page-off {
+						@include highdesktop {
+							display: inline-flex;
+							flex-direction: row;
+							flex-wrap: nowrap;
+							justify-content: center;
+							align-items: flex-start;
+						}
+						@include desktop {
+							display: inline-flex;
+							flex-direction: row;
+							flex-wrap: nowrap;
+							justify-content: center;
+							align-items: flex-start;
+						}
+						@include highlaptop {
+							display: inline-flex;
+							flex-direction: row;
+							flex-wrap: nowrap;
+							justify-content: center;
+							align-items: flex-start;
+						}
+						@include laptop {
+							display: inline-flex;
+							flex-direction: row;
+							flex-wrap: nowrap;
+							justify-content: center;
+							align-items: flex-start;
+						}
+						
+						.sidebar-left, .sidebar-right, .page {
+							height: auto;
+						}
+						
+						.sidebar-left, .sidebar-right {
+							display: none;
+						}
+						
+						.sidebar-left {
+							flex-basis: calc(300px - 20px);
+							width: calc(300px - 20px);
+							
+							@include highdesktop {
+								display: initial;
+								flex-basis: calc(350px - 20px);
+								width: calc(350px - 20px);
+							}
+							@include desktop {
+								display: initial;
+								flex-basis: calc(350px - 20px);
+								width: calc(350px - 20px);
+							}
+							@include highlaptop {
+								display: initial;
+								flex-basis: calc(350px - 20px);
+								width: calc(350px - 20px);
+							}
+							@include laptop {
+								display: initial;
+							}
+						}
+						
+						.sidebar-right {
+							flex-basis: calc(300px - 20px);
+							width: calc(300px - 20px);
+							
+							@include highdesktop {
+								display: initial;
+								flex-basis: calc(350px - 20px);
+								width: calc(350px - 20px);
+							}
+							@include desktop {
+								display: initial;
+								flex-basis: calc(350px - 20px);
+								width: calc(350px - 20px);
+							}
+							@include highlaptop {
+								display: initial;
+								flex-basis: calc(350px - 20px);
+								width: calc(350px - 20px);
+							}
+							@include laptop {
+								display: initial;
+							}
+						}
+						
+						.page {
+							flex-basis: 100%;
+							width: 100%;
+							
+							@include highdesktop {
+								flex-basis: calc(100% - 350px - 350px);
+								width: calc(100% - 350px - 350px);
+							}
+							@include desktop {
+								flex-basis: calc(100% - 350px - 350px);
+								width: calc(100% - 350px - 350px);
+							}
+							@include highlaptop {
+								flex-basis: calc(100% - 350px - 350px);
+								width: calc(100% - 350px - 350px);
+							}
+							@include laptop {
+								flex-basis: calc(100% - 300px - 300px);
+								width: calc(100% - 300px - 300px);
+							}
+						}
 					}
-					@include laptop {
-						display: inline-flex;
-						flex-direction: row;
-						flex-wrap: nowrap;
-						justify-content: center;
-						align-items: flex-start;
+					
+					&.full-page-on {
+						.sidebar-left {
+							display: none;
+						}
+						
+						.sidebar-right {
+							display: none;
+						}
+						
+						.page {
+							width: 100%;
+							height: auto;
+						}
 					}
 				}
 				
@@ -875,98 +1056,6 @@ body {
 					
 					.page__related {
 						width: initial;
-					}
-				}
-				
-				&.full-page-off {
-					.sidebar-left {
-						flex-basis: calc(300px - 20px);
-						width: calc(300px - 20px);
-						height: auto;
-						display: none;
-						
-						@include highdesktop {
-							display: initial;
-							flex-basis: calc(350px - 20px);
-							width: calc(350px - 20px);
-						}
-						@include desktop {
-							display: initial;
-							flex-basis: calc(350px - 20px);
-							width: calc(350px - 20px);
-						}
-						@include highlaptop {
-							display: initial;
-							flex-basis: calc(350px - 20px);
-							width: calc(350px - 20px);
-						}
-						@include laptop {
-							display: initial;
-						}
-					}
-					
-					.sidebar-right {
-						flex-basis: calc(300px - 20px);
-						width: calc(300px - 20px);
-						height: auto;
-						display: none;
-						
-						@include highdesktop {
-							display: initial;
-							flex-basis: calc(350px - 20px);
-							width: calc(350px - 20px);
-						}
-						@include desktop {
-							display: initial;
-							flex-basis: calc(350px - 20px);
-							width: calc(350px - 20px);
-						}
-						@include highlaptop {
-							display: initial;
-							flex-basis: calc(350px - 20px);
-							width: calc(350px - 20px);
-						}
-						@include laptop {
-							display: initial;
-						}
-					}
-					
-					.page {
-						flex-basis: 100%;
-						width: 100%;
-						height: auto;
-						
-						@include highdesktop {
-							flex-basis: calc(100% - 350px - 350px - 20px - 20px);
-							width: calc(100% - 350px - 350px - 20px - 20px);
-						}
-						@include desktop {
-							flex-basis: calc(100% - 350px - 350px - 20px - 20px);
-							width: calc(100% - 350px - 350px - 20px - 20px);
-						}
-						@include highlaptop {
-							flex-basis: calc(100% - 350px - 350px - 20px - 20px);
-							width: calc(100% - 350px - 350px - 20px - 20px);
-						}
-						@include laptop {
-							flex-basis: calc(100% - 300px - 300px - 20px - 20px);
-							width: calc(100% - 300px - 300px - 20px - 20px);
-						}
-					}
-				}
-				
-				&.full-page-on {
-					.sidebar-left {
-						display: none;
-					}
-					
-					.sidebar-right {
-						display: none;
-					}
-					
-					.page {
-						width: 100%;
-						height: auto;
 					}
 				}
 			}
