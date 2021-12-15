@@ -160,6 +160,11 @@ body {
 						
 						.sidebar-left, .sidebar-right {
 							display: none;
+							margin-top: 15px;
+							
+							&:first-child {
+								margin-top: unset;
+							}
 						}
 						
 						.sidebar-left {
@@ -204,6 +209,8 @@ body {
 						
 						.page {
 							width: 100%;
+							margin-right: 20px;
+							margin-left: 20px;
 							
 							@include highdesktop {
 								width: calc(100% - 350px - 350px);
@@ -286,6 +293,14 @@ body {
 						
 						.sidebar-left, .sidebar-right {
 							display: none;
+							
+							&>* {
+								margin-top: 15px;
+								
+								&:first-child {
+									margin-top: unset;
+								}
+							}
 						}
 						
 						.sidebar-left {
@@ -385,14 +400,6 @@ body {
 				
 				.sidebar-left, .sidebar-right {
 					font-size: 15px;
-					
-					&>* {
-						margin-top: 15px;
-						
-						&:first-child {
-							margin-top: unset;
-						}
-					}
 				}
 				
 				.sidebar-left {
