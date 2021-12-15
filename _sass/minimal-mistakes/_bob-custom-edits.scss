@@ -161,6 +161,11 @@ body {
 						.sidebar-left, .sidebar-right {
 							display: none;
 							margin-bottom: 15px;
+							
+							&.page-navigation, &.table-of-contents {
+								position: sticky;
+								top: 2.5em;
+							}
 						}
 						
 						.sidebar-left {
@@ -224,11 +229,7 @@ body {
 					}
 					
 					&.full-page-on {
-						.sidebar-left {
-							display: none;
-						}
-						
-						.sidebar-right {
+						.sidebar-left, .sidebar-right {
 							display: none;
 						}
 						
@@ -371,11 +372,7 @@ body {
 					}
 					
 					&.full-page-on {
-						.sidebar-left {
-							display: none;
-						}
-						
-						.sidebar-right {
+						.sidebar-left, .sidebar-right {
 							display: none;
 						}
 						
