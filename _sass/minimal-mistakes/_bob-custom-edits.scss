@@ -160,11 +160,7 @@ body {
 						
 						.sidebar-left, .sidebar-right {
 							display: none;
-							margin-top: 15px;
-							
-							&:first-child {
-								margin-top: unset;
-							}
+							margin-bottom: 15px;
 						}
 						
 						.sidebar-left {
