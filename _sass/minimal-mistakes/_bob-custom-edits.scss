@@ -238,6 +238,19 @@ body {
 				
 				&.page-structuring-flex {
 					&.full-page-off {
+						&>* {
+							margin-right: 20px;
+							// margin-left: 20px;
+						}
+						
+						&>*:first-child {
+							margin-left: unset;
+						}
+						
+						&>*:last-child {
+							margin-right: unset;
+						}
+						
 						@include highdesktop {
 							display: inline-flex;
 							flex-direction: row;
@@ -360,19 +373,6 @@ body {
 							height: auto;
 						}
 					}
-				}
-				
-				&>* {
-					margin-right: 20px;
-					// margin-left: 20px;
-				}
-				
-				&>*:first-child {
-					margin-left: unset;
-				}
-				
-				&>*:last-child {
-					margin-right: unset;
 				}
 				
 				img.color-image {
