@@ -13,7 +13,7 @@
 {% assign DecorativeTextColor = "#FFFFFF" %}
 {%- endunless -%}
 {%- if page.sidebars and page.sidebars.page_subject_info -%}
-<div class="page-subject-info">
+<div class="page-subject-info {% include page-sidebar-right-class.html %}">
   {%- if page.sidebars.page_subject_info.title -%}
   <div class="psi-title" style="background-color: {{ DecorativeColor }}; color: {{ DecorativeTextColor }}">
     {{- page.sidebars.page_subject_info.title | markdownify | strip_html | strip_newlines -}}

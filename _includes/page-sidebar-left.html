@@ -1,3 +1,7 @@
+{%- if site.enabled_features.sidebar_structuring_use_float == true -%}
+{%- include page-navigation-panel.html -%}
+{%- else -%}
 <div class="sidebar-left">
   {%- include page-navigation-panel.html -%}
 </div>
+{%- endif -%}

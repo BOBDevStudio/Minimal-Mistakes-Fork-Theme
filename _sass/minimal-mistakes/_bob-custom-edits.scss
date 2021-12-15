@@ -396,7 +396,7 @@ body {
 				}
 				
 				.sidebar-left {
-					.page-navigation {
+					.page-navigation, &.page-navigation {
 						width: 100%;
 						overflow: hidden;
 						
@@ -444,7 +444,7 @@ body {
 				}
 				
 				.sidebar-right {
-					.page-subject-info {
+					.page-subject-info, &.page-subject-info {
 						background-color: #d7d7d7;
 						box-shadow: 0 0 15px #00000033;
 						border-radius: 10px;
@@ -596,7 +596,7 @@ body {
 						}
 					}
 					
-					.table-of-contents {
+					.table-of-contents, &.table-of-contents {
 						background-color: #d7d7d7;
 						box-shadow: 0 0 15px #00000033;
 						border-radius: 10px;

@@ -1,5 +1,5 @@
 {%- if page.sidebars and page.sidebars.table_of_contents and page.sidebars.table_of_contents.enabled == true -%}
-<div class="table-of-contents">
+<div class="table-of-contents {% include page-sidebar-right-class.html %}">
   <div class="toc-title">On This Page</div>
   {%- include toc.html sanitize=true html=content h_min=1 h_max=3 class="toc-main" item_class="toc-item toc-item-layer-%level%" anchor_class="toc-item-text" submenu_class="toc-sub-items toc-sub-items-layer-%level%" skip_no_ids=true -%}
 </div>

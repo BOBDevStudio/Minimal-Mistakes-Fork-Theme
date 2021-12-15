@@ -1,5 +1,9 @@
+{%- if site.enabled_features.sidebar_structuring_use_float == true -%}
+{%- include page-subject-info-panel.html -%}
+{%- include page-table-of-contents-panel.html -%}
+{%- else -%}
 <div class="sidebar-right">
   {%- include page-subject-info-panel.html -%}
-  
   {%- include page-table-of-contents-panel.html -%}
 </div>
+{%- endif -%}
