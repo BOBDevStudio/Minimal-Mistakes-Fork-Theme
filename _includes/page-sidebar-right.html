@@ -1,6 +1,7 @@
 {%- if site.enabled_features.sidebar_structuring_use_float == true -%}
 {%- include page-subject-info-panel.html -%}
 {%- include page-table-of-contents-panel.html -%}
+<div class="sidebar-decoy {% include page-sidebar-right-class.html %}"></div>
 {%- else -%}
 <div class="sidebar-right">
   {%- include page-subject-info-panel.html -%}
