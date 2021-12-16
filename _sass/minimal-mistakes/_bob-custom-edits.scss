@@ -156,15 +156,21 @@ body {
 						.sidebar-left, .sidebar-right, .page {
 							float: left;
 							height: auto;
+							clear: right;
 						}
 						
 						.sidebar-left, .sidebar-right {
 							display: none;
 							margin-bottom: 15px;
+							clear: both;
 							
 							&.page-navigation, &.table-of-contents {
 								position: sticky;
 								top: 2.5em;
+							}
+							
+							&.sidebar-decoy {
+								clear: right;
 							}
 						}
 						
