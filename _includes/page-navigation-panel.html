@@ -1,6 +1,6 @@
 {%- if page.sidebars and page.sidebars.page_navigation_panel and page.sidebars.page_navigation_panel.list_name_used and site.data.navigation[page.sidebars.page_navigation_panel.list_name_used] -%}
 {%- assign NavigationList = site.data.navigation[page.sidebars.page_navigation_panel.list_name_used] -%}
-<div class="page-navigation {% include page-sidebar-left-class.html %}">
+<div class="page-navigation">
   {%- for Item1 in NavigationList -%}
   {%- if Item1.title -%}
   <div class="page-navigation-item">
